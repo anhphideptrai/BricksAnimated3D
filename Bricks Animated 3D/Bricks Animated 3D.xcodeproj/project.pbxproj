@@ -833,6 +833,13 @@
 		B20E5C7E1B15AFF0000B59D5 /* 1042.png in Resources */ = {isa = PBXBuildFile; fileRef = B20E5C491B15AFF0000B59D5 /* 1042.png */; };
 		B20E5C7F1B15AFF0000B59D5 /* 1043.png in Resources */ = {isa = PBXBuildFile; fileRef = B20E5C4A1B15AFF0000B59D5 /* 1043.png */; };
 		B20E5C801B15AFF0000B59D5 /* 1045.png in Resources */ = {isa = PBXBuildFile; fileRef = B20E5C4B1B15AFF0000B59D5 /* 1045.png */; };
+		B20E64BF1B1806FE000B59D5 /* LegoImage.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E64B81B1806FE000B59D5 /* LegoImage.m */; };
+		B20E64C01B1806FE000B59D5 /* LegoGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E64BC1B1806FE000B59D5 /* LegoGroup.m */; };
+		B20E64C11B1806FE000B59D5 /* LegoStep.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E64BD1B1806FE000B59D5 /* LegoStep.m */; };
+		B20E64C21B1806FE000B59D5 /* Lego.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E64BE1B1806FE000B59D5 /* Lego.m */; };
+		B20E64C51B18082F000B59D5 /* TEVHT19EQi5zcWxpdGU= in Resources */ = {isa = PBXBuildFile; fileRef = B20E64C41B18082F000B59D5 /* TEVHT19EQi5zcWxpdGU= */; };
+		B20E64CB1B1808C5000B59D5 /* SQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E64CA1B1808C5000B59D5 /* SQLiteManager.m */; };
+		B20E64CE1B180C2F000B59D5 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B20E64CD1B180C2F000B59D5 /* libsqlite3.0.dylib */; };
 		B988D12450A4551CC875CAB0 /* libPods-Bricks Animated 3D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A671F5382684AE0C5339ED /* libPods-Bricks Animated 3D.a */; };
 /* End PBXBuildFile section */
 
@@ -1669,6 +1676,20 @@
 		B20E5C491B15AFF0000B59D5 /* 1042.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1042.png; path = Images/Review/1042.png; sourceTree = "<group>"; };
 		B20E5C4A1B15AFF0000B59D5 /* 1043.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1043.png; path = Images/Review/1043.png; sourceTree = "<group>"; };
 		B20E5C4B1B15AFF0000B59D5 /* 1045.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1045.png; path = Images/Review/1045.png; sourceTree = "<group>"; };
+		B20E64B71B1806FE000B59D5 /* LegoImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LegoImage.h; path = Entry/LegoImage.h; sourceTree = "<group>"; };
+		B20E64B81B1806FE000B59D5 /* LegoImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LegoImage.m; path = Entry/LegoImage.m; sourceTree = "<group>"; };
+		B20E64B91B1806FE000B59D5 /* LegoStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LegoStep.h; path = Entry/LegoStep.h; sourceTree = "<group>"; };
+		B20E64BA1B1806FE000B59D5 /* Lego.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Lego.h; path = Entry/Lego.h; sourceTree = "<group>"; };
+		B20E64BB1B1806FE000B59D5 /* LegoGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LegoGroup.h; path = Entry/LegoGroup.h; sourceTree = "<group>"; };
+		B20E64BC1B1806FE000B59D5 /* LegoGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LegoGroup.m; path = Entry/LegoGroup.m; sourceTree = "<group>"; };
+		B20E64BD1B1806FE000B59D5 /* LegoStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LegoStep.m; path = Entry/LegoStep.m; sourceTree = "<group>"; };
+		B20E64BE1B1806FE000B59D5 /* Lego.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Lego.m; path = Entry/Lego.m; sourceTree = "<group>"; };
+		B20E64C41B18082F000B59D5 /* TEVHT19EQi5zcWxpdGU= */ = {isa = PBXFileReference; lastKnownFileType = file; name = "TEVHT19EQi5zcWxpdGU="; path = "DataBase/TEVHT19EQi5zcWxpdGU="; sourceTree = "<group>"; };
+		B20E64C71B180859000B59D5 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Common/Constants.h; sourceTree = "<group>"; };
+		B20E64C91B1808C5000B59D5 /* SQLiteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SQLiteManager.h; path = Proccessing/SQLiteManager.h; sourceTree = "<group>"; };
+		B20E64CA1B1808C5000B59D5 /* SQLiteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SQLiteManager.m; path = Proccessing/SQLiteManager.m; sourceTree = "<group>"; };
+		B20E64CC1B180981000B59D5 /* Bricks-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bricks-Prefix.pch"; sourceTree = "<group>"; };
+		B20E64CD1B180C2F000B59D5 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		B3B97C520897050493FDE417 /* Pods-Bricks Animated 3D.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bricks Animated 3D.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bricks Animated 3D/Pods-Bricks Animated 3D.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1677,6 +1698,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B20E64CE1B180C2F000B59D5 /* libsqlite3.0.dylib in Frameworks */,
 				B988D12450A4551CC875CAB0 /* libPods-Bricks Animated 3D.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1687,6 +1709,7 @@
 		30F38CB6C5C0B6E3446E1DC7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B20E64CD1B180C2F000B59D5 /* libsqlite3.0.dylib */,
 				A9A671F5382684AE0C5339ED /* libPods-Bricks Animated 3D.a */,
 			);
 			name = Frameworks;
@@ -1713,6 +1736,9 @@
 		B20E557C1B15A31B000B59D5 /* Bricks Animated 3D */ = {
 			isa = PBXGroup;
 			children = (
+				B20E64C81B18089B000B59D5 /* Proccessing */,
+				B20E64C61B180834000B59D5 /* Common */,
+				B20E64B61B1806D3000B59D5 /* Entry */,
 				B20E55811B15A31B000B59D5 /* AppDelegate.h */,
 				B20E55821B15A31B000B59D5 /* AppDelegate.m */,
 				B20E55841B15A31B000B59D5 /* ViewController.h */,
@@ -1728,9 +1754,11 @@
 		B20E557D1B15A31B000B59D5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B20E64C31B180745000B59D5 /* DataBase */,
 				B20E55A31B15AED7000B59D5 /* Images */,
 				B20E557E1B15A31B000B59D5 /* Info.plist */,
 				B20E557F1B15A31B000B59D5 /* main.m */,
+				B20E64CC1B180981000B59D5 /* Bricks-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -2586,6 +2614,46 @@
 			name = Bricks;
 			sourceTree = "<group>";
 		};
+		B20E64B61B1806D3000B59D5 /* Entry */ = {
+			isa = PBXGroup;
+			children = (
+				B20E64BA1B1806FE000B59D5 /* Lego.h */,
+				B20E64BE1B1806FE000B59D5 /* Lego.m */,
+				B20E64BB1B1806FE000B59D5 /* LegoGroup.h */,
+				B20E64BC1B1806FE000B59D5 /* LegoGroup.m */,
+				B20E64B91B1806FE000B59D5 /* LegoStep.h */,
+				B20E64BD1B1806FE000B59D5 /* LegoStep.m */,
+				B20E64B71B1806FE000B59D5 /* LegoImage.h */,
+				B20E64B81B1806FE000B59D5 /* LegoImage.m */,
+			);
+			name = Entry;
+			sourceTree = "<group>";
+		};
+		B20E64C31B180745000B59D5 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				B20E64C41B18082F000B59D5 /* TEVHT19EQi5zcWxpdGU= */,
+			);
+			name = DataBase;
+			sourceTree = "<group>";
+		};
+		B20E64C61B180834000B59D5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B20E64C71B180859000B59D5 /* Constants.h */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		B20E64C81B18089B000B59D5 /* Proccessing */ = {
+			isa = PBXGroup;
+			children = (
+				B20E64C91B1808C5000B59D5 /* SQLiteManager.h */,
+				B20E64CA1B1808C5000B59D5 /* SQLiteManager.m */,
+			);
+			name = Proccessing;
+			sourceTree = "<group>";
+		};
 		F6F020D6B6BFE1C05323CA0E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -3412,6 +3480,7 @@
 				B20E5B891B15AFC8000B59D5 /* 300328.png in Resources */,
 				B20E597F1B15AFC8000B59D5 /* 4277925.png in Resources */,
 				B20E5AFA1B15AFC8000B59D5 /* 4118785.png in Resources */,
+				B20E64C51B18082F000B59D5 /* TEVHT19EQi5zcWxpdGU= in Resources */,
 				B20E591B1B15AFC8000B59D5 /* 4522035.png in Resources */,
 				B20E5B601B15AFC8000B59D5 /* 235726.png in Resources */,
 				B20E5ACA1B15AFC8000B59D5 /* 379501.png in Resources */,
@@ -3520,9 +3589,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B20E64BF1B1806FE000B59D5 /* LegoImage.m in Sources */,
 				B20E55861B15A31B000B59D5 /* ViewController.m in Sources */,
+				B20E64C01B1806FE000B59D5 /* LegoGroup.m in Sources */,
+				B20E64C21B1806FE000B59D5 /* Lego.m in Sources */,
 				B20E55831B15A31B000B59D5 /* AppDelegate.m in Sources */,
+				B20E64C11B1806FE000B59D5 /* LegoStep.m in Sources */,
 				B20E55801B15A31B000B59D5 /* main.m in Sources */,
+				B20E64CB1B1808C5000B59D5 /* SQLiteManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3635,6 +3709,7 @@
 			baseConfigurationReference = B3B97C520897050493FDE417 /* Pods-Bricks Animated 3D.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "Bricks Animated 3D/Bricks-Prefix.pch";
 				INFOPLIST_FILE = "Bricks Animated 3D/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3646,6 +3721,7 @@
 			baseConfigurationReference = 37AAB6706395AD9442E0FC5D /* Pods-Bricks Animated 3D.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "Bricks Animated 3D/Bricks-Prefix.pch";
 				INFOPLIST_FILE = "Bricks Animated 3D/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
