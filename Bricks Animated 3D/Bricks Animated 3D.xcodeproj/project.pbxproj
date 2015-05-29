@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		B20E55801B15A31B000B59D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E557F1B15A31B000B59D5 /* main.m */; };
 		B20E55831B15A31B000B59D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E55821B15A31B000B59D5 /* AppDelegate.m */; };
-		B20E55861B15A31B000B59D5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E55851B15A31B000B59D5 /* ViewController.m */; };
-		B20E55891B15A31B000B59D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B20E55871B15A31B000B59D5 /* Main.storyboard */; };
+		B20E55861B15A31B000B59D5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E55851B15A31B000B59D5 /* MainViewController.m */; };
 		B20E558B1B15A31B000B59D5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B20E558A1B15A31B000B59D5 /* Images.xcassets */; };
 		B20E558E1B15A31B000B59D5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B20E558C1B15A31B000B59D5 /* LaunchScreen.xib */; };
 		B20E58E31B15AFC8000B59D5 /* 9327.png in Resources */ = {isa = PBXBuildFile; fileRef = B20E56191B15AFC2000B59D5 /* 9327.png */; };
@@ -840,6 +839,7 @@
 		B20E64C51B18082F000B59D5 /* TEVHT19EQi5zcWxpdGU= in Resources */ = {isa = PBXBuildFile; fileRef = B20E64C41B18082F000B59D5 /* TEVHT19EQi5zcWxpdGU= */; };
 		B20E64CB1B1808C5000B59D5 /* SQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E64CA1B1808C5000B59D5 /* SQLiteManager.m */; };
 		B20E64CE1B180C2F000B59D5 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B20E64CD1B180C2F000B59D5 /* libsqlite3.0.dylib */; };
+		B20E64D41B1839C5000B59D5 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B20E64D31B1839C5000B59D5 /* MainViewController.xib */; };
 		B988D12450A4551CC875CAB0 /* libPods-Bricks Animated 3D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A671F5382684AE0C5339ED /* libPods-Bricks Animated 3D.a */; };
 /* End PBXBuildFile section */
 
@@ -851,9 +851,8 @@
 		B20E557F1B15A31B000B59D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B20E55811B15A31B000B59D5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B20E55821B15A31B000B59D5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B20E55841B15A31B000B59D5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B20E55851B15A31B000B59D5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		B20E55881B15A31B000B59D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B20E55841B15A31B000B59D5 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		B20E55851B15A31B000B59D5 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		B20E558A1B15A31B000B59D5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B20E558D1B15A31B000B59D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B20E56191B15AFC2000B59D5 /* 9327.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 9327.png; path = Images/Bricks/9327.png; sourceTree = "<group>"; };
@@ -1690,6 +1689,7 @@
 		B20E64CA1B1808C5000B59D5 /* SQLiteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SQLiteManager.m; path = Proccessing/SQLiteManager.m; sourceTree = "<group>"; };
 		B20E64CC1B180981000B59D5 /* Bricks-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bricks-Prefix.pch"; sourceTree = "<group>"; };
 		B20E64CD1B180C2F000B59D5 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		B20E64D31B1839C5000B59D5 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainViewController.xib; path = Xib/MainViewController.xib; sourceTree = "<group>"; };
 		B3B97C520897050493FDE417 /* Pods-Bricks Animated 3D.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bricks Animated 3D.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bricks Animated 3D/Pods-Bricks Animated 3D.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1736,14 +1736,12 @@
 		B20E557C1B15A31B000B59D5 /* Bricks Animated 3D */ = {
 			isa = PBXGroup;
 			children = (
+				B20E64CF1B181799000B59D5 /* ViewControllers */,
 				B20E64C81B18089B000B59D5 /* Proccessing */,
 				B20E64C61B180834000B59D5 /* Common */,
 				B20E64B61B1806D3000B59D5 /* Entry */,
 				B20E55811B15A31B000B59D5 /* AppDelegate.h */,
 				B20E55821B15A31B000B59D5 /* AppDelegate.m */,
-				B20E55841B15A31B000B59D5 /* ViewController.h */,
-				B20E55851B15A31B000B59D5 /* ViewController.m */,
-				B20E55871B15A31B000B59D5 /* Main.storyboard */,
 				B20E558A1B15A31B000B59D5 /* Images.xcassets */,
 				B20E558C1B15A31B000B59D5 /* LaunchScreen.xib */,
 				B20E557D1B15A31B000B59D5 /* Supporting Files */,
@@ -2654,6 +2652,24 @@
 			name = Proccessing;
 			sourceTree = "<group>";
 		};
+		B20E64CF1B181799000B59D5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B20E64D01B1817EA000B59D5 /* Xib */,
+				B20E55841B15A31B000B59D5 /* MainViewController.h */,
+				B20E55851B15A31B000B59D5 /* MainViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B20E64D01B1817EA000B59D5 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				B20E64D31B1839C5000B59D5 /* MainViewController.xib */,
+			);
+			name = Xib;
+			sourceTree = "<group>";
+		};
 		F6F020D6B6BFE1C05323CA0E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -3030,7 +3046,6 @@
 				B20E5B0D1B15AFC8000B59D5 /* 302205.png in Resources */,
 				B20E59C51B15AFC8000B59D5 /* 4211469.png in Resources */,
 				B20E5C131B15AFDC000B59D5 /* ico1091.png in Resources */,
-				B20E55891B15A31B000B59D5 /* Main.storyboard in Resources */,
 				B20E5B861B15AFC8000B59D5 /* 300321.png in Resources */,
 				B20E5B731B15AFC8000B59D5 /* 243624.png in Resources */,
 				B20E5BA11B15AFC8000B59D5 /* 302021.png in Resources */,
@@ -3158,6 +3173,7 @@
 				B20E59A31B15AFC8000B59D5 /* 4506846.png in Resources */,
 				B20E5A051B15AFC8000B59D5 /* 4195659.png in Resources */,
 				B20E5B0A1B15AFC8000B59D5 /* 302126.png in Resources */,
+				B20E64D41B1839C5000B59D5 /* MainViewController.xib in Resources */,
 				B20E5A451B15AFC8000B59D5 /* 4211190.png in Resources */,
 				B20E595E1B15AFC8000B59D5 /* 447701.png in Resources */,
 				B20E5AE71B15AFC8000B59D5 /* 4113158.png in Resources */,
@@ -3590,7 +3606,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B20E64BF1B1806FE000B59D5 /* LegoImage.m in Sources */,
-				B20E55861B15A31B000B59D5 /* ViewController.m in Sources */,
+				B20E55861B15A31B000B59D5 /* MainViewController.m in Sources */,
 				B20E64C01B1806FE000B59D5 /* LegoGroup.m in Sources */,
 				B20E64C21B1806FE000B59D5 /* Lego.m in Sources */,
 				B20E55831B15A31B000B59D5 /* AppDelegate.m in Sources */,
@@ -3603,14 +3619,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B20E55871B15A31B000B59D5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B20E55881B15A31B000B59D5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B20E558C1B15A31B000B59D5 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
