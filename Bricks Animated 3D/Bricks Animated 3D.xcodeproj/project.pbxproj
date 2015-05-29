@@ -840,6 +840,8 @@
 		B20E64CB1B1808C5000B59D5 /* SQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E64CA1B1808C5000B59D5 /* SQLiteManager.m */; };
 		B20E64CE1B180C2F000B59D5 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B20E64CD1B180C2F000B59D5 /* libsqlite3.0.dylib */; };
 		B20E64D41B1839C5000B59D5 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B20E64D31B1839C5000B59D5 /* MainViewController.xib */; };
+		B20E64D71B183D91000B59D5 /* PreviewLegoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E64D61B183D91000B59D5 /* PreviewLegoViewController.m */; };
+		B20E64D91B183DAC000B59D5 /* PreviewLegoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B20E64D81B183DAC000B59D5 /* PreviewLegoViewController.xib */; };
 		B988D12450A4551CC875CAB0 /* libPods-Bricks Animated 3D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A671F5382684AE0C5339ED /* libPods-Bricks Animated 3D.a */; };
 /* End PBXBuildFile section */
 
@@ -1690,6 +1692,9 @@
 		B20E64CC1B180981000B59D5 /* Bricks-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bricks-Prefix.pch"; sourceTree = "<group>"; };
 		B20E64CD1B180C2F000B59D5 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		B20E64D31B1839C5000B59D5 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainViewController.xib; path = Xib/MainViewController.xib; sourceTree = "<group>"; };
+		B20E64D51B183D91000B59D5 /* PreviewLegoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewLegoViewController.h; sourceTree = "<group>"; };
+		B20E64D61B183D91000B59D5 /* PreviewLegoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviewLegoViewController.m; sourceTree = "<group>"; };
+		B20E64D81B183DAC000B59D5 /* PreviewLegoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreviewLegoViewController.xib; path = Xib/PreviewLegoViewController.xib; sourceTree = "<group>"; };
 		B3B97C520897050493FDE417 /* Pods-Bricks Animated 3D.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bricks Animated 3D.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bricks Animated 3D/Pods-Bricks Animated 3D.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -2658,6 +2663,8 @@
 				B20E64D01B1817EA000B59D5 /* Xib */,
 				B20E55841B15A31B000B59D5 /* MainViewController.h */,
 				B20E55851B15A31B000B59D5 /* MainViewController.m */,
+				B20E64D51B183D91000B59D5 /* PreviewLegoViewController.h */,
+				B20E64D61B183D91000B59D5 /* PreviewLegoViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -2666,6 +2673,7 @@
 			isa = PBXGroup;
 			children = (
 				B20E64D31B1839C5000B59D5 /* MainViewController.xib */,
+				B20E64D81B183DAC000B59D5 /* PreviewLegoViewController.xib */,
 			);
 			name = Xib;
 			sourceTree = "<group>";
@@ -2822,6 +2830,7 @@
 				B20E597E1B15AFC8000B59D5 /* 4277160.png in Resources */,
 				B20E5A921B15AFC8000B59D5 /* 4179872.png in Resources */,
 				B20E5B081B15AFC8000B59D5 /* 302121.png in Resources */,
+				B20E64D91B183DAC000B59D5 /* PreviewLegoViewController.xib in Resources */,
 				B20E5B671B15AFC8000B59D5 /* 241926.png in Resources */,
 				B20E5C051B15AFDC000B59D5 /* ico1066.png in Resources */,
 				B20E5B7E1B15AFC8000B59D5 /* 287726.png in Resources */,
@@ -3610,6 +3619,7 @@
 				B20E64C01B1806FE000B59D5 /* LegoGroup.m in Sources */,
 				B20E64C21B1806FE000B59D5 /* Lego.m in Sources */,
 				B20E55831B15A31B000B59D5 /* AppDelegate.m in Sources */,
+				B20E64D71B183D91000B59D5 /* PreviewLegoViewController.m in Sources */,
 				B20E64C11B1806FE000B59D5 /* LegoStep.m in Sources */,
 				B20E55801B15A31B000B59D5 /* main.m in Sources */,
 				B20E64CB1B1808C5000B59D5 /* SQLiteManager.m in Sources */,

@@ -27,6 +27,7 @@
                 <constraint firstAttribute="trailing" secondItem="BsE-Ja-9GV" secondAttribute="trailing" id="ZFu-zU-THJ"/>
                 <constraint firstAttribute="bottom" secondItem="BsE-Ja-9GV" secondAttribute="bottom" id="gtD-lc-JSb"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
         </view>
     </objects>
 </document>
