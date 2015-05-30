@@ -842,6 +842,7 @@
 		B20E64D41B1839C5000B59D5 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B20E64D31B1839C5000B59D5 /* MainViewController.xib */; };
 		B20E64D71B183D91000B59D5 /* PreviewLegoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E64D61B183D91000B59D5 /* PreviewLegoViewController.m */; };
 		B20E64D91B183DAC000B59D5 /* PreviewLegoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B20E64D81B183DAC000B59D5 /* PreviewLegoViewController.xib */; };
+		B20E64DB1B19B866000B59D5 /* icon_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = B20E64DA1B19B866000B59D5 /* icon_placeholder.png */; };
 		B988D12450A4551CC875CAB0 /* libPods-Bricks Animated 3D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A671F5382684AE0C5339ED /* libPods-Bricks Animated 3D.a */; };
 /* End PBXBuildFile section */
 
@@ -1695,6 +1696,7 @@
 		B20E64D51B183D91000B59D5 /* PreviewLegoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewLegoViewController.h; sourceTree = "<group>"; };
 		B20E64D61B183D91000B59D5 /* PreviewLegoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviewLegoViewController.m; sourceTree = "<group>"; };
 		B20E64D81B183DAC000B59D5 /* PreviewLegoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreviewLegoViewController.xib; path = Xib/PreviewLegoViewController.xib; sourceTree = "<group>"; };
+		B20E64DA1B19B866000B59D5 /* icon_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_placeholder.png; path = Images/Icon/icon_placeholder.png; sourceTree = "<group>"; };
 		B3B97C520897050493FDE417 /* Pods-Bricks Animated 3D.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bricks Animated 3D.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bricks Animated 3D/Pods-Bricks Animated 3D.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1839,6 +1841,7 @@
 		B20E56171B15AF9C000B59D5 /* Icon */ = {
 			isa = PBXGroup;
 			children = (
+				B20E64DA1B19B866000B59D5 /* icon_placeholder.png */,
 				B20E5BAD1B15AFDC000B59D5 /* ico1095.png */,
 				B20E5BAE1B15AFDC000B59D5 /* ico1096.png */,
 				B20E5BAF1B15AFDC000B59D5 /* ico1097.png */,
@@ -2828,6 +2831,7 @@
 				B20E5AFD1B15AFC8000B59D5 /* 4118827.png in Resources */,
 				B20E5B471B15AFC8000B59D5 /* 306924.png in Resources */,
 				B20E597E1B15AFC8000B59D5 /* 4277160.png in Resources */,
+				B20E64DB1B19B866000B59D5 /* icon_placeholder.png in Resources */,
 				B20E5A921B15AFC8000B59D5 /* 4179872.png in Resources */,
 				B20E5B081B15AFC8000B59D5 /* 302121.png in Resources */,
 				B20E64D91B183DAC000B59D5 /* PreviewLegoViewController.xib in Resources */,

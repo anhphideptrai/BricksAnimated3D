@@ -98,10 +98,12 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
+    [cell.imageView cancelImageRequestOperation];
+    [cell.imageView setImage:[UIImage imageNamed:@"icon_placeholder.png"]];
     Lego *lego = ((LegoGroup*)groups[indexPath.section]).legoes[indexPath.row];
     [cell.textLabel setText:lego.name];
     [cell.detailTextLabel setText:[NSString stringWithFormat:@"%lu Details", (unsigned long)lego.totalBricks]];
-    [cell.imageView setImage:[UIImage imageNamed:lego.icon]];
+    [cell.imageView setImageWithURL:[[NSBundle mainBundle] URLForResource:[[lego.icon componentsSeparatedByString:@"."] firstObject] withExtension:[[lego.icon componentsSeparatedByString:@"."] lastObject]]];
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
