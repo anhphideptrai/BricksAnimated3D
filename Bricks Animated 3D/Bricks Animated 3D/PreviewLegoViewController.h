@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Lego.h"
 
 @interface PreviewLegoViewController : UIViewController
-
+@property (nonatomic, strong) Lego *lego;
 @end
