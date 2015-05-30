@@ -109,9 +109,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     Lego *lego = ((LegoGroup*)groups[indexPath.section]).legoes[indexPath.row];
-    PreviewLegoViewController *previewVC = [[PreviewLegoViewController alloc] initWithNibName:@"PreviewLegoViewController" bundle:nil];
-    [previewVC setLego:lego];
-    [self.navigationController pushViewController:previewVC animated:YES];
+    if (lego.isDownloaded) {
+        
+    }else{
+        PreviewLegoViewController *previewVC = [[PreviewLegoViewController alloc] initWithNibName:@"PreviewLegoViewController" bundle:nil];
+        [previewVC setLego:lego];
+        [self.navigationController pushViewController:previewVC animated:YES];
+    }
 }
 #pragma mark - UIAlertViewDelegate methods
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{

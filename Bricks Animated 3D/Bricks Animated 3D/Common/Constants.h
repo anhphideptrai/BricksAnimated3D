@@ -24,4 +24,40 @@
 
 #define _url_share_ @"https://itunes.apple.com/app/id948768878"
 
+#define FRAME_PROMO_SLIDES (IS_IPAD?CGRectMake(0, 0, 768, 350):CGRectMake(0, 0, 320, 145))
+#define HEIGHT_CONTENT_GUIDE_VIEW_ROW (IS_IPAD?218:175)
+#define HEIGHT_CONTENT_GUIDE_VIEW_ROW_HEADER 30
+#define WIDTH_POSTER_VIEW (IS_IPAD?130:87)
+#define SPACE_BETWEEN_POSTER_VIEWS 10
+#define PANDING_TOP_AND_BOTTOM_OF_ROW_HEADER (IS_IPAD?0:0)
+#define OFFSET_Y_OF_FIRST_ROW (IS_IPAD?350:145)
+
+/*
+ ** START - CONSTANT OF CONTENT GUIDE VIEWS
+ */
+#define BACKGROUND_COLOR_ROWHEADER [UIColor colorWithRed:37.0f/255.0f green:64.0f/255.0f blue:68.0f/255.0f alpha:1.0f]
+#define BACKGROUND_COLOR_CONTENTGUIDEVIEW [UIColor colorWithRed:25.0f/255.0f green:38.0f/255.0f blue:44.0f/255.0f alpha:1.0f]
+#define PANDING_LEFT_CONTENT_GUIDE_ROW_HEADER_DEFAULT 10
+#define HEIGHT_TITLE_POSTER_DEFAULT 50
+#define TEXT_COLOR_TITLE_POSTER_DEFAULT [UIColor colorWithRed:220.0f/255.0f green:198.0f/255.0f blue:152.0f/255.0f alpha:1.0f]
+#define TEXT_COLOR_RIGHT_LABEL_POSTER_DEFAULT [UIColor colorWithRed:0.0f/255.0f green:0.0f/255.0f blue:0.0f/255.0f alpha:1.0f]
+#define FONT_TITLE_POSTER_DEFAULT [UIFont fontWithName:@"Arial-BoldMT" size:14.0f]
+#define FONT_RIGHT_LABEL_POSTER_DEFAULT [UIFont fontWithName:@"ArialMT" size:(IS_IPAD?14.0f:12.0f)]
+#define FONT_TITLE_ROW_HEADER_DEFAULT [UIFont fontWithName:@"Arial-BoldMT" size:20.0f]
+#define TIME_AUTO_SCROLLING_PROMOSLIDES_DEFAULT 8
+/*
+ ** END - CONSTANT OF CONTENT GUIDE VIEWS
+ */
+/*
+ ** START - FRAME CUSTOM
+ */
+#define SET_X_Y_FRAME(_x_, _y_, frameUpdate)   CGRectMake(_x_, _y_, frameUpdate.size.width, frameUpdate.size.height)
+#define SET_X_FRAME(_x_, frameUpdate)     CGRectMake(_x_, frameUpdate.origin.y, frameUpdate.size.width, frameUpdate.size.height)
+#define SET_Y_FRAME(_y_, frameUpdate)     CGRectMake(frameUpdate.origin.x, _y_, frameUpdate.size.width, frameUpdate.size.height)
+#define SET_WIDTH_HEIGHT_FRAME(_width_, _height_, frameUpdate)     CGRectMake(frameUpdate.origin.x, frameUpdate.origin.y, _width_, _height_)
+#define SET_WIDTH_FRAME(_width_, frameUpdate)     CGRectMake(frameUpdate.origin.x, frameUpdate.origin.y, _width_, frameUpdate.size.height)
+#define SET_HEIGHT_FRAME(_height_, frameUpdate)     CGRectMake(frameUpdate.origin.x, frameUpdate.origin.y, frameUpdate.size.width, _height_)
+/*
+ ** END - FRAME CUSTOM
+ */
 #endif
