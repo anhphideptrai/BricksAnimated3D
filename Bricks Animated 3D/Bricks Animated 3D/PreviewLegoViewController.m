@@ -19,16 +19,28 @@
     if (_lego) {
         [self.navigationItem setTitle:_lego.name];
     }
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Back"
+    self.navigationController.navigationBar.tintColor = UIColorFromRGB(0x2a9c40);
+    
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Back"
                                                                     style:UIBarButtonItemStylePlain
                                                                    target:self
                                                                    action:nil];
-    [rightButton setTitleTextAttributes:@{
+    [leftButton setTitleTextAttributes:@{
                                           NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:15.f],
                                           NSForegroundColorAttributeName: UIColorFromRGB(0x2a9c40)
                                           } forState:UIControlStateNormal];
-    self.navigationController.navigationBar.tintColor = UIColorFromRGB(0x2a9c40);
-    [self.navigationItem setBackBarButtonItem:rightButton];
+    
+    UIBarButtonItem *righttButton = [[UIBarButtonItem alloc] initWithTitle:@"Share!"
+                                                                   style:UIBarButtonItemStylePlain
+                                                                  target:self
+                                                                  action:nil];
+    [righttButton setTitleTextAttributes:@{
+                                         NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:15.f],
+                                         NSForegroundColorAttributeName: UIColorFromRGB(0x2a9c40)
+                                         } forState:UIControlStateNormal];
+    
+    [self.navigationItem setBackBarButtonItem:leftButton];
+    [self.navigationItem setRightBarButtonItem:righttButton];
 }
 - (BOOL)prefersStatusBarHidden {
     return YES;
