@@ -98,12 +98,12 @@
     
 }
 - (UIView *)topCustomViewForContentGuideView:(ContentGuideView *)contentGuide{
-    TopPreviewView *topPreviewV = [[TopPreviewView alloc] initWithFrame:SET_HEIGHT_FRAME(contentGuide.frame.size.width + 88, contentGuide.frame) withDelegate:self andLego:_lego];
+    TopPreviewView *topPreviewV = [[TopPreviewView alloc] initWithFrame:SET_HEIGHT_FRAME(IS_IPAD?600:(contentGuide.frame.size.width - 2*_PADDING_LEFT_RIGHT_) + 88, contentGuide.frame) withDelegate:self andLego:_lego];
     return topPreviewV;
 }
 #pragma mark - ContentGuideViewDelegate methods
 -(CGFloat)offsetYOfFirstRow:(ContentGuideView *)contentGuide{
-    return contentGuide.frame.size.width + 88;
+    return IS_IPAD?600:(contentGuide.frame.size.width - 2*_PADDING_LEFT_RIGHT_) + 88 ;
 }
 - (CGFloat)heightForContentGuideViewRow:(ContentGuideView*) contentGuide atRowIndex:(NSUInteger) rowIndex{
     return (contentGuide.frame.size.width/NUMBER_POSTERS_IN_A_ROW - SPACE_BETWEEN_POSTER_VIEWS + HEIGHT_TITLE_POSTER_DEFAULT);

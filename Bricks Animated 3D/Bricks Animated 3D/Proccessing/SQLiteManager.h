@@ -16,5 +16,6 @@
 + (SQLiteManager*)getInstance;
 - (NSMutableArray*)getAllLegoGroup;
 - (NSMutableArray*)getLegoImagesWithIDLego:(NSString*)iDLego;
+- (NSMutableArray*)getLegoStepsWithIDLego:(NSString*)iDLego;
 - (BOOL)didDownloadedLego:(NSString*)iDLego;
 @end

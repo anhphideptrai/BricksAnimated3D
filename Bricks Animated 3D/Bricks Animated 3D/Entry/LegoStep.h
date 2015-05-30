@@ -11,5 +11,6 @@
 @interface LegoStep : NSObject
 @property (nonatomic, strong) NSString *iDStep;
 @property (nonatomic, strong) NSString *iDLego;
-@property (nonatomic, strong) NSString *bricks;
+@property (nonatomic, strong) NSMutableArray *bricks;
+@property (nonatomic, strong) NSMutableArray *legoImgs;
 @end

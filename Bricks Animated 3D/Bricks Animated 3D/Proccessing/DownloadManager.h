@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 @protocol DownloadManagerDelegate <NSObject>
 @optional
-- (void)didFinishedDownloadFileWith:(NSURL*)filePath atIndex:(NSInteger)index;
-- (void)didFinishedDownloadFilesWith:(NSArray *)filePaths;
+- (void)didFinishedDownloadFileWith:(NSURL*)filePath atIndex:(NSInteger)index withError:(NSError*)error;
+- (void)didFinishedDownloadFilesWith:(NSArray *)filePaths withError:(NSError*)error;
 - (void)completePercent:(NSInteger)percent;
 @end
 @interface DownloadEntry : NSObject

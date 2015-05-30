@@ -162,7 +162,63 @@ static SQLiteManager *thisInstance;
         sqlite3_close(_contactDB);
     }
     return resultArray;
-
+}
+- (NSMutableArray*)getLegoStepsWithIDLego:(NSString*)iDLego{
+    [self copyDatabase];
+    NSMutableArray *resultArray = [[NSMutableArray alloc]init];
+    sqlite3_stmt    *statement;
+    const char *dbpath = [_databasePath UTF8String];
+    LegoStep *legoStep;
+    if (sqlite3_open(dbpath, &_contactDB) == SQLITE_OK)
+    {
+        NSString *querySQL = [NSString stringWithFormat:@"select * from legostep where iDLego = '%@' group by iDStep", iDLego];
+        const char *query_stmt = [querySQL UTF8String];
+        if (sqlite3_prepare_v2(_contactDB,
+                               query_stmt, -1, &statement, NULL) == SQLITE_OK)
+        {
+            while (sqlite3_step(statement) == SQLITE_ROW)
+            {
+                legoStep = [[LegoStep alloc] init];
+                legoStep.iDStep = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 0)];
+                legoStep.iDLego = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 1)];
+                legoStep.bricks = [self getLegoBricks:[NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 2)]];
+                legoStep.legoImgs = [self getLegoImagesWithLegoStep:legoStep];
+                [resultArray addObject:legoStep];
+            }
+            sqlite3_finalize(statement);
+        }
+        sqlite3_close(_contactDB);
+    }
+    return resultArray;
+}
+- (NSMutableArray*)getLegoImagesWithLegoStep:(LegoStep*)legoStep{
+    [self copyDatabase];
+    NSMutableArray *resultArray = [[NSMutableArray alloc]init];
+    sqlite3_stmt    *statement;
+    const char *dbpath = [_databasePath UTF8String];
+    LegoImage *legoImg;
+    if (sqlite3_open(dbpath, &_contactDB) == SQLITE_OK)
+    {
+        NSString *querySQL = [NSString stringWithFormat:@"select * from legoimage where iDLego = '%@' and iDStep = '%@' group by iDImage", legoStep.iDLego, legoStep.iDStep];
+        const char *query_stmt = [querySQL UTF8String];
+        if (sqlite3_prepare_v2(_contactDB,
+                               query_stmt, -1, &statement, NULL) == SQLITE_OK)
+        {
+            while (sqlite3_step(statement) == SQLITE_ROW)
+            {
+                legoImg = [[LegoImage alloc] init];
+                legoImg.iDStep = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 0)];
+                legoImg.iDLego = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 1)];
+                legoImg.iDImage = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 2)];
+                legoImg.urlImage = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 3)];
+                legoImg.size = sqlite3_column_int(statement, 4);
+                [resultArray addObject:legoImg];
+            }
+            sqlite3_finalize(statement);
+        }
+        sqlite3_close(_contactDB);
+    }
+    return resultArray;
 }
 - (BOOL)didDownloadedLego:(NSString*)iDLego{
     [self copyDatabase];

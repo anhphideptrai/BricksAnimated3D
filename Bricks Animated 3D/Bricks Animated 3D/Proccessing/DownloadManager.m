@@ -16,11 +16,13 @@
     NSInteger downloadedSize;
     NSInteger currentIndex;
     NSArray *entries;
+    NSError *_error;
 }
 @end
 @implementation DownloadManager
 
 - (void)dowloadFilesWith:(NSArray*)downloadEntries{
+    _error = nil;
     totalSize = 0;
     downloadedSize = 0;
     currentIndex = 0;
@@ -48,14 +50,17 @@
         return [dirURL URLByAppendingPathComponent:entry.fileName];
     } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
         downloadedSize += entry.size;
-        if (self.delegate && [self.delegate respondsToSelector:@selector(didFinishedDownloadFileWith:atIndex:)]) {
-            [self.delegate didFinishedDownloadFileWith:filePath atIndex:currentIndex];
+        if (error) {
+            _error = error;
+        }
+        if (self.delegate && [self.delegate respondsToSelector:@selector(didFinishedDownloadFileWith:atIndex:withError:)]) {
+            [self.delegate didFinishedDownloadFileWith:filePath atIndex:currentIndex withError:error];
         }
         if (++currentIndex < entries.count) {
             [self proccessingDownload];
         }else{
-            if (self.delegate && [self.delegate respondsToSelector:@selector(didFinishedDownloadFilesWith:)]) {
-                [self.delegate didFinishedDownloadFilesWith:nil];
+            if (self.delegate && [self.delegate respondsToSelector:@selector(didFinishedDownloadFilesWith:withError:)]) {
+                [self.delegate didFinishedDownloadFilesWith:nil withError:_error];
             }
         }
         [progress removeObserver:self forKeyPath:FRACTION_COMPLETED context:NULL];
