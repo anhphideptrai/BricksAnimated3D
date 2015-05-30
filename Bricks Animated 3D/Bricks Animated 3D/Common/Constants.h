@@ -18,5 +18,10 @@
 #define UIColorFromRGBAndAlpha(rgbValue,_alpha) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:_alpha]
 
 #define _NAME_DB_STRING_ @"TEVHT19EQi5zcWxpdGU="
+#define _msg_rating_ @"Help make Bricks Animated 3D even better. Rate us 5 stars!"
+#define _msg_rate_it_5_starts_ @"Rate it 5 stars"
+#define _msg_dismiss_ @"Dismiss"
+
+#define _url_share_ @"https://itunes.apple.com/app/id948768878"
 
 #endif
