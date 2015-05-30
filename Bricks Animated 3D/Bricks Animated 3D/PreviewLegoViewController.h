@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "Lego.h"
-
+@class PreviewLegoViewController;
+@protocol PreviewLegoViewControllerDelegate <NSObject>
+- (void)didTapDownloadLego:(PreviewLegoViewController*)previewLegoVC;
+@end
 @interface PreviewLegoViewController : UIViewController
+@property (nonatomic, assign) id<PreviewLegoViewControllerDelegate> delegate;
 @property (nonatomic, strong) Lego *lego;
 @end

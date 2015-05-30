@@ -10,7 +10,7 @@
 #import "SQLiteManager.h"
 #import "PreviewLegoViewController.h"
 
-@interface MainViewController () <UITableViewDataSource,UITableViewDelegate>{
+@interface MainViewController () <UITableViewDataSource,UITableViewDelegate, PreviewLegoViewControllerDelegate>{
     NSMutableArray *groups;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tbView;
@@ -112,8 +112,9 @@
     if (lego.isDownloaded) {
         
     }else{
-        PreviewLegoViewController *previewVC = [[PreviewLegoViewController alloc] initWithNibName:@"PreviewLegoViewController" bundle:nil];
+        PreviewLegoViewController *previewVC = [[PreviewLegoViewController alloc] init];
         [previewVC setLego:lego];
+        [previewVC setDelegate:self];
         [self.navigationController pushViewController:previewVC animated:YES];
     }
 }
@@ -122,5 +123,9 @@
     if (buttonIndex != alertView.cancelButtonIndex) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:_url_share_]];
     }
+}
+#pragma mark - PreviewLegoViewControllerDelegate methods
+-(void)didTapDownloadLego:(PreviewLegoViewController *)previewLegoVC{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end

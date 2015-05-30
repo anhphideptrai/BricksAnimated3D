@@ -10,6 +10,7 @@
 #import "Lego.h"
 
 @protocol TopPreviewViewDelegate <NSObject>
+- (void) didClickDownloadButton:(id)topPreviewView;
 @end
 @interface TopPreviewView : UIView
 - (instancetype)initWithFrame:(CGRect)frame

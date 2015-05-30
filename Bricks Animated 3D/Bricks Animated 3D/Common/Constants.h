@@ -59,4 +59,8 @@
 /*
  ** END - FRAME CUSTOM
  */
+
+#define _PADDING_LEFT_RIGHT_ 10
+#define _HEIGHT_BUTTON_AND_TEXT_ 44
+
 #endif

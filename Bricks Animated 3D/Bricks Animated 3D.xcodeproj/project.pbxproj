@@ -841,14 +841,13 @@
 		B20E64CE1B180C2F000B59D5 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B20E64CD1B180C2F000B59D5 /* libsqlite3.0.dylib */; };
 		B20E64D41B1839C5000B59D5 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B20E64D31B1839C5000B59D5 /* MainViewController.xib */; };
 		B20E64D71B183D91000B59D5 /* PreviewLegoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E64D61B183D91000B59D5 /* PreviewLegoViewController.m */; };
-		B20E64D91B183DAC000B59D5 /* PreviewLegoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B20E64D81B183DAC000B59D5 /* PreviewLegoViewController.xib */; };
 		B20E64DB1B19B866000B59D5 /* icon_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = B20E64DA1B19B866000B59D5 /* icon_placeholder.png */; };
 		B20E64DF1B19BAB7000B59D5 /* TopPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E64DE1B19BAB7000B59D5 /* TopPreviewView.m */; };
-		B20E64E21B19BB07000B59D5 /* TopBricksView.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E64E11B19BB07000B59D5 /* TopBricksView.m */; };
 		B20E64EC1B19C492000B59D5 /* ContentGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E64E41B19C492000B59D5 /* ContentGuideView.m */; };
 		B20E64ED1B19C492000B59D5 /* ContentGuideViewRowCarouselViewPosterView.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E64E61B19C492000B59D5 /* ContentGuideViewRowCarouselViewPosterView.m */; };
 		B20E64EE1B19C492000B59D5 /* ContentGuideViewRowHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E64E81B19C492000B59D5 /* ContentGuideViewRowHeader.m */; };
 		B20E64EF1B19C492000B59D5 /* ContentGuideViewRow.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E64EB1B19C492000B59D5 /* ContentGuideViewRow.m */; };
+		B20E64F21B1A0F41000B59D5 /* BricksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E64F11B1A0F41000B59D5 /* BricksViewController.m */; };
 		B988D12450A4551CC875CAB0 /* libPods-Bricks Animated 3D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A671F5382684AE0C5339ED /* libPods-Bricks Animated 3D.a */; };
 /* End PBXBuildFile section */
 
@@ -1701,12 +1700,9 @@
 		B20E64D31B1839C5000B59D5 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainViewController.xib; path = Xib/MainViewController.xib; sourceTree = "<group>"; };
 		B20E64D51B183D91000B59D5 /* PreviewLegoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewLegoViewController.h; sourceTree = "<group>"; };
 		B20E64D61B183D91000B59D5 /* PreviewLegoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviewLegoViewController.m; sourceTree = "<group>"; };
-		B20E64D81B183DAC000B59D5 /* PreviewLegoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreviewLegoViewController.xib; path = Xib/PreviewLegoViewController.xib; sourceTree = "<group>"; };
 		B20E64DA1B19B866000B59D5 /* icon_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_placeholder.png; path = Images/Icon/icon_placeholder.png; sourceTree = "<group>"; };
 		B20E64DD1B19BAB7000B59D5 /* TopPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopPreviewView.h; path = Views/TopPreviewView.h; sourceTree = "<group>"; };
 		B20E64DE1B19BAB7000B59D5 /* TopPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopPreviewView.m; path = Views/TopPreviewView.m; sourceTree = "<group>"; };
-		B20E64E01B19BB07000B59D5 /* TopBricksView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopBricksView.h; path = Views/TopBricksView.h; sourceTree = "<group>"; };
-		B20E64E11B19BB07000B59D5 /* TopBricksView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopBricksView.m; path = Views/TopBricksView.m; sourceTree = "<group>"; };
 		B20E64E41B19C492000B59D5 /* ContentGuideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContentGuideView.m; path = Views/ContentGuideView/ContentGuideView.m; sourceTree = "<group>"; };
 		B20E64E51B19C492000B59D5 /* ContentGuideViewRowCarouselViewPosterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContentGuideViewRowCarouselViewPosterView.h; path = Views/ContentGuideView/ContentGuideViewRowCarouselViewPosterView.h; sourceTree = "<group>"; };
 		B20E64E61B19C492000B59D5 /* ContentGuideViewRowCarouselViewPosterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContentGuideViewRowCarouselViewPosterView.m; path = Views/ContentGuideView/ContentGuideViewRowCarouselViewPosterView.m; sourceTree = "<group>"; };
@@ -1715,6 +1711,8 @@
 		B20E64E91B19C492000B59D5 /* ContentGuideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContentGuideView.h; path = Views/ContentGuideView/ContentGuideView.h; sourceTree = "<group>"; };
 		B20E64EA1B19C492000B59D5 /* ContentGuideViewRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContentGuideViewRow.h; path = Views/ContentGuideView/ContentGuideViewRow.h; sourceTree = "<group>"; };
 		B20E64EB1B19C492000B59D5 /* ContentGuideViewRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContentGuideViewRow.m; path = Views/ContentGuideView/ContentGuideViewRow.m; sourceTree = "<group>"; };
+		B20E64F01B1A0F41000B59D5 /* BricksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BricksViewController.h; sourceTree = "<group>"; };
+		B20E64F11B1A0F41000B59D5 /* BricksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BricksViewController.m; sourceTree = "<group>"; };
 		B3B97C520897050493FDE417 /* Pods-Bricks Animated 3D.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bricks Animated 3D.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bricks Animated 3D/Pods-Bricks Animated 3D.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -2687,6 +2685,8 @@
 				B20E55851B15A31B000B59D5 /* MainViewController.m */,
 				B20E64D51B183D91000B59D5 /* PreviewLegoViewController.h */,
 				B20E64D61B183D91000B59D5 /* PreviewLegoViewController.m */,
+				B20E64F01B1A0F41000B59D5 /* BricksViewController.h */,
+				B20E64F11B1A0F41000B59D5 /* BricksViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -2695,7 +2695,6 @@
 			isa = PBXGroup;
 			children = (
 				B20E64D31B1839C5000B59D5 /* MainViewController.xib */,
-				B20E64D81B183DAC000B59D5 /* PreviewLegoViewController.xib */,
 			);
 			name = Xib;
 			sourceTree = "<group>";
@@ -2706,8 +2705,6 @@
 				B20E64E31B19C476000B59D5 /* ContentGuideView */,
 				B20E64DD1B19BAB7000B59D5 /* TopPreviewView.h */,
 				B20E64DE1B19BAB7000B59D5 /* TopPreviewView.m */,
-				B20E64E01B19BB07000B59D5 /* TopBricksView.h */,
-				B20E64E11B19BB07000B59D5 /* TopBricksView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -2880,7 +2877,6 @@
 				B20E64DB1B19B866000B59D5 /* icon_placeholder.png in Resources */,
 				B20E5A921B15AFC8000B59D5 /* 4179872.png in Resources */,
 				B20E5B081B15AFC8000B59D5 /* 302121.png in Resources */,
-				B20E64D91B183DAC000B59D5 /* PreviewLegoViewController.xib in Resources */,
 				B20E5B671B15AFC8000B59D5 /* 241926.png in Resources */,
 				B20E5C051B15AFDC000B59D5 /* ico1066.png in Resources */,
 				B20E5B7E1B15AFC8000B59D5 /* 287726.png in Resources */,
@@ -3676,8 +3672,8 @@
 				B20E64ED1B19C492000B59D5 /* ContentGuideViewRowCarouselViewPosterView.m in Sources */,
 				B20E55801B15A31B000B59D5 /* main.m in Sources */,
 				B20E64EC1B19C492000B59D5 /* ContentGuideView.m in Sources */,
-				B20E64E21B19BB07000B59D5 /* TopBricksView.m in Sources */,
 				B20E64CB1B1808C5000B59D5 /* SQLiteManager.m in Sources */,
+				B20E64F21B1A0F41000B59D5 /* BricksViewController.m in Sources */,
 				B20E64EE1B19C492000B59D5 /* ContentGuideViewRowHeader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

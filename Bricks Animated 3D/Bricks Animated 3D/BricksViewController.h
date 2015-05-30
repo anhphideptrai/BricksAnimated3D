@@ -1,5 +1,5 @@
 //
-//  TopBricksView.h
+//  BricksViewController.h
 //  Bricks Animated 3D
 //
 //  Created by Phi Nguyen on 5/30/15.
@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Lego.h"
 
-@interface TopBricksView : UIView
-
+@interface BricksViewController : UIViewController
+@property (nonatomic, strong) Lego *lego;
 @end

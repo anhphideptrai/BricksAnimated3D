@@ -1,25 +1,22 @@
 //
-//  PreviewLegoViewController.m
+//  BricksViewController.m
 //  Bricks Animated 3D
 //
-//  Created by Phi Nguyen on 5/29/15.
+//  Created by Phi Nguyen on 5/30/15.
 //  Copyright (c) 2015 Thien Nguyen. All rights reserved.
 //
 
-#import "PreviewLegoViewController.h"
-#import "TopPreviewView.h"
+#import "BricksViewController.h"
 #import "ContentGuideView.h"
 
-@interface PreviewLegoViewController ()<ContentGuideViewDataSource, ContentGuideViewDelegate, TopPreviewViewDelegate>
+@interface BricksViewController ()<ContentGuideViewDelegate, ContentGuideViewDataSource>
 @property (nonatomic, strong) ContentGuideView *contentGuideView;
 @end
 
-@implementation PreviewLegoViewController
-
+@implementation BricksViewController
 - (void)loadView{
     [super loadView];
 }
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor whiteColor]];
@@ -28,31 +25,23 @@
     }
     self.navigationController.navigationBar.tintColor = UIColorFromRGB(0x2a9c40);
     
-    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Back"
-                                                                    style:UIBarButtonItemStylePlain
-                                                                   target:self
-                                                                   action:nil];
-    [leftButton setTitleTextAttributes:@{
-                                          NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:15.f],
-                                          NSForegroundColorAttributeName: UIColorFromRGB(0x2a9c40)
-                                          } forState:UIControlStateNormal];
-    
-    UIBarButtonItem *righttButton = [[UIBarButtonItem alloc] initWithTitle:@"Share!"
-                                                                   style:UIBarButtonItemStylePlain
-                                                                  target:self
-                                                                  action:nil];
+    UIBarButtonItem *righttButton = [[UIBarButtonItem alloc] initWithTitle:@"Close"
+                                                                     style:UIBarButtonItemStylePlain
+                                                                    target:self
+                                                                    action:@selector(closeView)];
     [righttButton setTitleTextAttributes:@{
-                                         NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:15.f],
-                                         NSForegroundColorAttributeName: UIColorFromRGB(0x2a9c40)
-                                         } forState:UIControlStateNormal];
+                                           NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:15.f],
+                                           NSForegroundColorAttributeName: UIColorFromRGB(0x2a9c40)
+                                           } forState:UIControlStateNormal];
     
-    [self.navigationItem setBackBarButtonItem:leftButton];
     [self.navigationItem setRightBarButtonItem:righttButton];
 }
+
 - (BOOL)prefersStatusBarHidden {
     return YES;
 }
 - (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     if (!_contentGuideView) {
         _contentGuideView = [[ContentGuideView alloc] initWithFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height, self.view.frame.size.width, self.view.frame.size.height - self.navigationController.navigationBar.frame.size.height)];
         [_contentGuideView setDataSource:self];
@@ -60,6 +49,9 @@
         [_contentGuideView reloadData];
         [self.view addSubview:_contentGuideView];
     }
+}
+- (void)closeView{
+    [self dismissViewControllerAnimated:YES completion:^{}];
 }
 #pragma mark - ContentGuideViewDataSource methods
 - (NSUInteger) numberOfPostersInCarousel:(ContentGuideView*) contentGuide atRowIndex:(NSUInteger) rowIndex{
@@ -98,12 +90,17 @@
     
 }
 - (UIView *)topCustomViewForContentGuideView:(ContentGuideView *)contentGuide{
-    TopPreviewView *topPreviewV = [[TopPreviewView alloc] initWithFrame:SET_HEIGHT_FRAME(contentGuide.frame.size.width + 88, contentGuide.frame) withDelegate:self andLego:_lego];
-    return topPreviewV;
+    UITextView* txtGuide = [[UITextView alloc] initWithFrame:CGRectMake(_PADDING_LEFT_RIGHT_, 0, contentGuide.frame.size.width, _HEIGHT_BUTTON_AND_TEXT_)];
+    [txtGuide setUserInteractionEnabled:NO];
+    [txtGuide setTextColor:[UIColor lightGrayColor]];
+    [txtGuide setTextAlignment:NSTextAlignmentCenter];
+    [txtGuide setFont:[UIFont fontWithName:@"Helvetica" size:14.f]];
+    [txtGuide setText:@"You can use the same\nbricks of different color"];
+    return txtGuide;
 }
 #pragma mark - ContentGuideViewDelegate methods
 -(CGFloat)offsetYOfFirstRow:(ContentGuideView *)contentGuide{
-    return contentGuide.frame.size.width + 88;
+    return _HEIGHT_BUTTON_AND_TEXT_;
 }
 - (CGFloat)heightForContentGuideViewRow:(ContentGuideView*) contentGuide atRowIndex:(NSUInteger) rowIndex{
     return (contentGuide.frame.size.width/NUMBER_POSTERS_IN_A_ROW - SPACE_BETWEEN_POSTER_VIEWS + HEIGHT_TITLE_POSTER_DEFAULT);
@@ -122,11 +119,5 @@
 
 - (CGFloat)pandingTopAndBottomOfRowHeader:(ContentGuideView*) contentGuide  atRowIndex:(NSUInteger) rowIndex{
     return PANDING_TOP_AND_BOTTOM_OF_ROW_HEADER;
-}
-#pragma mark - TopPreviewViewDelegate methods
-- (void)didClickDownloadButton:(id)topPreviewView{
-    if (self.delegate && [self.delegate respondsToSelector:@selector(didTapDownloadLego:)]) {
-        [self.delegate didTapDownloadLego:self];
-    }
 }
 @end

@@ -8,9 +8,6 @@
 
 #import "TopPreviewView.h"
 
-#define _PADDING_LEFT_RIGHT_ 10
-#define _HEIGHT_BUTTON_AND_TEXT_ 44
-
 @interface TopPreviewView(){
     Lego *_lego;
     UIImageView *imgV;
@@ -40,6 +37,7 @@
     [btnAction setBackgroundColor:UIColorFromRGB(0x2a9c40)];
     [btnAction.layer setCornerRadius:4.0f];
     [btnAction.layer setMasksToBounds:YES];
+    [btnAction addTarget:self action:@selector(actionTapDownloadButton) forControlEvents:UIControlEventTouchUpInside];
     
     [txtGuide setUserInteractionEnabled:NO];
     [txtGuide setTextColor:[UIColor lightGrayColor]];
@@ -55,5 +53,10 @@
     [self addSubview:imgV];
     [self addSubview:btnAction];
     [self addSubview:txtGuide];
+}
+- (void)actionTapDownloadButton{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didClickDownloadButton:)]) {
+        [self.delegate didClickDownloadButton:self];
+    }
 }
 @end
