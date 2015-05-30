@@ -9,9 +9,14 @@
 #import "MainViewController.h"
 #import "SQLiteManager.h"
 #import "PreviewLegoViewController.h"
+#import "PercentageBarUploadingView.h"
+#import "DownloadManager.h"
 
-@interface MainViewController () <UITableViewDataSource,UITableViewDelegate, PreviewLegoViewControllerDelegate>{
+@interface MainViewController () <UITableViewDataSource,UITableViewDelegate, PreviewLegoViewControllerDelegate, DownloadManagerDelegate>{
     NSMutableArray *groups;
+    PercentageBarUploadingView *_percentageBarUploadingV;
+    DownloadManager *downloadManager;
+    Lego *legoSelected;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tbView;
 
@@ -46,6 +51,9 @@
     [self.navigationItem setRightBarButtonItem:rightButton];
     
     groups = [[SQLiteManager getInstance] getAllLegoGroup];
+    
+    downloadManager = [[DownloadManager alloc] init];
+    [downloadManager setDelegate:self];
 }
 
 - (BOOL)prefersStatusBarHidden {
@@ -57,6 +65,15 @@
 }
 - (void)actionMore{
     
+}
+- (UIView *) percentageBarUploadingV{
+    if( !_percentageBarUploadingV ) {
+        _percentageBarUploadingV = [[PercentageBarUploadingView alloc] initWithNibName:@"PercentageBarUploadingView" bundle:nil];
+        [_percentageBarUploadingV.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    }
+    [_percentageBarUploadingV setTextLoading:@""];
+    [_percentageBarUploadingV setPercent:0];
+    return _percentageBarUploadingV.view;
 }
 #pragma mark - TableViewControll Delegate + DataSource methods
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -108,12 +125,12 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    Lego *lego = ((LegoGroup*)groups[indexPath.section]).legoes[indexPath.row];
-    if (lego.isDownloaded) {
+    legoSelected = ((LegoGroup*)groups[indexPath.section]).legoes[indexPath.row];
+    if (legoSelected.isDownloaded) {
         
     }else{
         PreviewLegoViewController *previewVC = [[PreviewLegoViewController alloc] init];
-        [previewVC setLego:lego];
+        [previewVC setLego:legoSelected];
         [previewVC setDelegate:self];
         [self.navigationController pushViewController:previewVC animated:YES];
     }
@@ -127,5 +144,29 @@
 #pragma mark - PreviewLegoViewControllerDelegate methods
 -(void)didTapDownloadLego:(PreviewLegoViewController *)previewLegoVC{
     [self.navigationController popViewControllerAnimated:YES];
+    [self.view setUserInteractionEnabled:NO];
+    [self.navigationController.navigationBar addSubview:self.percentageBarUploadingV];
+    NSMutableArray *files = [[NSMutableArray alloc] init];
+    for (LegoImage *frame in [[SQLiteManager getInstance] getLegoImagesWithIDLego:previewLegoVC.lego.iDLego]) {
+        DownloadEntry *entry = [[DownloadEntry alloc] init];
+        entry.strUrl = frame.urlImage;
+        entry.dir = frame.iDLego;
+        entry.fileName = [[frame.urlImage componentsSeparatedByString:@"/"] lastObject];
+        entry.size = frame.size;
+        [files addObject:entry];
+    }
+    [downloadManager dowloadFilesWith:files];
+}
+#pragma mark - DownloadManagerDelegate methods
+- (void)didFinishedDownloadFilesWith:(NSArray *)filePaths{
+    [self.view setUserInteractionEnabled:YES];
+    [_percentageBarUploadingV.view removeFromSuperview];
+    legoSelected.isDownloaded = YES;
+    [[SQLiteManager getInstance] didDownloadedLego:legoSelected.iDLego];
+}
+- (void)completePercent:(NSInteger)percent{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [_percentageBarUploadingV setPercent:percent];
+    });
 }
 @end

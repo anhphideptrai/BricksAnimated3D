@@ -15,4 +15,6 @@
 @interface SQLiteManager : NSObject
 + (SQLiteManager*)getInstance;
 - (NSMutableArray*)getAllLegoGroup;
+- (NSMutableArray*)getLegoImagesWithIDLego:(NSString*)iDLego;
+- (BOOL)didDownloadedLego:(NSString*)iDLego;
 @end

@@ -134,4 +134,52 @@ static SQLiteManager *thisInstance;
     return resultArray;
 
 }
+- (NSMutableArray*)getLegoImagesWithIDLego:(NSString*)iDLego{
+    [self copyDatabase];
+    NSMutableArray *resultArray = [[NSMutableArray alloc]init];
+    sqlite3_stmt    *statement;
+    const char *dbpath = [_databasePath UTF8String];
+    LegoImage *legoImg;
+    if (sqlite3_open(dbpath, &_contactDB) == SQLITE_OK)
+    {
+        NSString *querySQL = [NSString stringWithFormat:@"select * from legoimage where iDLego = '%@'", iDLego];
+        const char *query_stmt = [querySQL UTF8String];
+        if (sqlite3_prepare_v2(_contactDB,
+                               query_stmt, -1, &statement, NULL) == SQLITE_OK)
+        {
+            while (sqlite3_step(statement) == SQLITE_ROW)
+            {
+                legoImg = [[LegoImage alloc] init];
+                legoImg.iDStep = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 0)];
+                legoImg.iDLego = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 1)];
+                legoImg.iDImage = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 2)];
+                legoImg.urlImage = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 3)];
+                legoImg.size = sqlite3_column_int(statement, 4);
+                [resultArray addObject:legoImg];
+            }
+            sqlite3_finalize(statement);
+        }
+        sqlite3_close(_contactDB);
+    }
+    return resultArray;
+
+}
+- (BOOL)didDownloadedLego:(NSString*)iDLego{
+    [self copyDatabase];
+    BOOL result = NO;
+    sqlite3_stmt *statement;
+    const char *dbpath = [_databasePath UTF8String];
+    if (sqlite3_open(dbpath, &_contactDB) == SQLITE_OK)
+    {
+        NSString *insertSQL = [NSString stringWithFormat:
+                               @"UPDATE lego SET isdownloaded = \"1\" WHERE iDLego = '%@'",iDLego];
+        const char *insert_stmt = [insertSQL UTF8String];
+        sqlite3_prepare_v2(_contactDB, insert_stmt,
+                           -1, &statement, NULL);
+        result = (sqlite3_step(statement) == SQLITE_DONE);
+        sqlite3_finalize(statement);
+        sqlite3_close(_contactDB);
+    }
+    return result;
+}
 @end

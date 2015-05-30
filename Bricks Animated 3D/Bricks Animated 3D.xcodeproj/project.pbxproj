@@ -848,6 +848,10 @@
 		B20E64EE1B19C492000B59D5 /* ContentGuideViewRowHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E64E81B19C492000B59D5 /* ContentGuideViewRowHeader.m */; };
 		B20E64EF1B19C492000B59D5 /* ContentGuideViewRow.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E64EB1B19C492000B59D5 /* ContentGuideViewRow.m */; };
 		B20E64F21B1A0F41000B59D5 /* BricksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E64F11B1A0F41000B59D5 /* BricksViewController.m */; };
+		B20E64F91B1A1B3D000B59D5 /* PercentageBarUploadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B20E64F61B1A1B3D000B59D5 /* PercentageBarUploadingView.xib */; };
+		B20E64FA1B1A1B3D000B59D5 /* PercentageBarUploadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E64F71B1A1B3D000B59D5 /* PercentageBarUploadingView.m */; };
+		B20E64FD1B1A1E8B000B59D5 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E64FC1B1A1E8B000B59D5 /* DownloadManager.m */; };
+		B20E65001B1A1ED6000B59D5 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E64FF1B1A1ED6000B59D5 /* Utils.m */; };
 		B988D12450A4551CC875CAB0 /* libPods-Bricks Animated 3D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A671F5382684AE0C5339ED /* libPods-Bricks Animated 3D.a */; };
 /* End PBXBuildFile section */
 
@@ -1713,6 +1717,13 @@
 		B20E64EB1B19C492000B59D5 /* ContentGuideViewRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContentGuideViewRow.m; path = Views/ContentGuideView/ContentGuideViewRow.m; sourceTree = "<group>"; };
 		B20E64F01B1A0F41000B59D5 /* BricksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BricksViewController.h; sourceTree = "<group>"; };
 		B20E64F11B1A0F41000B59D5 /* BricksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BricksViewController.m; sourceTree = "<group>"; };
+		B20E64F61B1A1B3D000B59D5 /* PercentageBarUploadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PercentageBarUploadingView.xib; path = Views/PercentageBarUploadingView/PercentageBarUploadingView.xib; sourceTree = "<group>"; };
+		B20E64F71B1A1B3D000B59D5 /* PercentageBarUploadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PercentageBarUploadingView.m; path = Views/PercentageBarUploadingView/PercentageBarUploadingView.m; sourceTree = "<group>"; };
+		B20E64F81B1A1B3D000B59D5 /* PercentageBarUploadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PercentageBarUploadingView.h; path = Views/PercentageBarUploadingView/PercentageBarUploadingView.h; sourceTree = "<group>"; };
+		B20E64FB1B1A1E8B000B59D5 /* DownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DownloadManager.h; path = Proccessing/DownloadManager.h; sourceTree = "<group>"; };
+		B20E64FC1B1A1E8B000B59D5 /* DownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DownloadManager.m; path = Proccessing/DownloadManager.m; sourceTree = "<group>"; };
+		B20E64FE1B1A1ED6000B59D5 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = Common/Utils.h; sourceTree = "<group>"; };
+		B20E64FF1B1A1ED6000B59D5 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utils.m; path = Common/Utils.m; sourceTree = "<group>"; };
 		B3B97C520897050493FDE417 /* Pods-Bricks Animated 3D.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bricks Animated 3D.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bricks Animated 3D/Pods-Bricks Animated 3D.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -2663,6 +2674,8 @@
 		B20E64C61B180834000B59D5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B20E64FE1B1A1ED6000B59D5 /* Utils.h */,
+				B20E64FF1B1A1ED6000B59D5 /* Utils.m */,
 				B20E64C71B180859000B59D5 /* Constants.h */,
 			);
 			name = Common;
@@ -2671,6 +2684,8 @@
 		B20E64C81B18089B000B59D5 /* Proccessing */ = {
 			isa = PBXGroup;
 			children = (
+				B20E64FB1B1A1E8B000B59D5 /* DownloadManager.h */,
+				B20E64FC1B1A1E8B000B59D5 /* DownloadManager.m */,
 				B20E64C91B1808C5000B59D5 /* SQLiteManager.h */,
 				B20E64CA1B1808C5000B59D5 /* SQLiteManager.m */,
 			);
@@ -2702,6 +2717,7 @@
 		B20E64DC1B19BA8A000B59D5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B20E64F51B1A1B2F000B59D5 /* PercentageBarUploadingView */,
 				B20E64E31B19C476000B59D5 /* ContentGuideView */,
 				B20E64DD1B19BAB7000B59D5 /* TopPreviewView.h */,
 				B20E64DE1B19BAB7000B59D5 /* TopPreviewView.m */,
@@ -2722,6 +2738,16 @@
 				B20E64EB1B19C492000B59D5 /* ContentGuideViewRow.m */,
 			);
 			name = ContentGuideView;
+			sourceTree = "<group>";
+		};
+		B20E64F51B1A1B2F000B59D5 /* PercentageBarUploadingView */ = {
+			isa = PBXGroup;
+			children = (
+				B20E64F61B1A1B3D000B59D5 /* PercentageBarUploadingView.xib */,
+				B20E64F81B1A1B3D000B59D5 /* PercentageBarUploadingView.h */,
+				B20E64F71B1A1B3D000B59D5 /* PercentageBarUploadingView.m */,
+			);
+			name = PercentageBarUploadingView;
 			sourceTree = "<group>";
 		};
 		F6F020D6B6BFE1C05323CA0E /* Pods */ = {
@@ -3202,6 +3228,7 @@
 				B20E596D1B15AFC8000B59D5 /* 4247343.png in Resources */,
 				B20E5B3C1B15AFC8000B59D5 /* 306226.png in Resources */,
 				B20E5B071B15AFC8000B59D5 /* 302101.png in Resources */,
+				B20E64F91B1A1B3D000B59D5 /* PercentageBarUploadingView.xib in Resources */,
 				B20E59C61B15AFC8000B59D5 /* 4211475.png in Resources */,
 				B20E59011B15AFC8000B59D5 /* 6030715.png in Resources */,
 				B20E59BB1B15AFC8000B59D5 /* 4211414.png in Resources */,
@@ -3668,6 +3695,8 @@
 				B20E64C21B1806FE000B59D5 /* Lego.m in Sources */,
 				B20E55831B15A31B000B59D5 /* AppDelegate.m in Sources */,
 				B20E64D71B183D91000B59D5 /* PreviewLegoViewController.m in Sources */,
+				B20E64FA1B1A1B3D000B59D5 /* PercentageBarUploadingView.m in Sources */,
+				B20E65001B1A1ED6000B59D5 /* Utils.m in Sources */,
 				B20E64C11B1806FE000B59D5 /* LegoStep.m in Sources */,
 				B20E64ED1B19C492000B59D5 /* ContentGuideViewRowCarouselViewPosterView.m in Sources */,
 				B20E55801B15A31B000B59D5 /* main.m in Sources */,
@@ -3675,6 +3704,7 @@
 				B20E64CB1B1808C5000B59D5 /* SQLiteManager.m in Sources */,
 				B20E64F21B1A0F41000B59D5 /* BricksViewController.m in Sources */,
 				B20E64EE1B19C492000B59D5 /* ContentGuideViewRowHeader.m in Sources */,
+				B20E64FD1B1A1E8B000B59D5 /* DownloadManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

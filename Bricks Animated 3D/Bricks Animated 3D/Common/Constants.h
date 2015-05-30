@@ -63,4 +63,6 @@
 #define _PADDING_LEFT_RIGHT_ 10
 #define _HEIGHT_BUTTON_AND_TEXT_ 44
 
+#define _LABEL_PERCENT_FONT_ [UIFont fontWithName:@"Helvetica" size:14.0f]
+
 #endif

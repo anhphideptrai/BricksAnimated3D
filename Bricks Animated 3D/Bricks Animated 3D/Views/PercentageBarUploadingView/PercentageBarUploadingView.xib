@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PercentageBarUploadingView">
+            <connections>
+                <outlet property="lbPercent" destination="QoQ-zK-jdw" id="8Dp-Xd-QGO"/>
+                <outlet property="progressView" destination="xY8-EC-nLm" id="cn0-mJ-ih3"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RmE-U3-qnb">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QoQ-zK-jdw">
+                    <rect key="frame" x="0.0" y="270" width="600" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="FzU-Xz-Aj3"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </label>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xY8-EC-nLm">
+                    <rect key="frame" x="30" y="301" width="540" height="2"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="gI6-0S-gHk"/>
+                    </constraints>
+                    <color key="progressTintColor" red="0.3803921569" green="0.89019607840000003" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="trackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </progressView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mKi-nc-JCk">
+                    <rect key="frame" x="0.0" y="300" width="600" height="1"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="bsG-OA-squ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="mKi-nc-JCk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="1ZI-dn-MQf"/>
+                <constraint firstAttribute="trailing" secondItem="xY8-EC-nLm" secondAttribute="trailing" constant="30" id="3Gq-83-Nj4"/>
+                <constraint firstAttribute="trailing" secondItem="RmE-U3-qnb" secondAttribute="trailing" id="6E9-OD-j3j"/>
+                <constraint firstItem="RmE-U3-qnb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BON-Gc-6Nj"/>
+                <constraint firstItem="QoQ-zK-jdw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Dng-WY-XS0"/>
+                <constraint firstItem="mKi-nc-JCk" firstAttribute="top" secondItem="QoQ-zK-jdw" secondAttribute="bottom" id="MbN-6J-djA"/>
+                <constraint firstItem="xY8-EC-nLm" firstAttribute="top" secondItem="mKi-nc-JCk" secondAttribute="bottom" id="NYE-Q3-PBG"/>
+                <constraint firstAttribute="trailing" secondItem="mKi-nc-JCk" secondAttribute="trailing" id="e5I-K6-yLD"/>
+                <constraint firstAttribute="trailing" secondItem="QoQ-zK-jdw" secondAttribute="trailing" id="hCK-8l-0rB"/>
+                <constraint firstAttribute="centerY" secondItem="mKi-nc-JCk" secondAttribute="centerY" id="kf5-CP-TlZ"/>
+                <constraint firstItem="RmE-U3-qnb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="pei-wM-kAX"/>
+                <constraint firstItem="xY8-EC-nLm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="uqg-ER-Ybe"/>
+                <constraint firstAttribute="bottom" secondItem="RmE-U3-qnb" secondAttribute="bottom" id="yP2-vZ-P3o"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+        </view>
+    </objects>
+</document>
