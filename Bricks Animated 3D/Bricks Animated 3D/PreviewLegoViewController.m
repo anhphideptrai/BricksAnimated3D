@@ -57,10 +57,16 @@
 }
 #pragma mark - ContentGuideViewDataSource methods
 - (NSUInteger) numberOfPostersInCarousel:(ContentGuideView*) contentGuide atRowIndex:(NSUInteger) rowIndex{
-    return 0;
+    NSUInteger _numberOfRows = (_lego.bricks.count - 1)/NUMBER_POSTERS_IN_A_ROW + 1;
+    NSUInteger _numberOfItems = _lego.bricks.count;
+    if ((rowIndex == _numberOfRows -1) && _numberOfItems % NUMBER_POSTERS_IN_A_ROW > 0) {
+        return _numberOfItems % NUMBER_POSTERS_IN_A_ROW;
+    }
+    return NUMBER_POSTERS_IN_A_ROW;
 }
 - (NSUInteger) numberOfRowsInContentGuide:(ContentGuideView*) contentGuide{
-    return 0;
+    NSUInteger numberPokemons = _lego.bricks.count;
+    return numberPokemons == 0 ? 0 : (numberPokemons - 1)/NUMBER_POSTERS_IN_A_ROW + 1;
 }
 - (ContentGuideViewRow*) contentGuide:(ContentGuideView*) contentGuide
                        rowForRowIndex:(NSUInteger)rowIndex{
@@ -79,6 +85,9 @@
     if (!posterView) {
         posterView = [[ContentGuideViewRowCarouselViewPosterView alloc] initWithStyle:ContentGuideViewRowCarouselViewPosterViewStyleDefault reuseIdentifier:identifier];
     }
+    LegoBrick *pokemon = (LegoBrick*)_lego.bricks[rowIndex*NUMBER_POSTERS_IN_A_ROW + index];
+    [posterView setURLImagePoster:[[NSBundle mainBundle] URLForResource:pokemon.name withExtension:@"png"] placeholderImage:[UIImage imageNamed:@"icon_placeholder.png"]];
+    [posterView setTextTitlePoster:[NSString stringWithFormat:@"%@x", pokemon.count]];
     return posterView;
     
 }
@@ -91,7 +100,7 @@
     return contentGuide.frame.size.width + 88;
 }
 - (CGFloat)heightForContentGuideViewRow:(ContentGuideView*) contentGuide atRowIndex:(NSUInteger) rowIndex{
-    return 0;
+    return (contentGuide.frame.size.width/NUMBER_POSTERS_IN_A_ROW - SPACE_BETWEEN_POSTER_VIEWS + HEIGHT_TITLE_POSTER_DEFAULT);
 }
 
 - (CGFloat)heightForContentGuideViewRowHeader:(ContentGuideView*) contentGuide atRowIndex:(NSUInteger) rowIndex{
@@ -99,7 +108,7 @@
 }
 
 - (CGFloat)widthForContentGuideViewRowCarouselViewPosterView:(ContentGuideView*) contentGuide atRowIndex:(NSUInteger) rowIndex{
-    return 0;
+    return (contentGuide.frame.size.width/NUMBER_POSTERS_IN_A_ROW - SPACE_BETWEEN_POSTER_VIEWS);
 }
 - (CGFloat)spaceBetweenCarouselViewPosterViews:(ContentGuideView*) contentGuide  atRowIndex:(NSUInteger) rowIndex{
     return SPACE_BETWEEN_POSTER_VIEWS;

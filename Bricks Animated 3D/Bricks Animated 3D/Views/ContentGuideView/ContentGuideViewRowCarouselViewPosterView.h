@@ -38,7 +38,8 @@ typedef enum {
 
 - (id) initWithStyle:(ContentGuideViewRowCarouselViewPosterViewStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
 - (void) setFrame:(CGRect)frame;
-- (void) setURLImagePoster:(NSString*)strURL placeholderImage:(UIImage *)placeholderImage;
+- (void) setStringURLImagePoster:(NSString*)strURL placeholderImage:(UIImage *)placeholderImage;
+- (void) setURLImagePoster:(NSURL*)uRL placeholderImage:(UIImage *)placeholderImage;
 - (void) setHeightTitlePosterView:(CGFloat)height;
 - (void) setTextTitlePoster:(NSString*) txtTitle;
 - (void) setFontTitlePoster:(UIFont*) font;

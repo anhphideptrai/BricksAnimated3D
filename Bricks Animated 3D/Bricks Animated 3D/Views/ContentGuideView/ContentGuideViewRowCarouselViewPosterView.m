@@ -128,13 +128,22 @@
     }
 }
 
-- (void)setURLImagePoster:(NSString*)strURL placeholderImage:(UIImage *)placeholderImage{
+- (void)setStringURLImagePoster:(NSString*)strURL placeholderImage:(UIImage *)placeholderImage{
     if (strURL && ![strURL isEqualToString:@""] && imageView) {
         NSURL *url = [NSURL URLWithString:strURL];
         if (placeholderImage) {
             [imageView setImageWithURL:url placeholderImage:placeholderImage];
         }else{
             [imageView setImageWithURL:url];
+        }
+    }
+}
+- (void) setURLImagePoster:(NSURL*)uRL placeholderImage:(UIImage *)placeholderImage{
+    if (uRL && imageView) {
+        if (placeholderImage) {
+            [imageView setImageWithURL:uRL placeholderImage:placeholderImage];
+        }else{
+            [imageView setImageWithURL:uRL];
         }
     }
 }

@@ -73,7 +73,7 @@ static SQLiteManager *thisInstance;
                 lego.iDLego = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 0)];
                 lego.iDGroup = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 1)];
                 lego.name = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 2)];
-                lego.bricks = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 3)];
+                lego.bricks = [self getLegoBricks:[NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 3)]];
                 lego.icon = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 4)];
                 lego.preview = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 5)];
                 lego.totalBricks = sqlite3_column_int(statement, 6);
@@ -89,6 +89,20 @@ static SQLiteManager *thisInstance;
     }
     return resultArray;
     
+}
+- (NSMutableArray*)getLegoBricks:(NSString*)bricks{
+    NSMutableArray *result = [NSMutableArray new];
+    NSArray *arr = [bricks componentsSeparatedByString:@","];
+    for (NSString *tmp in arr) {
+        NSArray *arrTmp = [tmp componentsSeparatedByString:@"x"];
+        if (arrTmp.count > 1) {
+            LegoBrick *brick = [LegoBrick new];
+            [brick setName:[arrTmp[1] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
+            [brick setCount:[arrTmp[0] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
+            [result addObject:brick];
+        }
+    }
+    return result;
 }
 - (NSMutableArray*)getAllLegoGroup{
     [self copyDatabase];

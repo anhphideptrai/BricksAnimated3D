@@ -7,12 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@interface LegoBrick : NSObject
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *count;
+@end
 @interface Lego : NSObject
 @property (nonatomic, strong) NSString *iDLego;
 @property (nonatomic, strong) NSString *iDGroup;
 @property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *bricks;
+@property (nonatomic, strong) NSMutableArray *bricks;
 @property (nonatomic, strong) NSString *icon;
 @property (nonatomic, strong) NSString *preview;
 @property (nonatomic) NSUInteger totalBricks;

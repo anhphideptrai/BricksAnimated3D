@@ -8,6 +8,8 @@
 
 #import "Lego.h"
 
-@implementation Lego
+@implementation LegoBrick
+@end
 
+@implementation Lego
 @end
