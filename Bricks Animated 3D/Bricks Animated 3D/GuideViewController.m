@@ -10,13 +10,18 @@
 #import <GoogleMobileAds/GoogleMobileAds.h>
 #import "BricksBarView.h"
 #import "BricksViewController.h"
+#define _TIME_TICK_CHANGE_ 3.f
 
 @interface GuideViewController ()<GADBannerViewDelegate, BricksBarViewDelegate>{
     NSInteger currentIndex;
     NSURL *oldImg;
     NSURL *newImg;
+    NSTimer *delayShowAdsTimer;
+    NSTimer *timeChangeImage;
+    NSInteger countChange;
 }
-@property (weak, nonatomic) IBOutlet UIImageView *imgV;
+@property (weak, nonatomic) IBOutlet UIImageView *a_oldImgView;
+@property (weak, nonatomic) IBOutlet UIImageView *a_newImgView;
 @property (weak, nonatomic) IBOutlet UIView *toolBarView;
 @property (weak, nonatomic) IBOutlet GADBannerView *bannerV;
 @property (weak, nonatomic) IBOutlet UIButton *btnLeft;
@@ -65,14 +70,19 @@
     
     [_lbDescription setFont:[UIFont fontWithName:@"Helvetica" size:20.f]];
     [_lbDescription setTextColor:UIColorFromRGB(0x2a9c40)];
-    [_imgV setContentMode:UIViewContentModeScaleAspectFit];
+    [_a_oldImgView setContentMode:UIViewContentModeScaleAspectFit];
+    [_a_newImgView setContentMode:UIViewContentModeScaleAspectFit];
+    
+    _heightBannerLayoutConstraint.constant = IS_IPAD ? 90 : 50;
+    _heightImgLayoutConstraint.constant = IS_IPAD ? 190 : 150;
     
     currentIndex = -1;
     [self updateData];
     
+    delayShowAdsTimer = [NSTimer scheduledTimerWithTimeInterval:_TIME_TICK_CHANGE_ target:self selector:@selector(delayShowAds) userInfo:nil repeats:NO];
+}
+- (void)delayShowAds{
     //Add Admob
-    _heightBannerLayoutConstraint.constant = IS_IPAD ? 90 : 50;
-    _heightImgLayoutConstraint.constant = IS_IPAD ? 190 : 150;
     self.bannerV.adUnitID = BANNER_ID_ADMOB_DETAIL_PAGE;
     self.bannerV.rootViewController = self;
     GADRequest *request = [GADRequest request];
@@ -81,7 +91,6 @@
                            nil];
     [self.bannerV setDelegate:self];
     [self.bannerV loadRequest:request];
-
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -93,6 +102,18 @@
         [_bricksView setBackgroundColor:UIColorFromRGB(0xe0e0e0)];
         [_bricksView addSubview:_bricksBarView];
     }
+}
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    if (delayShowAdsTimer) {
+        [delayShowAdsTimer invalidate];
+        delayShowAdsTimer = nil;
+    }
+    if (timeChangeImage) {
+        [timeChangeImage invalidate];
+        timeChangeImage = nil;
+    }
+    [_a_newImgView setAlpha:1.f];
 }
 - (void)adViewDidReceiveAd:(GADBannerView *)view{
     _bottomToolBarLayoutConstraint.constant = IS_IPAD ? 90 : 50;
@@ -116,7 +137,22 @@
         }
         [_lbDescription setText:[NSString stringWithFormat:@"%ld/%lu", currentIndex + 1, (unsigned long)_lego.legoSteps.count]];
     }
-    [_imgV setImageWithURL:newImg];
+    if (timeChangeImage) {
+        [timeChangeImage invalidate];
+        timeChangeImage = nil;
+    }
+    countChange = 0;
+    [_a_newImgView setAlpha:1.f];
+    [_a_newImgView setImageWithURL:newImg];
+    [_a_oldImgView setImageWithURL:oldImg];
+    timeChangeImage = [NSTimer scheduledTimerWithTimeInterval:3.f target:self selector:@selector(updateImageChange) userInfo:nil repeats:YES];
+}
+- (void)updateImageChange{
+    [UIView animateWithDuration:1.f animations:^{
+        [_a_newImgView setAlpha:0.f];
+    } completion:^(BOOL finished) {
+        [_a_newImgView setAlpha:1.f];
+    }];
 }
 - (IBAction)actionLeft:(id)sender {
     currentIndex = MAX(-1, currentIndex - 1);
