@@ -16,7 +16,6 @@
     NSInteger currentIndex;
     NSURL *oldImg;
     NSURL *newImg;
-    NSTimer *delayShowAdsTimer;
     NSTimer *timeChangeImage;
     NSInteger countChange;
 }
@@ -79,7 +78,7 @@
     currentIndex = -1;
     [self updateData];
     
-    delayShowAdsTimer = [NSTimer scheduledTimerWithTimeInterval:_TIME_TICK_CHANGE_ target:self selector:@selector(delayShowAds) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:_TIME_TICK_CHANGE_ target:self selector:@selector(delayShowAds) userInfo:nil repeats:NO];
 }
 - (void)delayShowAds{
     //Add Admob
@@ -105,10 +104,6 @@
 }
 - (void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
-    if (delayShowAdsTimer) {
-        [delayShowAdsTimer invalidate];
-        delayShowAdsTimer = nil;
-    }
     if (timeChangeImage) {
         [timeChangeImage invalidate];
         timeChangeImage = nil;
@@ -132,8 +127,18 @@
             oldImg = [Utils getURLImageForIDLego:step.iDLego andFileName:[[((LegoImage*)step.legoImgs[0]).urlImage componentsSeparatedByString:@"/"] lastObject]];
             newImg = [Utils getURLImageForIDLego:step.iDLego andFileName:[[((LegoImage*)step.legoImgs[1]).urlImage componentsSeparatedByString:@"/"] lastObject]];
         }else{
-            oldImg = newImg;
-            newImg = [Utils getURLImageForIDLego:step.iDLego andFileName:[[((LegoImage*)step.legoImgs[0]).urlImage componentsSeparatedByString:@"/"] lastObject]];
+            if (currentIndex == _lego.legoSteps.count - 1) {
+                newImg = [Utils getURLImageForIDLego:step.iDLego andFileName:[[((LegoImage*)step.legoImgs[0]).urlImage componentsSeparatedByString:@"/"] lastObject]];
+                oldImg = newImg;
+            }else{
+                LegoStep *stepPre = (LegoStep*)_lego.legoSteps[currentIndex - 1];
+                if (stepPre.legoImgs.count > 1) {
+                    oldImg = [Utils getURLImageForIDLego:stepPre.iDLego andFileName:[[((LegoImage*)stepPre.legoImgs[1]).urlImage componentsSeparatedByString:@"/"] lastObject]];
+                }else{
+                    oldImg = [Utils getURLImageForIDLego:stepPre.iDLego andFileName:[[((LegoImage*)stepPre.legoImgs[0]).urlImage componentsSeparatedByString:@"/"] lastObject]];
+                }
+                newImg = [Utils getURLImageForIDLego:step.iDLego andFileName:[[((LegoImage*)step.legoImgs[0]).urlImage componentsSeparatedByString:@"/"] lastObject]];
+            }
         }
         [_lbDescription setText:[NSString stringWithFormat:@"%ld/%lu", currentIndex + 1, (unsigned long)_lego.legoSteps.count]];
     }
@@ -145,7 +150,7 @@
     [_a_newImgView setAlpha:1.f];
     [_a_newImgView setImageWithURL:newImg];
     [_a_oldImgView setImageWithURL:oldImg];
-    timeChangeImage = [NSTimer scheduledTimerWithTimeInterval:3.f target:self selector:@selector(updateImageChange) userInfo:nil repeats:YES];
+    timeChangeImage = [NSTimer scheduledTimerWithTimeInterval:2.f target:self selector:@selector(updateImageChange) userInfo:nil repeats:YES];
 }
 - (void)updateImageChange{
     [UIView animateWithDuration:1.f animations:^{
