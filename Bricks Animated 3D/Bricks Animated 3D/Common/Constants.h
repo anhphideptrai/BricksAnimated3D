@@ -22,6 +22,11 @@
 #define _msg_rate_it_5_starts_ @"Rate it 5 stars"
 #define _msg_dismiss_ @"Dismiss"
 
+#define _msg_share_on_facebook_ @"Make a post on Facebook"
+#define _msg_send_mail_to_friends @"Send mail to friends"
+#define _msg_cancel_ @"Cancel"
+#define _msg_share_ @"Share!"
+
 #define _url_share_ @"https://itunes.apple.com/app/id948768878"
 
 #define HEIGHT_CONTENT_GUIDE_VIEW_ROW (IS_IPAD?245:165)

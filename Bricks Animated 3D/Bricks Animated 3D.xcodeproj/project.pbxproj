@@ -857,6 +857,7 @@
 		B27C1E8C1B1C3FD300E29671 /* btnRight.png in Resources */ = {isa = PBXBuildFile; fileRef = B27C1E8A1B1C3FD300E29671 /* btnRight.png */; };
 		B27C1E8D1B1C3FD300E29671 /* btnLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = B27C1E8B1B1C3FD300E29671 /* btnLeft.png */; };
 		B27C1E911B1C47CB00E29671 /* BricksBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = B27C1E8F1B1C47CB00E29671 /* BricksBarView.m */; };
+		B27C1E931B1D12C000E29671 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27C1E921B1D12C000E29671 /* MessageUI.framework */; };
 		B988D12450A4551CC875CAB0 /* libPods-Bricks Animated 3D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A671F5382684AE0C5339ED /* libPods-Bricks Animated 3D.a */; };
 /* End PBXBuildFile section */
 
@@ -1736,6 +1737,8 @@
 		B27C1E8B1B1C3FD300E29671 /* btnLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btnLeft.png; path = Images/btnLeft.png; sourceTree = "<group>"; };
 		B27C1E8F1B1C47CB00E29671 /* BricksBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BricksBarView.m; path = Views/BricksBarView/BricksBarView.m; sourceTree = "<group>"; };
 		B27C1E901B1C47CB00E29671 /* BricksBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BricksBarView.h; path = Views/BricksBarView/BricksBarView.h; sourceTree = "<group>"; };
+		B27C1E921B1D12C000E29671 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		B27C1E941B1D152400E29671 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		B3B97C520897050493FDE417 /* Pods-Bricks Animated 3D.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bricks Animated 3D.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bricks Animated 3D/Pods-Bricks Animated 3D.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1744,6 +1747,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B27C1E931B1D12C000E29671 /* MessageUI.framework in Frameworks */,
 				B20E64CE1B180C2F000B59D5 /* libsqlite3.0.dylib in Frameworks */,
 				B988D12450A4551CC875CAB0 /* libPods-Bricks Animated 3D.a in Frameworks */,
 			);
@@ -1755,6 +1759,8 @@
 		30F38CB6C5C0B6E3446E1DC7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B27C1E941B1D152400E29671 /* Social.framework */,
+				B27C1E921B1D12C000E29671 /* MessageUI.framework */,
 				B20E64CD1B180C2F000B59D5 /* libsqlite3.0.dylib */,
 				A9A671F5382684AE0C5339ED /* libPods-Bricks Animated 3D.a */,
 			);

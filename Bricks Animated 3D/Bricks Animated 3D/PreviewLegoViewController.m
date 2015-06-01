@@ -9,8 +9,10 @@
 #import "PreviewLegoViewController.h"
 #import "TopPreviewView.h"
 #import "ContentGuideView.h"
+#import <MessageUI/MessageUI.h>
+#import <Social/Social.h>
 
-@interface PreviewLegoViewController ()<ContentGuideViewDataSource, ContentGuideViewDelegate, TopPreviewViewDelegate>
+@interface PreviewLegoViewController ()<ContentGuideViewDataSource, ContentGuideViewDelegate, TopPreviewViewDelegate, MFMailComposeViewControllerDelegate>
 @property (nonatomic, strong) ContentGuideView *contentGuideView;
 @end
 
@@ -40,7 +42,7 @@
     UIBarButtonItem *righttButton = [[UIBarButtonItem alloc] initWithTitle:@"Share!"
                                                                    style:UIBarButtonItemStylePlain
                                                                   target:self
-                                                                  action:nil];
+                                                                  action:@selector(actionShare)];
     [righttButton setTitleTextAttributes:@{
                                          NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:15.f],
                                          NSForegroundColorAttributeName: UIColorFromRGB(0x2a9c40)
@@ -51,6 +53,10 @@
 }
 - (BOOL)prefersStatusBarHidden {
     return YES;
+}
+- (void)actionShare{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:_msg_share_ message:nil delegate:self cancelButtonTitle:_msg_cancel_ otherButtonTitles:_msg_share_on_facebook_, _msg_send_mail_to_friends, nil];
+    [alert show];
 }
 - (void)viewWillAppear:(BOOL)animated{
     if (!_contentGuideView) {
@@ -128,5 +134,61 @@
     if (self.delegate && [self.delegate respondsToSelector:@selector(didTapDownloadLego:)]) {
         [self.delegate didTapDownloadLego:self];
     }
+}
+#pragma mark - MFMailComposeViewControllerDelegate methods
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail sent");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+            break;
+        default:
+            break;
+    }
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+#pragma mark - UIAlertViewDelegate methods
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex != alertView.cancelButtonIndex) {
+        if (buttonIndex == 1) {
+            [self shareToFacebook];
+        }else{
+            [self sendMailInviteTo:@"" withSubject:@"Bricks Animated 3D for LEGO new creations" andContent:[NSString stringWithFormat:@"Lots of new instructions for Lego\niTunes:\n%@\n\nI like it!!!", _url_share_]];
+        }
+    }
+}
+// Invate utils
+- (void)sendMailInviteTo:(NSString*)mail
+             withSubject:(NSString*)subject
+              andContent:(NSString*)contentMail{
+    NSArray *toRecipents = [NSArray arrayWithObject:mail];
+    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+    if ([MFMailComposeViewController canSendMail] && mc) {
+        mc.mailComposeDelegate = self;
+        [mc setSubject:subject];
+        [mc setMessageBody:contentMail isHTML:NO];
+        [mc setToRecipients:toRecipents];
+        NSData *imageData = UIImagePNGRepresentation([UIImage imageNamed:_lego.preview]);
+        [mc addAttachmentData:imageData mimeType:@"image/png" fileName:[NSString stringWithFormat:@"preview.png"]];
+        // Present mail view controller on screen
+        [self presentViewController:mc animated:YES completion:NULL];
+    }
+}
+- (void)shareToFacebook{
+    SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+    [controller setInitialText:[NSString stringWithFormat:@"Lots of new instructions for Lego\niTunes:\n%@\n\nI like it!!!", _url_share_]];
+    [controller addURL:[NSURL URLWithString:_url_share_]];
+    [controller addImage:[UIImage imageNamed:_lego.preview]];
+    [self presentViewController:controller animated:YES completion:Nil];
 }
 @end
