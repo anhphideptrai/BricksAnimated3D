@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Lego.h"
 
 @protocol TopPreviewViewDelegate <NSObject>
 - (void) didClickDownloadButton:(id)topPreviewView;

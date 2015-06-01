@@ -7,10 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Lego.h"
-#import "LegoStep.h"
-#import "LegoImage.h"
-#import "LegoGroup.h"
 
 @interface SQLiteManager : NSObject
 + (SQLiteManager*)getInstance;

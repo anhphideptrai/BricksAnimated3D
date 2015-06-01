@@ -40,7 +40,7 @@
 #define HEIGHT_TITLE_POSTER_DEFAULT 50
 #define TEXT_COLOR_TITLE_POSTER_DEFAULT [UIColor colorWithRed:.0f/255.0f green:.0f/255.0f blue:.0f/255.0f alpha:1.0f]
 #define TEXT_COLOR_RIGHT_LABEL_POSTER_DEFAULT [UIColor colorWithRed:0.0f/255.0f green:0.0f/255.0f blue:0.0f/255.0f alpha:1.0f]
-#define FONT_TITLE_POSTER_DEFAULT [UIFont fontWithName:@"Helvetica" size:14.0f]
+#define FONT_TITLE_POSTER_DEFAULT [UIFont fontWithName:@"Helvetica" size:18.0f]
 #define FONT_RIGHT_LABEL_POSTER_DEFAULT [UIFont fontWithName:@"Helvetica" size:(IS_IPAD?14.0f:12.0f)]
 #define FONT_TITLE_ROW_HEADER_DEFAULT [UIFont fontWithName:@"Helvetica" size:20.0f]
 #define TIME_AUTO_SCROLLING_PROMOSLIDES_DEFAULT 8

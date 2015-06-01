@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Lego.h"
 @class PreviewLegoViewController;
 @protocol PreviewLegoViewControllerDelegate <NSObject>
 - (void)didTapDownloadLego:(PreviewLegoViewController*)previewLegoVC;

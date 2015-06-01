@@ -10,6 +10,7 @@
 #import "SQLiteManager.h"
 #import "PreviewLegoViewController.h"
 #import "PercentageBarUploadingView.h"
+#import "GuideViewController.h"
 #import "DownloadManager.h"
 
 @interface MainViewController () <UITableViewDataSource,UITableViewDelegate, PreviewLegoViewControllerDelegate, DownloadManagerDelegate>{
@@ -67,7 +68,9 @@
     
 }
 - (void)openLegoDetail{
-    
+    GuideViewController *guideVC = [[GuideViewController alloc] initWithNibName:@"GuideViewController" bundle:nil];
+    [guideVC setLego:legoSelected];
+    [self.navigationController pushViewController:guideVC animated:YES];
 }
 - (UIView *) percentageBarUploadingV{
     if( !_percentageBarUploadingV ) {
@@ -124,6 +127,8 @@
     [cell.textLabel setText:lego.name];
     [cell.detailTextLabel setText:[NSString stringWithFormat:@"%lu Details", (unsigned long)lego.totalBricks]];
     [cell.imageView setImageWithURL:[[NSBundle mainBundle] URLForResource:[[lego.icon componentsSeparatedByString:@"."] firstObject] withExtension:[[lego.icon componentsSeparatedByString:@"."] lastObject]]];
+    cell.accessoryType = lego.isDownloaded?UITableViewCellAccessoryCheckmark:UITableViewCellAccessoryNone;
+    cell.tintColor = UIColorFromRGB(0x2a9c40);
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -168,6 +173,7 @@
     if (!error) {
         legoSelected.isDownloaded = YES;
         [[SQLiteManager getInstance] didDownloadedLego:legoSelected.iDLego];
+        [_tbView reloadData];
     }else{
         [Utils showAlertWithError:error];
     }
