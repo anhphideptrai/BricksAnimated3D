@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <objects>
@@ -48,18 +49,18 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQi-Z4-kSw">
-                    <rect key="frame" x="0.0" y="500" width="600" height="100"/>
+                    <rect key="frame" x="0.0" y="490" width="600" height="110"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gku-Ue-sAx">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="50" id="Nne-Sa-buS"/>
+                                <constraint firstAttribute="height" constant="60" id="Nne-Sa-buS"/>
                             </constraints>
                         </view>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnLeft.png" translatesAutoresizingMaskIntoConstraints="NO" id="zHQ-ub-8hx">
-                            <rect key="frame" x="10" y="55" width="24" height="40"/>
+                            <rect key="frame" x="10" y="65" width="24" height="40"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -68,14 +69,14 @@
                             </constraints>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnRight.png" translatesAutoresizingMaskIntoConstraints="NO" id="Cc7-nr-w4A">
-                            <rect key="frame" x="566" y="55" width="24" height="40"/>
+                            <rect key="frame" x="566" y="65" width="24" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="jo1-zZ-XJw"/>
                                 <constraint firstAttribute="width" constant="24" id="oKZ-TB-2Zt"/>
                             </constraints>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QtS-IM-1Ed">
-                            <rect key="frame" x="0.0" y="52" width="120" height="46"/>
+                            <rect key="frame" x="0.0" y="62" width="120" height="46"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="46" id="R5R-wY-E9h"/>
@@ -91,7 +92,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SO1-fU-uxA">
-                            <rect key="frame" x="480" y="52" width="120" height="46"/>
+                            <rect key="frame" x="480" y="62" width="120" height="46"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="46" id="DFa-lY-nVU"/>
@@ -107,7 +108,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVm-J7-QWQ">
-                            <rect key="frame" x="120" y="50" width="360" height="50"/>
+                            <rect key="frame" x="120" y="60" width="360" height="50"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -124,7 +125,7 @@
                         <constraint firstItem="Gku-Ue-sAx" firstAttribute="top" secondItem="NQi-Z4-kSw" secondAttribute="top" id="PtZ-Rs-pii"/>
                         <constraint firstAttribute="bottom" secondItem="QtS-IM-1Ed" secondAttribute="bottom" constant="2" id="RLX-Dg-vXK"/>
                         <constraint firstItem="zHQ-ub-8hx" firstAttribute="leading" secondItem="NQi-Z4-kSw" secondAttribute="leading" constant="10" id="XX8-bC-QT2"/>
-                        <constraint firstAttribute="height" constant="100" id="ZVz-v7-92q"/>
+                        <constraint firstAttribute="height" constant="110" id="ZVz-v7-92q"/>
                         <constraint firstItem="Gku-Ue-sAx" firstAttribute="leading" secondItem="NQi-Z4-kSw" secondAttribute="leading" id="cqi-G8-jdW"/>
                         <constraint firstItem="NVm-J7-QWQ" firstAttribute="top" secondItem="Gku-Ue-sAx" secondAttribute="bottom" id="dHe-9d-crY"/>
                         <constraint firstAttribute="bottom" secondItem="SO1-fU-uxA" secondAttribute="bottom" constant="2" id="eW2-ZH-y2O"/>

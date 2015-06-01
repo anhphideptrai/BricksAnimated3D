@@ -117,6 +117,7 @@
     return YES;
 }
 - (void)updateData{
+    [_bricksView setHidden:currentIndex == _lego.legoSteps.count - 1];
     if (currentIndex == -1) {
         oldImg = [Utils getURLBundleForFileName:_lego.preview];
         newImg = oldImg;
