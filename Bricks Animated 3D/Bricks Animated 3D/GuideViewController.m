@@ -11,7 +11,11 @@
 #import "BricksBarView.h"
 #import "BricksViewController.h"
 
-@interface GuideViewController ()<GADBannerViewDelegate, BricksBarViewDelegate>
+@interface GuideViewController ()<GADBannerViewDelegate, BricksBarViewDelegate>{
+    NSInteger currentIndex;
+    NSURL *oldImg;
+    NSURL *newImg;
+}
 @property (weak, nonatomic) IBOutlet UIImageView *imgV;
 @property (weak, nonatomic) IBOutlet UIView *toolBarView;
 @property (weak, nonatomic) IBOutlet GADBannerView *bannerV;
@@ -60,11 +64,11 @@
     [self.navigationItem setRightBarButtonItem:righttButton];
     
     [_lbDescription setFont:[UIFont fontWithName:@"Helvetica" size:20.f]];
-    [_lbDescription setText:@"Preview"];
     [_lbDescription setTextColor:UIColorFromRGB(0x2a9c40)];
-    
     [_imgV setContentMode:UIViewContentModeScaleAspectFit];
-    [_imgV setImageWithURL:[[NSBundle mainBundle] URLForResource:[[_lego.preview componentsSeparatedByString:@"."] firstObject] withExtension:[[_lego.preview componentsSeparatedByString:@"."] lastObject]]];
+    
+    currentIndex = -1;
+    [self updateData];
     
     //Add Admob
     _heightBannerLayoutConstraint.constant = IS_IPAD ? 90 : 50;
@@ -96,14 +100,38 @@
 - (BOOL)prefersStatusBarHidden {
     return YES;
 }
-- (IBAction)actionLeft:(id)sender {
+- (void)updateData{
+    if (currentIndex == -1) {
+        oldImg = [Utils getURLBundleForFileName:_lego.preview];
+        newImg = oldImg;
+        [_lbDescription setText:@"Preview"];
+    }else{
+        LegoStep *step = (LegoStep*)_lego.legoSteps[currentIndex];
+        if (step.legoImgs.count > 1) {
+            oldImg = [Utils getURLImageForIDLego:step.iDLego andFileName:[[((LegoImage*)step.legoImgs[0]).urlImage componentsSeparatedByString:@"/"] lastObject]];
+            newImg = [Utils getURLImageForIDLego:step.iDLego andFileName:[[((LegoImage*)step.legoImgs[1]).urlImage componentsSeparatedByString:@"/"] lastObject]];
+        }else{
+            oldImg = newImg;
+            newImg = [Utils getURLImageForIDLego:step.iDLego andFileName:[[((LegoImage*)step.legoImgs[0]).urlImage componentsSeparatedByString:@"/"] lastObject]];
+        }
+        [_lbDescription setText:[NSString stringWithFormat:@"%ld/%lu", currentIndex + 1, (unsigned long)_lego.legoSteps.count]];
+    }
+    [_imgV setImageWithURL:newImg];
 }
-
+- (IBAction)actionLeft:(id)sender {
+    currentIndex = MAX(-1, currentIndex - 1);
+    [self updateData];
+    [_bricksBarView loadView];
+}
 - (IBAction)actionRight:(id)sender {
+    currentIndex = MIN(_lego.legoSteps.count - 1, currentIndex + 1);
+    [self updateData];
+    [_bricksBarView loadView];
 }
 #pragma mark - BricksBarViewDelegate methods
 - (NSMutableArray*)dataItemsForBricksBarView:(BricksBarView*)bricksBarView{
-    return _lego.bricks;
+    return currentIndex == -1 ? _lego.bricks : ((LegoStep*)_lego.legoSteps[currentIndex]).bricks;
+    
 }
 - (void) didTapBottomToolBarItem:(BricksBarView*)bricksBarView{
     BricksViewController *bricksVC = [BricksViewController new];

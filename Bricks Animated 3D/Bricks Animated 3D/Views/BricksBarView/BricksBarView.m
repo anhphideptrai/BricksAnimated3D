@@ -51,7 +51,7 @@
 - (void)loadView{
     [self clearView];
     if (self.delegate && [self.delegate respondsToSelector:@selector(dataItemsForBricksBarView:)]) {
-        dataItems = [self.delegate dataItemsForBricksBarView:self];
+        dataItems = [[NSMutableArray alloc] initWithArray:[self.delegate dataItemsForBricksBarView:self]];
     }
     NSUInteger numberItem = MIN(dataItems.count, _MAX_ITEMS_);
     int i = 0;

@@ -43,6 +43,15 @@
     descriptionErr = [descriptionErr stringByReplacingOccurrencesOfString:@")" withString:@""];
     return descriptionErr;
 }
++ (NSURL*)getURLBundleForFileName:(NSString*)fileName{
+    return [[NSBundle mainBundle] URLForResource:[[fileName componentsSeparatedByString:@"."] firstObject] withExtension:[[fileName componentsSeparatedByString:@"."] lastObject]];
+}
++ (NSURL*)getURLImageForIDLego:(NSString*)iDLego andFileName:(NSString*)fileName{
+    NSURL *url = nil;
+    NSString *strUrl = [Utils documentsPathForFileName:[NSString stringWithFormat:@"%@/%@",iDLego, fileName]];
+    url = [NSURL fileURLWithPath:strUrl];
+    return url;
+}
 // + (NSString *) admobDeviceID
 // {
 // NSUUID* adid = [[ASIdentifierManager sharedManager] advertisingIdentifier];

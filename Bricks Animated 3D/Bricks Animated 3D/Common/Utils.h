@@ -12,5 +12,7 @@
 + (NSString *)documentsPathForFileName:(NSString *)name;
 + (BOOL)addSkipBackupAttributeToItemAtURL:(NSURL *)URL;
 + (void)showAlertWithError:(NSError*)err;
++ (NSURL*)getURLBundleForFileName:(NSString*)fileName;
++ (NSURL*)getURLImageForIDLego:(NSString*)iDLego andFileName:(NSString*)fileName;
 //+ (NSString *) admobDeviceID;
 @end
