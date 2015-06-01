@@ -65,4 +65,6 @@
 
 #define _LABEL_PERCENT_FONT_ [UIFont fontWithName:@"Helvetica" size:14.0f]
 
+#define BANNER_ID_ADMOB_DETAIL_PAGE @"ca-app-pub-1775449000819183/5229441150"
+
 #endif

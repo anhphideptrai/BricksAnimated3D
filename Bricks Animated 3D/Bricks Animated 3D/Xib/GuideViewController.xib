@@ -7,6 +7,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GuideViewController">
             <connections>
+                <outlet property="bannerV" destination="b5p-4n-2xC" id="Nfb-eL-0H5"/>
+                <outlet property="bottomToolBarLayoutConstraint" destination="Axt-qf-m4d" id="1by-IT-3jt"/>
+                <outlet property="heightBannerLayoutConstraint" destination="rbu-Bh-aCu" id="b6w-Ly-vNt"/>
+                <outlet property="heightImgLayoutConstraint" destination="Apy-Un-NXq" id="AhP-Ak-uS9"/>
+                <outlet property="imgV" destination="7E1-qP-lVQ" id="Jqf-Wp-JAn"/>
+                <outlet property="toolBarView" destination="NQi-Z4-kSw" id="fOp-2e-fau"/>
                 <outlet property="view" destination="iN0-l3-epB" id="vaH-w3-1Wv"/>
             </connections>
         </placeholder>
@@ -14,7 +20,52 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7E1-qP-lVQ">
+                    <rect key="frame" x="10" y="5" width="580" height="485"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b5p-4n-2xC" customClass="GADBannerView">
+                    <rect key="frame" x="0.0" y="600" width="600" height="0.0"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" id="rbu-Bh-aCu"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CD1-GP-O7v">
+                    <rect key="frame" x="0.0" y="495" width="600" height="105"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="105" id="Apy-Un-NXq"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQi-Z4-kSw">
+                    <rect key="frame" x="0.0" y="500" width="600" height="100"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="ZVz-v7-92q"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="b5p-4n-2xC" secondAttribute="trailing" id="6hZ-yt-HvV"/>
+                <constraint firstAttribute="trailing" secondItem="NQi-Z4-kSw" secondAttribute="trailing" id="AcE-VP-308"/>
+                <constraint firstAttribute="bottom" secondItem="NQi-Z4-kSw" secondAttribute="bottom" id="Axt-qf-m4d"/>
+                <constraint firstItem="b5p-4n-2xC" firstAttribute="top" secondItem="CD1-GP-O7v" secondAttribute="bottom" id="CAj-5P-V0r"/>
+                <constraint firstItem="7E1-qP-lVQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="F6i-iY-mIn"/>
+                <constraint firstItem="7E1-qP-lVQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="FdW-HE-bZM"/>
+                <constraint firstItem="b5p-4n-2xC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="J2Z-jJ-q4W"/>
+                <constraint firstAttribute="bottom" secondItem="b5p-4n-2xC" secondAttribute="bottom" id="U84-c7-vgU"/>
+                <constraint firstAttribute="trailing" secondItem="7E1-qP-lVQ" secondAttribute="trailing" constant="10" id="YP5-3U-voJ"/>
+                <constraint firstItem="CD1-GP-O7v" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Zc7-xX-8Tg"/>
+                <constraint firstAttribute="trailing" secondItem="CD1-GP-O7v" secondAttribute="trailing" id="aOe-2a-M4j"/>
+                <constraint firstItem="CD1-GP-O7v" firstAttribute="top" secondItem="7E1-qP-lVQ" secondAttribute="bottom" constant="5" id="aZY-oo-nGu"/>
+                <constraint firstItem="NQi-Z4-kSw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kTw-Aa-iek"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
         </view>
     </objects>
