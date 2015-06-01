@@ -8,14 +8,23 @@
 
 #import "GuideViewController.h"
 #import <GoogleMobileAds/GoogleMobileAds.h>
+#import "BricksBarView.h"
+#import "BricksViewController.h"
 
-@interface GuideViewController ()<GADBannerViewDelegate>
+@interface GuideViewController ()<GADBannerViewDelegate, BricksBarViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *imgV;
 @property (weak, nonatomic) IBOutlet UIView *toolBarView;
 @property (weak, nonatomic) IBOutlet GADBannerView *bannerV;
+@property (weak, nonatomic) IBOutlet UIButton *btnLeft;
+@property (weak, nonatomic) IBOutlet UIButton *btnRight;
+@property (weak, nonatomic) IBOutlet UIView *bricksView;
+@property (weak, nonatomic) IBOutlet UILabel *lbDescription;
+@property (nonatomic, strong) BricksBarView *bricksBarView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightBannerLayoutConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomToolBarLayoutConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightImgLayoutConstraint;
+- (IBAction)actionLeft:(id)sender;
+- (IBAction)actionRight:(id)sender;
 
 @end
 
@@ -50,6 +59,10 @@
     [self.navigationItem setBackBarButtonItem:leftButton];
     [self.navigationItem setRightBarButtonItem:righttButton];
     
+    [_lbDescription setFont:[UIFont fontWithName:@"Helvetica" size:20.f]];
+    [_lbDescription setText:@"Preview"];
+    [_lbDescription setTextColor:UIColorFromRGB(0x2a9c40)];
+    
     [_imgV setContentMode:UIViewContentModeScaleAspectFit];
     [_imgV setImageWithURL:[[NSBundle mainBundle] URLForResource:[[_lego.preview componentsSeparatedByString:@"."] firstObject] withExtension:[[_lego.preview componentsSeparatedByString:@"."] lastObject]]];
     
@@ -66,10 +79,36 @@
     [self.bannerV loadRequest:request];
 
 }
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    if (!_bricksBarView) {
+        _bricksBarView = [[BricksBarView alloc] initBricksBarWithFrame:CGRectMake(0, 1, self.view.frame.size.width, _bricksView.frame.size.height - 2)];
+        [_bricksBarView setDelegate:self];
+        [_bricksBarView setBackgroundColor:UIColorFromRGB(0xf8f8f8)];
+        [_bricksBarView loadView];
+        [_bricksView setBackgroundColor:UIColorFromRGB(0xe0e0e0)];
+        [_bricksView addSubview:_bricksBarView];
+    }
+}
 - (void)adViewDidReceiveAd:(GADBannerView *)view{
     _bottomToolBarLayoutConstraint.constant = IS_IPAD ? 90 : 50;
 }
 - (BOOL)prefersStatusBarHidden {
     return YES;
+}
+- (IBAction)actionLeft:(id)sender {
+}
+
+- (IBAction)actionRight:(id)sender {
+}
+#pragma mark - BricksBarViewDelegate methods
+- (NSMutableArray*)dataItemsForBricksBarView:(BricksBarView*)bricksBarView{
+    return _lego.bricks;
+}
+- (void) didTapBottomToolBarItem:(BricksBarView*)bricksBarView{
+    BricksViewController *bricksVC = [BricksViewController new];
+    [bricksVC setLego:_lego];
+    UINavigationController *navC = [[UINavigationController alloc] initWithRootViewController:bricksVC];
+    [self presentViewController:navC animated:YES completion:^{}];
 }
 @end

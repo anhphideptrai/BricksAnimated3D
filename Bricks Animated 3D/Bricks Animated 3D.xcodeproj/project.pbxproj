@@ -854,6 +854,9 @@
 		B20E65001B1A1ED6000B59D5 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E64FF1B1A1ED6000B59D5 /* Utils.m */; };
 		B27C1E871B1C084600E29671 /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27C1E861B1C084600E29671 /* GuideViewController.m */; };
 		B27C1E891B1C085900E29671 /* GuideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B27C1E881B1C085900E29671 /* GuideViewController.xib */; };
+		B27C1E8C1B1C3FD300E29671 /* btnRight.png in Resources */ = {isa = PBXBuildFile; fileRef = B27C1E8A1B1C3FD300E29671 /* btnRight.png */; };
+		B27C1E8D1B1C3FD300E29671 /* btnLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = B27C1E8B1B1C3FD300E29671 /* btnLeft.png */; };
+		B27C1E911B1C47CB00E29671 /* BricksBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = B27C1E8F1B1C47CB00E29671 /* BricksBarView.m */; };
 		B988D12450A4551CC875CAB0 /* libPods-Bricks Animated 3D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A671F5382684AE0C5339ED /* libPods-Bricks Animated 3D.a */; };
 /* End PBXBuildFile section */
 
@@ -1729,6 +1732,10 @@
 		B27C1E851B1C084600E29671 /* GuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideViewController.h; sourceTree = "<group>"; };
 		B27C1E861B1C084600E29671 /* GuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideViewController.m; sourceTree = "<group>"; };
 		B27C1E881B1C085900E29671 /* GuideViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GuideViewController.xib; path = Xib/GuideViewController.xib; sourceTree = "<group>"; };
+		B27C1E8A1B1C3FD300E29671 /* btnRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btnRight.png; path = Images/btnRight.png; sourceTree = "<group>"; };
+		B27C1E8B1B1C3FD300E29671 /* btnLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btnLeft.png; path = Images/btnLeft.png; sourceTree = "<group>"; };
+		B27C1E8F1B1C47CB00E29671 /* BricksBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BricksBarView.m; path = Views/BricksBarView/BricksBarView.m; sourceTree = "<group>"; };
+		B27C1E901B1C47CB00E29671 /* BricksBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BricksBarView.h; path = Views/BricksBarView/BricksBarView.h; sourceTree = "<group>"; };
 		B3B97C520897050493FDE417 /* Pods-Bricks Animated 3D.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bricks Animated 3D.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bricks Animated 3D/Pods-Bricks Animated 3D.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1804,6 +1811,8 @@
 		B20E55A31B15AED7000B59D5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B27C1E8A1B1C3FD300E29671 /* btnRight.png */,
+				B27C1E8B1B1C3FD300E29671 /* btnLeft.png */,
 				B20E56181B15AFA1000B59D5 /* Bricks */,
 				B20E56171B15AF9C000B59D5 /* Icon */,
 				B20E56161B15AF94000B59D5 /* Review */,
@@ -2725,6 +2734,7 @@
 		B20E64DC1B19BA8A000B59D5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B27C1E8E1B1C47C000E29671 /* BricksBarView */,
 				B20E64F51B1A1B2F000B59D5 /* PercentageBarUploadingView */,
 				B20E64E31B19C476000B59D5 /* ContentGuideView */,
 				B20E64DD1B19BAB7000B59D5 /* TopPreviewView.h */,
@@ -2736,12 +2746,12 @@
 		B20E64E31B19C476000B59D5 /* ContentGuideView */ = {
 			isa = PBXGroup;
 			children = (
+				B20E64E91B19C492000B59D5 /* ContentGuideView.h */,
 				B20E64E41B19C492000B59D5 /* ContentGuideView.m */,
 				B20E64E51B19C492000B59D5 /* ContentGuideViewRowCarouselViewPosterView.h */,
 				B20E64E61B19C492000B59D5 /* ContentGuideViewRowCarouselViewPosterView.m */,
 				B20E64E71B19C492000B59D5 /* ContentGuideViewRowHeader.h */,
 				B20E64E81B19C492000B59D5 /* ContentGuideViewRowHeader.m */,
-				B20E64E91B19C492000B59D5 /* ContentGuideView.h */,
 				B20E64EA1B19C492000B59D5 /* ContentGuideViewRow.h */,
 				B20E64EB1B19C492000B59D5 /* ContentGuideViewRow.m */,
 			);
@@ -2756,6 +2766,15 @@
 				B20E64F71B1A1B3D000B59D5 /* PercentageBarUploadingView.m */,
 			);
 			name = PercentageBarUploadingView;
+			sourceTree = "<group>";
+		};
+		B27C1E8E1B1C47C000E29671 /* BricksBarView */ = {
+			isa = PBXGroup;
+			children = (
+				B27C1E901B1C47CB00E29671 /* BricksBarView.h */,
+				B27C1E8F1B1C47CB00E29671 /* BricksBarView.m */,
+			);
+			name = BricksBarView;
 			sourceTree = "<group>";
 		};
 		F6F020D6B6BFE1C05323CA0E /* Pods */ = {
@@ -2852,6 +2871,7 @@
 				B20E5A7E1B15AFC8000B59D5 /* 4164025.png in Resources */,
 				B20E59D81B15AFC8000B59D5 /* 4211639.png in Resources */,
 				B20E5B771B15AFC8000B59D5 /* 245626.png in Resources */,
+				B27C1E8D1B1C3FD300E29671 /* btnLeft.png in Resources */,
 				B20E5AB81B15AFC8000B59D5 /* 366621.png in Resources */,
 				B20E5A611B15AFC8000B59D5 /* 4124058.png in Resources */,
 				B20E5C501B15AFF0000B59D5 /* 1096.png in Resources */,
@@ -3019,6 +3039,7 @@
 				B20E59871B15AFC8000B59D5 /* 4283123.png in Resources */,
 				B20E5B451B15AFC8000B59D5 /* 306905.png in Resources */,
 				B20E5B2E1B15AFC8000B59D5 /* 303601.png in Resources */,
+				B27C1E8C1B1C3FD300E29671 /* btnRight.png in Resources */,
 				B20E5BA01B15AFC8000B59D5 /* 302005.png in Resources */,
 				B20E5B3F1B15AFC8000B59D5 /* 306805.png in Resources */,
 				B20E5B2F1B15AFC8000B59D5 /* 303626.png in Resources */,
@@ -3713,6 +3734,7 @@
 				B20E64CB1B1808C5000B59D5 /* SQLiteManager.m in Sources */,
 				B27C1E871B1C084600E29671 /* GuideViewController.m in Sources */,
 				B20E64F21B1A0F41000B59D5 /* BricksViewController.m in Sources */,
+				B27C1E911B1C47CB00E29671 /* BricksBarView.m in Sources */,
 				B20E64EE1B19C492000B59D5 /* ContentGuideViewRowHeader.m in Sources */,
 				B20E64FD1B1A1E8B000B59D5 /* DownloadManager.m in Sources */,
 			);

@@ -83,9 +83,9 @@
     if (!posterView) {
         posterView = [[ContentGuideViewRowCarouselViewPosterView alloc] initWithStyle:ContentGuideViewRowCarouselViewPosterViewStyleDefault reuseIdentifier:identifier];
     }
-    LegoBrick *pokemon = (LegoBrick*)_lego.bricks[rowIndex*NUMBER_POSTERS_IN_A_ROW + index];
-    [posterView setURLImagePoster:[[NSBundle mainBundle] URLForResource:pokemon.name withExtension:@"png"] placeholderImage:[UIImage imageNamed:@"icon_placeholder.png"]];
-    [posterView setTextTitlePoster:[NSString stringWithFormat:@"%@x", pokemon.count]];
+    LegoBrick *brick = (LegoBrick*)_lego.bricks[rowIndex*NUMBER_POSTERS_IN_A_ROW + index];
+    [posterView setURLImagePoster:[[NSBundle mainBundle] URLForResource:brick.name withExtension:@"png"] placeholderImage:[UIImage imageNamed:@"icon_placeholder.png"]];
+    [posterView setTextTitlePoster:[NSString stringWithFormat:@"%@x", brick.count]];
     return posterView;
     
 }
