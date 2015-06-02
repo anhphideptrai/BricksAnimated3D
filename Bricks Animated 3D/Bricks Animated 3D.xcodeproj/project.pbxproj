@@ -858,6 +858,7 @@
 		B27C1E8D1B1C3FD300E29671 /* btnLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = B27C1E8B1B1C3FD300E29671 /* btnLeft.png */; };
 		B27C1E911B1C47CB00E29671 /* BricksBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = B27C1E8F1B1C47CB00E29671 /* BricksBarView.m */; };
 		B27C1E931B1D12C000E29671 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27C1E921B1D12C000E29671 /* MessageUI.framework */; };
+		B27C1E991B1D4E5F00E29671 /* lego_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B27C1E981B1D4E5F00E29671 /* lego_icon.png */; };
 		B988D12450A4551CC875CAB0 /* libPods-Bricks Animated 3D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A671F5382684AE0C5339ED /* libPods-Bricks Animated 3D.a */; };
 /* End PBXBuildFile section */
 
@@ -1739,6 +1740,7 @@
 		B27C1E901B1C47CB00E29671 /* BricksBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BricksBarView.h; path = Views/BricksBarView/BricksBarView.h; sourceTree = "<group>"; };
 		B27C1E921B1D12C000E29671 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		B27C1E941B1D152400E29671 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		B27C1E981B1D4E5F00E29671 /* lego_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lego_icon.png; path = Images/lego_icon.png; sourceTree = "<group>"; };
 		B3B97C520897050493FDE417 /* Pods-Bricks Animated 3D.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bricks Animated 3D.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bricks Animated 3D/Pods-Bricks Animated 3D.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1817,6 +1819,7 @@
 		B20E55A31B15AED7000B59D5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B27C1E981B1D4E5F00E29671 /* lego_icon.png */,
 				B27C1E8A1B1C3FD300E29671 /* btnRight.png */,
 				B27C1E8B1B1C3FD300E29671 /* btnLeft.png */,
 				B20E56181B15AFA1000B59D5 /* Bricks */,
@@ -3386,6 +3389,7 @@
 				B20E5AE21B15AFC8000B59D5 /* 4107758.png in Resources */,
 				B20E59801B15AFC8000B59D5 /* 4277927.png in Resources */,
 				B20E5AD81B15AFC8000B59D5 /* 407021.png in Resources */,
+				B27C1E991B1D4E5F00E29671 /* lego_icon.png in Resources */,
 				B20E58F51B15AFC8000B59D5 /* 614128.png in Resources */,
 				B20E59641B15AFC8000B59D5 /* 4244370.png in Resources */,
 				B20E5C691B15AFF0000B59D5 /* 1090.png in Resources */,
