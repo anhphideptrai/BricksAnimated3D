@@ -57,11 +57,13 @@
         [tbView setHidden:YES];
         [waitingV startAnimating];
         [[ConfigManager getInstance] loadMoreApp:_url_more_apps_ finished:^(BOOL success, NSArray *moreApps) {
-            arrApps = moreApps;
-            appDelegate.moreApps = moreApps;
-            [tbView setHidden:NO];
-            [tbView reloadData];
-            [waitingV stopAnimating];
+            if (success) {
+                arrApps = moreApps;
+                appDelegate.moreApps = moreApps;
+                [tbView setHidden:NO];
+                [tbView reloadData];
+                [waitingV stopAnimating];
+            }
         }];
     }
 }
