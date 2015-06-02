@@ -14,15 +14,18 @@
 #import "DownloadManager.h"
 #import "MoreAppsViewController.h"
 #import "AppDelegate.h"
+#import <GoogleMobileAds/GoogleMobileAds.h>
 
-@interface MainViewController () <UITableViewDataSource,UITableViewDelegate, PreviewLegoViewControllerDelegate, DownloadManagerDelegate>{
+@interface MainViewController () <UITableViewDataSource,UITableViewDelegate, PreviewLegoViewControllerDelegate, DownloadManagerDelegate, GADInterstitialDelegate>{
     NSMutableArray *groups;
     PercentageBarUploadingView *_percentageBarUploadingV;
     DownloadManager *downloadManager;
     Lego *legoSelected;
+    BOOL shouldAds;
+    AppDelegate *appDelegate;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tbView;
-
+@property(nonatomic, strong) GADInterstitial *interstitial;
 @end
 
 @implementation MainViewController
@@ -43,7 +46,7 @@
     
     [self.navigationItem setLeftBarButtonItem:leftButton];
     
-    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    appDelegate = [UIApplication sharedApplication].delegate;
     if (![appDelegate.config.moreShow isEqualToString:_more_default_]) {
         UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"More"
                                                                         style:UIBarButtonItemStylePlain
@@ -61,7 +64,16 @@
     downloadManager = [[DownloadManager alloc] init];
     [downloadManager setDelegate:self];
 }
-
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    if (shouldAds && ![appDelegate.config.adsShow isEqualToString:_ads_default_]) {
+        shouldAds = NO;
+        NSUInteger r = arc4random_uniform(5) + 1;
+        if (r == 3) {
+            self.interstitial = [self createAndLoadInterstitial];
+        }
+    }
+}
 - (BOOL)prefersStatusBarHidden {
     return YES;
 }
@@ -87,6 +99,17 @@
     [_percentageBarUploadingV setTextLoading:@""];
     [_percentageBarUploadingV setPercent:0];
     return _percentageBarUploadingV.view;
+}
+- (GADInterstitial *)createAndLoadInterstitial {
+    GADInterstitial *interstitial = [[GADInterstitial alloc] initWithAdUnitID:INTERSTITIAL_ID_ADMOB_PAGE];
+    interstitial.delegate = self;
+    GADRequest *request = [GADRequest request];
+    // Requests test ads on simulators.
+    request.testDevices = [NSArray arrayWithObjects:@"GAD_SIMULATOR_ID",
+                           @"1485d1faa4c1010a54b384ca9e9944b7", @"f2b1a55b050ac3483e1c17a21a2073f5",
+                           nil];
+    [interstitial loadRequest:request];
+    return interstitial;
 }
 #pragma mark - TableViewControll Delegate + DataSource methods
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -144,6 +167,7 @@
     if (legoSelected.isDownloaded) {
         legoSelected.legoSteps = [[SQLiteManager getInstance] getLegoStepsWithIDLego:legoSelected.iDLego];
         [self openLegoDetail];
+        shouldAds = YES;
     }else{
         PreviewLegoViewController *previewVC = [[PreviewLegoViewController alloc] init];
         [previewVC setLego:legoSelected];
@@ -203,5 +227,9 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [_percentageBarUploadingV setPercent:percent];
     });
+}
+#pragma mark - GADInterstitialDelegate methods
+- (void)interstitialDidReceiveAd:(GADInterstitial *)interstitial {
+    [self.interstitial presentFromRootViewController:self];
 }
 @end
