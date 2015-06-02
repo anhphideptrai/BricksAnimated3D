@@ -16,14 +16,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lego_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="0M6-S1-baW">
-                    <rect key="frame" x="225" y="40" width="150" height="150"/>
+                    <rect key="frame" x="225" y="30" width="150" height="150"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="150" id="G17-dx-VQZ"/>
                         <constraint firstAttribute="width" constant="150" id="MaI-nd-v8j"/>
                     </constraints>
                 </imageView>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="oik-pi-xr9">
-                    <rect key="frame" x="290" y="200" width="20" height="20"/>
+                    <rect key="frame" x="290" y="190" width="20" height="20"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="mzg-Bn-hDX"/>
@@ -31,7 +31,7 @@
                     </constraints>
                 </activityIndicatorView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ERc-dS-Ews">
-                    <rect key="frame" x="10" y="230" width="580" height="360"/>
+                    <rect key="frame" x="10" y="220" width="580" height="380"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <attributedString key="attributedText">
@@ -78,11 +78,11 @@ LEGO</string>
             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="ERc-dS-Ews" secondAttribute="trailing" constant="10" id="7gu-m5-lGR"/>
-                <constraint firstAttribute="bottom" secondItem="ERc-dS-Ews" secondAttribute="bottom" constant="10" id="H0y-x4-bPK"/>
+                <constraint firstAttribute="bottom" secondItem="ERc-dS-Ews" secondAttribute="bottom" id="H0y-x4-bPK"/>
                 <constraint firstItem="oik-pi-xr9" firstAttribute="top" secondItem="0M6-S1-baW" secondAttribute="bottom" constant="10" id="PiM-3e-Bxb"/>
                 <constraint firstAttribute="centerX" secondItem="0M6-S1-baW" secondAttribute="centerX" id="WaZ-WO-vpH"/>
                 <constraint firstItem="ERc-dS-Ews" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="bB0-ul-9lB"/>
-                <constraint firstItem="0M6-S1-baW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="40" id="ibW-uG-Ygg"/>
+                <constraint firstItem="0M6-S1-baW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="ibW-uG-Ygg"/>
                 <constraint firstAttribute="centerX" secondItem="oik-pi-xr9" secondAttribute="centerX" id="jw1-BN-cCx"/>
                 <constraint firstItem="ERc-dS-Ews" firstAttribute="top" secondItem="oik-pi-xr9" secondAttribute="bottom" constant="10" id="z1J-OX-RRW"/>
             </constraints>
