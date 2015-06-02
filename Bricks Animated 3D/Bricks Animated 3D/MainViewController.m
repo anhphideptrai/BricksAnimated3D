@@ -144,6 +144,20 @@
         [self.navigationController pushViewController:previewVC animated:YES];
     }
 }
+- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    [UIView animateWithDuration:0.3
+                          delay:0
+                        options:UIViewAnimationOptionBeginFromCurrentState
+                     animations:(void (^)(void)) ^{
+                         cell.imageView.transform=CGAffineTransformMakeScale(1.2, 1.2);
+                     }
+                     completion:^(BOOL finished){
+                         [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+                             cell.imageView.transform=CGAffineTransformIdentity;
+                         } completion:^(BOOL finished) {}];
+                     }];
+}
 #pragma mark - UIAlertViewDelegate methods
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex != alertView.cancelButtonIndex) {
