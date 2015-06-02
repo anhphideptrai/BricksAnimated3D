@@ -10,11 +10,8 @@
 
 @interface ConfigApp : NSObject
 @property(nonatomic, strong) NSString *statusApp;
-@property(nonatomic, strong) NSString *urlShare;
-@property(nonatomic, strong) NSString *urlServer;
-@property(nonatomic, strong) NSString *version;
-@property(nonatomic, strong) NSString *expriredDay;
-@property(nonatomic, strong) NSString *urlApp1;
+@property(nonatomic, strong) NSString *adsShow;
+@property(nonatomic, strong) NSString *moreShow;
 - (id)init;
 - (void)parser:(id)json;
 @end

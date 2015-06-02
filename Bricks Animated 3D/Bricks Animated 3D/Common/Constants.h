@@ -73,4 +73,12 @@
 
 #define BANNER_ID_ADMOB_DETAIL_PAGE @"ca-app-pub-1775449000819183/5229441150"
 
+#define CONFIG_STATUS_TAG @"CONFIG_STATUS_TAG"
+#define CONFIG_ADS_TAG @"CONFIG_ADS_TAG"
+#define CONFIG_MORE_TAG @"CONFIG_MORE_TAG"
+
+#define _status_defalt_ @"beta"
+#define _ads_default_ @"beta"
+#define _more_default_ @"beta"
+
 #endif

@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSArray *moreApps;
+@property (strong, nonatomic) ConfigApp *config;
 
 
 @end

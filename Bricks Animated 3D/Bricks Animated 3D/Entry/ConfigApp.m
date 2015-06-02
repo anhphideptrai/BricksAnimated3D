@@ -8,32 +8,23 @@
 
 #import "ConfigApp.h"
 #define key_status_app @"status.app"
-#define key_url_share @"url.share"
-#define key_version @"version"
-#define key_expired_day @"expired.day"
-#define key_url_server @"url.server"
-#define key_url_app_1 @"url.app1"
+#define key_ads_show @"ads.show"
+#define key_more_show @"more.show"
 @implementation ConfigApp
 - (id)init{
     self = [super init];
     if (self) {
         self.statusApp = @"";
-        self.urlShare = @"";
-        self.urlServer = @"";
-        self.version = @"";
-        self.expriredDay = @"";
-        self.urlApp1 = @"";
+        self.adsShow = @"";
+        self.moreShow = @"";
     }
     return self;
 }
 - (void)parser:(id)json{
     if (json == nil) return;
     self.statusApp = [json valueForKey:key_status_app];
-    self.urlShare = [json valueForKey:key_url_share];
-    self.urlServer = [json valueForKey:key_url_server];
-    self.version = [json valueForKey:key_version];
-    self.expriredDay = [json valueForKey:key_expired_day];
-    self.urlApp1 = [json valueForKey:key_url_app_1];
+    self.adsShow = [json valueForKey:key_ads_show];
+    self.moreShow = [json valueForKey:key_more_show];
     
 }
 @end

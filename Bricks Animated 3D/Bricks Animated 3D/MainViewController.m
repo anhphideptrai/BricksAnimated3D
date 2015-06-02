@@ -13,6 +13,7 @@
 #import "GuideViewController.h"
 #import "DownloadManager.h"
 #import "MoreAppsViewController.h"
+#import "AppDelegate.h"
 
 @interface MainViewController () <UITableViewDataSource,UITableViewDelegate, PreviewLegoViewControllerDelegate, DownloadManagerDelegate>{
     NSMutableArray *groups;
@@ -40,17 +41,20 @@
                                          NSForegroundColorAttributeName: UIColorFromRGB(0x2a9c40)
                                          } forState:UIControlStateNormal];
     
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"More"
-                                                                 style:UIBarButtonItemStylePlain
-                                                                target:self
-                                                                action:@selector(actionMore)];
-    [rightButton setTitleTextAttributes:@{
-                                       NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:15.f],
-                                       NSForegroundColorAttributeName: UIColorFromRGB(0x2a9c40)
-                                       } forState:UIControlStateNormal];
-    
     [self.navigationItem setLeftBarButtonItem:leftButton];
-    [self.navigationItem setRightBarButtonItem:rightButton];
+    
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    if (![appDelegate.config.moreShow isEqualToString:_more_default_]) {
+        UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"More"
+                                                                        style:UIBarButtonItemStylePlain
+                                                                       target:self
+                                                                       action:@selector(actionMore)];
+        [rightButton setTitleTextAttributes:@{
+                                              NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:15.f],
+                                              NSForegroundColorAttributeName: UIColorFromRGB(0x2a9c40)
+                                              } forState:UIControlStateNormal];
+        [self.navigationItem setRightBarButtonItem:rightButton];
+    }
     
     groups = [[SQLiteManager getInstance] getAllLegoGroup];
     
