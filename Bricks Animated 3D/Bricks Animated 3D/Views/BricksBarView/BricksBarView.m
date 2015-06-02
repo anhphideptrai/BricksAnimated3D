@@ -8,7 +8,7 @@
 
 #import "BricksBarView.h"
 #define _HEIGHT_WIDTH_ITEM_ 40
-#define _HEIGHT_WIDTH_NUMBER_ITEM_ 14
+#define _HEIGHT_NUMBER_ITEM_ 14
 #define _MAX_ITEMS_ 5
 #define _PADDING_IMG_NUMBER_ 4
 
@@ -59,12 +59,13 @@
     for (LegoBrick *brick in dataItems) {
         if (i < _MAX_ITEMS_) {
             CGFloat _width_space_item_ = self.frame.size.width/numberItem;
-            UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake((_width_space_item_ - _HEIGHT_WIDTH_ITEM_)/2 + i*_width_space_item_, (self.frame.size.height - _HEIGHT_WIDTH_ITEM_ - _HEIGHT_WIDTH_NUMBER_ITEM_ - _PADDING_IMG_NUMBER_)/2, _HEIGHT_WIDTH_ITEM_, _HEIGHT_WIDTH_ITEM_)];
+            UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake((_width_space_item_ - _HEIGHT_WIDTH_ITEM_)/2 + i*_width_space_item_, (self.frame.size.height - _HEIGHT_WIDTH_ITEM_ - _HEIGHT_NUMBER_ITEM_ - _PADDING_IMG_NUMBER_)/2, _HEIGHT_WIDTH_ITEM_, _HEIGHT_WIDTH_ITEM_)];
             [imgView setContentMode:UIViewContentModeScaleAspectFit];
             [imgView setImageWithURL:[[NSBundle mainBundle] URLForResource:brick.name withExtension:@"png"]];
             
-            UILabel *lb = [[UILabel alloc] initWithFrame:CGRectMake(imgView.center.x - _HEIGHT_WIDTH_NUMBER_ITEM_/2, imgView.frame.size.height + imgView.frame.origin.y + _PADDING_IMG_NUMBER_/2, _HEIGHT_WIDTH_NUMBER_ITEM_, _HEIGHT_WIDTH_NUMBER_ITEM_)];
-            [lb setFont:[UIFont fontWithName:@"Helvetica" size:12.f]];
+            UILabel *lb = [[UILabel alloc] initWithFrame:CGRectMake(imgView.frame.origin.x, imgView.frame.size.height + imgView.frame.origin.y + _PADDING_IMG_NUMBER_/2, _HEIGHT_WIDTH_ITEM_, _HEIGHT_NUMBER_ITEM_)];
+            [lb setTextAlignment:NSTextAlignmentCenter];
+            [lb setFont:[UIFont fontWithName:@"Helvetica" size:14.f]];
             [lb setTextColor:[UIColor blackColor]];
             [lb setText:[NSString stringWithFormat:@"%@x", brick.count]];
             
