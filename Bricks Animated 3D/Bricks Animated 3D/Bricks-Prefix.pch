@@ -18,5 +18,7 @@
 #import "LegoStep.h"
 #import "LegoImage.h"
 #import "LegoGroup.h"
+#import <AFNetworking/AFNetworking.h>
+#import "ConfigManager.h"
 #import <UIImageView+AFNetworking.h>
 #endif

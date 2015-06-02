@@ -852,6 +852,11 @@
 		B20E64FA1B1A1B3D000B59D5 /* PercentageBarUploadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E64F71B1A1B3D000B59D5 /* PercentageBarUploadingView.m */; };
 		B20E64FD1B1A1E8B000B59D5 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E64FC1B1A1E8B000B59D5 /* DownloadManager.m */; };
 		B20E65001B1A1ED6000B59D5 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E64FF1B1A1ED6000B59D5 /* Utils.m */; };
+		B26FFC6A1B1DD23F00B2E111 /* MoreApp.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FFC691B1DD23F00B2E111 /* MoreApp.m */; };
+		B26FFC6D1B1DD33200B2E111 /* ConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FFC6B1B1DD33200B2E111 /* ConfigManager.m */; };
+		B26FFC701B1DD35A00B2E111 /* ConfigApp.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FFC6F1B1DD35A00B2E111 /* ConfigApp.m */; };
+		B26FFC731B1DD6E900B2E111 /* MoreAppsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FFC721B1DD6E900B2E111 /* MoreAppsViewController.m */; };
+		B26FFC751B1DDD1A00B2E111 /* ic_more.png in Resources */ = {isa = PBXBuildFile; fileRef = B26FFC741B1DDD1A00B2E111 /* ic_more.png */; };
 		B27C1E871B1C084600E29671 /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27C1E861B1C084600E29671 /* GuideViewController.m */; };
 		B27C1E891B1C085900E29671 /* GuideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B27C1E881B1C085900E29671 /* GuideViewController.xib */; };
 		B27C1E8C1B1C3FD300E29671 /* btnRight.png in Resources */ = {isa = PBXBuildFile; fileRef = B27C1E8A1B1C3FD300E29671 /* btnRight.png */; };
@@ -1733,6 +1738,15 @@
 		B20E64FC1B1A1E8B000B59D5 /* DownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DownloadManager.m; path = Proccessing/DownloadManager.m; sourceTree = "<group>"; };
 		B20E64FE1B1A1ED6000B59D5 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = Common/Utils.h; sourceTree = "<group>"; };
 		B20E64FF1B1A1ED6000B59D5 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utils.m; path = Common/Utils.m; sourceTree = "<group>"; };
+		B26FFC681B1DD23F00B2E111 /* MoreApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoreApp.h; path = Entry/MoreApp.h; sourceTree = "<group>"; };
+		B26FFC691B1DD23F00B2E111 /* MoreApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MoreApp.m; path = Entry/MoreApp.m; sourceTree = "<group>"; };
+		B26FFC6B1B1DD33200B2E111 /* ConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConfigManager.m; path = Common/ConfigManager.m; sourceTree = "<group>"; };
+		B26FFC6C1B1DD33200B2E111 /* ConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConfigManager.h; path = Common/ConfigManager.h; sourceTree = "<group>"; };
+		B26FFC6E1B1DD35A00B2E111 /* ConfigApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConfigApp.h; path = Entry/ConfigApp.h; sourceTree = "<group>"; };
+		B26FFC6F1B1DD35A00B2E111 /* ConfigApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConfigApp.m; path = Entry/ConfigApp.m; sourceTree = "<group>"; };
+		B26FFC711B1DD6E900B2E111 /* MoreAppsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreAppsViewController.h; sourceTree = "<group>"; };
+		B26FFC721B1DD6E900B2E111 /* MoreAppsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreAppsViewController.m; sourceTree = "<group>"; };
+		B26FFC741B1DDD1A00B2E111 /* ic_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_more.png; path = Images/ic_more.png; sourceTree = "<group>"; };
 		B27C1E851B1C084600E29671 /* GuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideViewController.h; sourceTree = "<group>"; };
 		B27C1E861B1C084600E29671 /* GuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideViewController.m; sourceTree = "<group>"; };
 		B27C1E881B1C085900E29671 /* GuideViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GuideViewController.xib; path = Xib/GuideViewController.xib; sourceTree = "<group>"; };
@@ -1824,6 +1838,7 @@
 		B20E55A31B15AED7000B59D5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B26FFC741B1DDD1A00B2E111 /* ic_more.png */,
 				B27C1E981B1D4E5F00E29671 /* lego_icon.png */,
 				B27C1E8A1B1C3FD300E29671 /* btnRight.png */,
 				B27C1E8B1B1C3FD300E29671 /* btnLeft.png */,
@@ -2679,6 +2694,10 @@
 		B20E64B61B1806D3000B59D5 /* Entry */ = {
 			isa = PBXGroup;
 			children = (
+				B26FFC6E1B1DD35A00B2E111 /* ConfigApp.h */,
+				B26FFC6F1B1DD35A00B2E111 /* ConfigApp.m */,
+				B26FFC681B1DD23F00B2E111 /* MoreApp.h */,
+				B26FFC691B1DD23F00B2E111 /* MoreApp.m */,
 				B20E64BA1B1806FE000B59D5 /* Lego.h */,
 				B20E64BE1B1806FE000B59D5 /* Lego.m */,
 				B20E64BB1B1806FE000B59D5 /* LegoGroup.h */,
@@ -2702,6 +2721,8 @@
 		B20E64C61B180834000B59D5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B26FFC6C1B1DD33200B2E111 /* ConfigManager.h */,
+				B26FFC6B1B1DD33200B2E111 /* ConfigManager.m */,
 				B20E64FE1B1A1ED6000B59D5 /* Utils.h */,
 				B20E64FF1B1A1ED6000B59D5 /* Utils.m */,
 				B20E64C71B180859000B59D5 /* Constants.h */,
@@ -2734,6 +2755,8 @@
 				B27C1E861B1C084600E29671 /* GuideViewController.m */,
 				B27C1E9A1B1D552800E29671 /* SplashScreenViewController.h */,
 				B27C1E9B1B1D552800E29671 /* SplashScreenViewController.m */,
+				B26FFC711B1DD6E900B2E111 /* MoreAppsViewController.h */,
+				B26FFC721B1DD6E900B2E111 /* MoreAppsViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -3594,6 +3617,7 @@
 				B20E59181B15AFC8000B59D5 /* 4521187.png in Resources */,
 				B20E5A161B15AFC8000B59D5 /* 4210788.png in Resources */,
 				B20E59D01B15AFC8000B59D5 /* 4211535.png in Resources */,
+				B26FFC751B1DDD1A00B2E111 /* ic_more.png in Resources */,
 				B20E5BE31B15AFDC000B59D5 /* ico1096.png in Resources */,
 				B20E59191B15AFC8000B59D5 /* 4521210.png in Resources */,
 				B20E5C6B1B15AFF0000B59D5 /* 1008.png in Resources */,
@@ -3738,15 +3762,19 @@
 			files = (
 				B20E64BF1B1806FE000B59D5 /* LegoImage.m in Sources */,
 				B20E64EF1B19C492000B59D5 /* ContentGuideViewRow.m in Sources */,
+				B26FFC731B1DD6E900B2E111 /* MoreAppsViewController.m in Sources */,
 				B20E55861B15A31B000B59D5 /* MainViewController.m in Sources */,
 				B20E64C01B1806FE000B59D5 /* LegoGroup.m in Sources */,
+				B26FFC6A1B1DD23F00B2E111 /* MoreApp.m in Sources */,
 				B20E64DF1B19BAB7000B59D5 /* TopPreviewView.m in Sources */,
 				B20E64C21B1806FE000B59D5 /* Lego.m in Sources */,
+				B26FFC6D1B1DD33200B2E111 /* ConfigManager.m in Sources */,
 				B20E55831B15A31B000B59D5 /* AppDelegate.m in Sources */,
 				B20E64D71B183D91000B59D5 /* PreviewLegoViewController.m in Sources */,
 				B27C1E9C1B1D552800E29671 /* SplashScreenViewController.m in Sources */,
 				B20E64FA1B1A1B3D000B59D5 /* PercentageBarUploadingView.m in Sources */,
 				B20E65001B1A1ED6000B59D5 /* Utils.m in Sources */,
+				B26FFC701B1DD35A00B2E111 /* ConfigApp.m in Sources */,
 				B20E64C11B1806FE000B59D5 /* LegoStep.m in Sources */,
 				B20E64ED1B19C492000B59D5 /* ContentGuideViewRowCarouselViewPosterView.m in Sources */,
 				B20E55801B15A31B000B59D5 /* main.m in Sources */,

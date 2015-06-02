@@ -12,6 +12,7 @@
 #import "PercentageBarUploadingView.h"
 #import "GuideViewController.h"
 #import "DownloadManager.h"
+#import "MoreAppsViewController.h"
 
 @interface MainViewController () <UITableViewDataSource,UITableViewDelegate, PreviewLegoViewControllerDelegate, DownloadManagerDelegate>{
     NSMutableArray *groups;
@@ -65,7 +66,9 @@
     [alert show];
 }
 - (void)actionMore{
-    
+    MoreAppsViewController *moreAppsVC = [MoreAppsViewController new];
+    UINavigationController *navC = [[UINavigationController alloc] initWithRootViewController:moreAppsVC];
+    [self presentViewController:navC animated:YES completion:^{}];
 }
 - (void)openLegoDetail{
     GuideViewController *guideVC = [[GuideViewController alloc] initWithNibName:@"GuideViewController" bundle:nil];
