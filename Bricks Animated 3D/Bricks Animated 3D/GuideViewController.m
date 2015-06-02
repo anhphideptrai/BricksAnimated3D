@@ -20,7 +20,6 @@
     NSURL *oldImg;
     NSURL *newImg;
     NSTimer *timeChangeImage;
-    NSInteger countChange;
 }
 @property (weak, nonatomic) IBOutlet UIImageView *a_oldImgView;
 @property (weak, nonatomic) IBOutlet UIImageView *a_newImgView;
@@ -79,7 +78,6 @@
     _heightImgLayoutConstraint.constant = IS_IPAD ? 190 : 150;
     
     currentIndex = -1;
-    [self updateData];
     
     [NSTimer scheduledTimerWithTimeInterval:_TIME_TICK_CHANGE_ target:self selector:@selector(delayShowAds) userInfo:nil repeats:NO];
 }
@@ -104,6 +102,7 @@
         [_bricksView setBackgroundColor:UIColorFromRGB(0xe0e0e0)];
         [_bricksView addSubview:_bricksBarView];
     }
+    [self updateData];
 }
 - (void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
@@ -154,7 +153,6 @@
         [timeChangeImage invalidate];
         timeChangeImage = nil;
     }
-    countChange = 0;
     [_a_newImgView setAlpha:1.f];
     [_a_newImgView setImageWithURL:newImg];
     [_a_oldImgView setImageWithURL:oldImg];
