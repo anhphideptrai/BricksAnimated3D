@@ -27,7 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationItem setTitle:@"Bricks Animated 3D"];
+    [self.navigationItem setTitle:@"Animated Bricks 3D"];
     
     //create a right side button in the navigation bar
     UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Like!"

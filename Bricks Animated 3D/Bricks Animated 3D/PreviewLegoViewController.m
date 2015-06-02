@@ -163,7 +163,7 @@
         if (buttonIndex == 1) {
             [self shareToFacebook];
         }else{
-            [self sendMailInviteTo:@"" withSubject:@"Bricks Animated 3D for LEGO new creations" andContent:[NSString stringWithFormat:@"Lots of new instructions for Lego\niTunes:\n%@\n\nI like it!!!", _url_share_]];
+            [self sendMailInviteTo:@"" withSubject:@"Animated Bricks 3D for LEGO new creations" andContent:[NSString stringWithFormat:@"Lots of new instructions for Lego\niTunes:\n%@\n\nI like it!!!", _url_share_]];
         }
     }
 }
