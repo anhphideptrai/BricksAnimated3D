@@ -28,6 +28,7 @@
 #define _msg_share_ @"Share via"
 
 #define _url_share_ @"https://itunes.apple.com/app/id948768878"
+#define _url_more_apps_ @"https://raw.githubusercontent.com/anhphideptrai/more-apps/master/more_apps_bricks_3d.json"
 
 #define HEIGHT_CONTENT_GUIDE_VIEW_ROW (IS_IPAD?245:165)
 #define HEIGHT_CONTENT_GUIDE_VIEW_ROW_HEADER 30
