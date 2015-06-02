@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SplashScreenViewController">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="TDP-lc-YhA"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lego_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="0M6-S1-baW">
+                    <rect key="frame" x="225" y="40" width="150" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="G17-dx-VQZ"/>
+                        <constraint firstAttribute="width" constant="150" id="MaI-nd-v8j"/>
+                    </constraints>
+                </imageView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="oik-pi-xr9">
+                    <rect key="frame" x="290" y="200" width="20" height="20"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="mzg-Bn-hDX"/>
+                        <constraint firstAttribute="width" constant="20" id="sZC-OG-dQ9"/>
+                    </constraints>
+                </activityIndicatorView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ERc-dS-Ews">
+                    <rect key="frame" x="10" y="230" width="580" height="360"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <attributedString key="attributedText">
+                        <fragment>
+                            <string key="content">KEEP
+CALM
+</string>
+                            <attributes>
+                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <font key="NSFont" size="45" name="Verdana-Bold"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content">and
+</string>
+                            <attributes>
+                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <font key="NSFont" size="25" name="Verdana-Bold"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content">PLAY
+LEGO</string>
+                            <attributes>
+                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <font key="NSFont" size="45" name="Verdana-Bold"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="®">
+                            <attributes>
+                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <font key="NSFont" size="45" name="Verdana"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" red="0.1647058824" green="0.61176470589999998" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="ERc-dS-Ews" secondAttribute="trailing" constant="10" id="7gu-m5-lGR"/>
+                <constraint firstAttribute="bottom" secondItem="ERc-dS-Ews" secondAttribute="bottom" constant="10" id="H0y-x4-bPK"/>
+                <constraint firstItem="oik-pi-xr9" firstAttribute="top" secondItem="0M6-S1-baW" secondAttribute="bottom" constant="10" id="PiM-3e-Bxb"/>
+                <constraint firstAttribute="centerX" secondItem="0M6-S1-baW" secondAttribute="centerX" id="WaZ-WO-vpH"/>
+                <constraint firstItem="ERc-dS-Ews" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="bB0-ul-9lB"/>
+                <constraint firstItem="0M6-S1-baW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="40" id="ibW-uG-Ygg"/>
+                <constraint firstAttribute="centerX" secondItem="oik-pi-xr9" secondAttribute="centerX" id="jw1-BN-cCx"/>
+                <constraint firstItem="ERc-dS-Ews" firstAttribute="top" secondItem="oik-pi-xr9" secondAttribute="bottom" constant="10" id="z1J-OX-RRW"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="lego_icon.png" width="248" height="262"/>
+    </resources>
+</document>

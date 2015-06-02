@@ -859,6 +859,8 @@
 		B27C1E911B1C47CB00E29671 /* BricksBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = B27C1E8F1B1C47CB00E29671 /* BricksBarView.m */; };
 		B27C1E931B1D12C000E29671 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27C1E921B1D12C000E29671 /* MessageUI.framework */; };
 		B27C1E991B1D4E5F00E29671 /* lego_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B27C1E981B1D4E5F00E29671 /* lego_icon.png */; };
+		B27C1E9C1B1D552800E29671 /* SplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27C1E9B1B1D552800E29671 /* SplashScreenViewController.m */; };
+		B27C1E9E1B1D55AA00E29671 /* SplashScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B27C1E9D1B1D55AA00E29671 /* SplashScreenViewController.xib */; };
 		B988D12450A4551CC875CAB0 /* libPods-Bricks Animated 3D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A671F5382684AE0C5339ED /* libPods-Bricks Animated 3D.a */; };
 /* End PBXBuildFile section */
 
@@ -1741,6 +1743,9 @@
 		B27C1E921B1D12C000E29671 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		B27C1E941B1D152400E29671 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		B27C1E981B1D4E5F00E29671 /* lego_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lego_icon.png; path = Images/lego_icon.png; sourceTree = "<group>"; };
+		B27C1E9A1B1D552800E29671 /* SplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashScreenViewController.h; sourceTree = "<group>"; };
+		B27C1E9B1B1D552800E29671 /* SplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashScreenViewController.m; sourceTree = "<group>"; };
+		B27C1E9D1B1D55AA00E29671 /* SplashScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SplashScreenViewController.xib; path = Xib/SplashScreenViewController.xib; sourceTree = "<group>"; };
 		B3B97C520897050493FDE417 /* Pods-Bricks Animated 3D.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bricks Animated 3D.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bricks Animated 3D/Pods-Bricks Animated 3D.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -2727,6 +2732,8 @@
 				B20E64F11B1A0F41000B59D5 /* BricksViewController.m */,
 				B27C1E851B1C084600E29671 /* GuideViewController.h */,
 				B27C1E861B1C084600E29671 /* GuideViewController.m */,
+				B27C1E9A1B1D552800E29671 /* SplashScreenViewController.h */,
+				B27C1E9B1B1D552800E29671 /* SplashScreenViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -2736,6 +2743,7 @@
 			children = (
 				B20E64D31B1839C5000B59D5 /* MainViewController.xib */,
 				B27C1E881B1C085900E29671 /* GuideViewController.xib */,
+				B27C1E9D1B1D55AA00E29671 /* SplashScreenViewController.xib */,
 			);
 			name = Xib;
 			sourceTree = "<group>";
@@ -2998,6 +3006,7 @@
 				B20E5C141B15AFDC000B59D5 /* ico1092.png in Resources */,
 				B20E5B831B15AFC8000B59D5 /* 300201.png in Resources */,
 				B20E5A6F1B15AFC8000B59D5 /* 4158355.png in Resources */,
+				B27C1E9E1B1D55AA00E29671 /* SplashScreenViewController.xib in Resources */,
 				B20E59251B15AFC8000B59D5 /* 4537928.png in Resources */,
 				B20E5B5E1B15AFC8000B59D5 /* 235701.png in Resources */,
 				B20E590F1B15AFC8000B59D5 /* 485601.png in Resources */,
@@ -3735,6 +3744,7 @@
 				B20E64C21B1806FE000B59D5 /* Lego.m in Sources */,
 				B20E55831B15A31B000B59D5 /* AppDelegate.m in Sources */,
 				B20E64D71B183D91000B59D5 /* PreviewLegoViewController.m in Sources */,
+				B27C1E9C1B1D552800E29671 /* SplashScreenViewController.m in Sources */,
 				B20E64FA1B1A1B3D000B59D5 /* PercentageBarUploadingView.m in Sources */,
 				B20E65001B1A1ED6000B59D5 /* Utils.m in Sources */,
 				B20E64C11B1806FE000B59D5 /* LegoStep.m in Sources */,
@@ -3855,6 +3865,7 @@
 				INFOPLIST_FILE = "Bricks Animated 3D/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -3867,6 +3878,7 @@
 				INFOPLIST_FILE = "Bricks Animated 3D/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
