@@ -42,18 +42,19 @@
                                           NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:15.f],
                                           NSForegroundColorAttributeName: UIColorFromRGB(0x2a9c40)
                                           } forState:UIControlStateNormal];
-    
-    UIBarButtonItem *righttButton = [[UIBarButtonItem alloc] initWithTitle:@"Share!"
-                                                                   style:UIBarButtonItemStylePlain
-                                                                  target:self
-                                                                  action:@selector(actionShare)];
-    [righttButton setTitleTextAttributes:@{
-                                         NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:15.f],
-                                         NSForegroundColorAttributeName: UIColorFromRGB(0x2a9c40)
-                                         } forState:UIControlStateNormal];
-    
     [self.navigationItem setBackBarButtonItem:leftButton];
-    [self.navigationItem setRightBarButtonItem:righttButton];
+    
+    if (![appDelegate.config.statusApp isEqualToString:_status_defalt_]) {
+        UIBarButtonItem *righttButton = [[UIBarButtonItem alloc] initWithTitle:@"Share!"
+                                                                         style:UIBarButtonItemStylePlain
+                                                                        target:self
+                                                                        action:@selector(actionShare)];
+        [righttButton setTitleTextAttributes:@{
+                                               NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:15.f],
+                                               NSForegroundColorAttributeName: UIColorFromRGB(0x2a9c40)
+                                               } forState:UIControlStateNormal];
+        [self.navigationItem setRightBarButtonItem:righttButton];
+    }
 }
 - (BOOL)prefersStatusBarHidden {
     return YES;
