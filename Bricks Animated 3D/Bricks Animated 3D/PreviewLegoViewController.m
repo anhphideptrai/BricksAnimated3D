@@ -11,8 +11,11 @@
 #import "ContentGuideView.h"
 #import <MessageUI/MessageUI.h>
 #import <Social/Social.h>
+#import "AppDelegate.h"
 
-@interface PreviewLegoViewController ()<ContentGuideViewDataSource, ContentGuideViewDelegate, TopPreviewViewDelegate, MFMailComposeViewControllerDelegate>
+@interface PreviewLegoViewController ()<ContentGuideViewDataSource, ContentGuideViewDelegate, TopPreviewViewDelegate, MFMailComposeViewControllerDelegate>{
+    AppDelegate *appDelegate;
+}
 @property (nonatomic, strong) ContentGuideView *contentGuideView;
 @end
 
@@ -25,6 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor whiteColor]];
+    appDelegate = [UIApplication sharedApplication].delegate;
     if (_lego) {
         [self.navigationItem setTitle:_lego.name];
     }
@@ -163,7 +167,7 @@
         if (buttonIndex == 1) {
             [self shareToFacebook];
         }else{
-            [self sendMailInviteTo:@"" withSubject:@"Animated Bricks 3D for LEGO new creations" andContent:[NSString stringWithFormat:@"Lots of new instructions for Lego\niTunes:\n%@\n\nI like it!!!", _url_share_]];
+            [self sendMailInviteTo:@"" withSubject:@"Animated Bricks 3D for LEGO new creations" andContent:[NSString stringWithFormat:@"Lots of new instructions for Lego\niTunes:\n%@\n\nI like it!!!", appDelegate.config.urliTunes]];
         }
     }
 }
@@ -186,8 +190,8 @@
 }
 - (void)shareToFacebook{
     SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-    [controller setInitialText:[NSString stringWithFormat:@"Lots of new instructions for Lego\niTunes:\n%@\n\nI like it!!!", _url_share_]];
-    [controller addURL:[NSURL URLWithString:_url_share_]];
+    [controller setInitialText:[NSString stringWithFormat:@"Lots of new instructions for Lego\niTunes:\n%@\n\nI like it!!!", appDelegate.config.urliTunes]];
+    [controller addURL:[NSURL URLWithString:appDelegate.config.urliTunes]];
     [controller addImage:[UIImage imageNamed:_lego.preview]];
     [self presentViewController:controller animated:YES completion:Nil];
 }

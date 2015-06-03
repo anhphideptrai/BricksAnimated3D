@@ -69,7 +69,7 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [tbView setFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height, self.view.frame.size.width, self.view.frame.size.height - self.navigationController.navigationBar.frame.size.height)];
+    [tbView setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [waitingV setFrame:CGRectMake((self.view.frame.size.width - waitingV.frame.size.width)/2, self.navigationController.navigationBar.frame.size.height + 10, waitingV.frame.size.width, waitingV.frame.size.height)];
 }
 - (BOOL)prefersStatusBarHidden {

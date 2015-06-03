@@ -12,6 +12,7 @@
 @property(nonatomic, strong) NSString *statusApp;
 @property(nonatomic, strong) NSString *adsShow;
 @property(nonatomic, strong) NSString *moreShow;
+@property(nonatomic, strong) NSString *urliTunes;
 - (id)init;
 - (void)parser:(id)json;
 @end

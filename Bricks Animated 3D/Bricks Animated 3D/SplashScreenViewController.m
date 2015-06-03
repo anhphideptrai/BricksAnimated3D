@@ -25,6 +25,7 @@
             [[NSUserDefaults standardUserDefaults] setValue:appDelegate.config.statusApp forKey:CONFIG_STATUS_TAG];
             [[NSUserDefaults standardUserDefaults] setValue:appDelegate.config.adsShow forKey:CONFIG_ADS_TAG];
             [[NSUserDefaults standardUserDefaults] setValue:appDelegate.config.moreShow forKey:CONFIG_MORE_TAG];
+            [[NSUserDefaults standardUserDefaults] setValue:appDelegate.config.urliTunes forKey:CONFIG_URL_ITUNES_TAG];
             [[NSUserDefaults standardUserDefaults] synchronize];
         }else{
             appDelegate.config = [[ConfigApp alloc] init];
@@ -44,6 +45,12 @@
                 appDelegate.config.moreShow = [[NSUserDefaults standardUserDefaults] objectForKey:CONFIG_MORE_TAG];
             }else{
                 appDelegate.config.moreShow = _more_default_;
+            }
+            
+            if ([[NSUserDefaults standardUserDefaults] objectForKey:CONFIG_URL_ITUNES_TAG]) {
+                appDelegate.config.urliTunes = [[NSUserDefaults standardUserDefaults] objectForKey:CONFIG_URL_ITUNES_TAG];
+            }else{
+                appDelegate.config.urliTunes = _url_share_;
             }
         }
         [NSTimer scheduledTimerWithTimeInterval:2.f target:self selector:@selector(goToMainView) userInfo:nil repeats:NO];

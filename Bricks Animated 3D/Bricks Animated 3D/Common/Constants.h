@@ -77,6 +77,7 @@
 #define CONFIG_STATUS_TAG @"CONFIG_STATUS_TAG"
 #define CONFIG_ADS_TAG @"CONFIG_ADS_TAG"
 #define CONFIG_MORE_TAG @"CONFIG_MORE_TAG"
+#define CONFIG_URL_ITUNES_TAG @"CONFIG_URL_ITUNES_TAG"
 
 #define _status_defalt_ @"beta"
 #define _ads_default_ @"beta"
