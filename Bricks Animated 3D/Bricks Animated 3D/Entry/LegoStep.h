@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Lego.h"
 
-@interface LegoStep : NSObject
+@interface LegoStep : Lego
 @property (nonatomic, strong) NSString *iDStep;
-@property (nonatomic, strong) NSString *iDLego;
-@property (nonatomic, strong) NSMutableArray *bricks;
 @property (nonatomic, strong) NSMutableArray *legoImgs;
+@property (nonatomic, strong) NSString *urlImage;
 @end

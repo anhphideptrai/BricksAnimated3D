@@ -7,11 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LegoStep.h"
 
-@interface LegoImage : NSObject
-@property (nonatomic, strong) NSString *iDStep;
-@property (nonatomic, strong) NSString *iDLego;
+@interface LegoImage : LegoStep
 @property (nonatomic, strong) NSString *iDImage;
-@property (nonatomic, strong) NSString *urlImage;
-@property (nonatomic) NSUInteger size;
 @end
