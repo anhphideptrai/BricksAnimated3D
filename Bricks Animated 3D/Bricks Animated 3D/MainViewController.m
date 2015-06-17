@@ -171,7 +171,7 @@
     [cell.imageView setImage:[UIImage imageNamed:@"icon_placeholder.png"]];
     Lego *lego = ((LegoGroup*)groups[indexPath.section]).legoes[indexPath.row];
     [cell.textLabel setText:lego.name];
-    [cell.detailTextLabel setText:[NSString stringWithFormat:@"%lu Details", (unsigned long)lego.totalBricks]];
+    [cell.detailTextLabel setText:[NSString stringWithFormat:appDelegate.legoType == NORMAL_LEGO_TYPE ? @"%lu Details":@"%lu Steps", (unsigned long)lego.totalBricks]];
     [cell.imageView setImageWithURL:[[NSBundle mainBundle] URLForResource:appDelegate.legoType == NORMAL_LEGO_TYPE ? [[lego.icon componentsSeparatedByString:@"."] firstObject] : [NSString stringWithFormat:@"icon%@_s", lego.iDLego] withExtension:[[lego.icon componentsSeparatedByString:@"."] lastObject]]];
     cell.accessoryType = lego.isDownloaded?UITableViewCellAccessoryCheckmark:UITableViewCellAccessoryNone;
     cell.tintColor = UIColorFromRGB(0x2a9c40);
