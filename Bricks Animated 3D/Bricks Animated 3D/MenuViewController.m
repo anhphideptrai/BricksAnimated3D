@@ -41,6 +41,15 @@
 - (BOOL)prefersStatusBarHidden {
     return YES;
 }
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    NSUInteger r = arc4random_uniform(15) + 1;
+    if (r == 3) {
+        if (!([[NSUserDefaults standardUserDefaults] objectForKey:SHOW_RATING_VIEW_TAG])) {
+            [self actionLike];
+        }
+    }
+}
 - (IBAction)actionClickNormalLego:(id)sender {
     appDelegate.legoType = NORMAL_LEGO_TYPE;
     [self goToMainView];
@@ -60,6 +69,8 @@
 #pragma mark - UIAlertViewDelegate methods
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex != alertView.cancelButtonIndex) {
+        [[NSUserDefaults standardUserDefaults] setValue:@(true) forKey:SHOW_RATING_VIEW_TAG];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:appDelegate.config.urliTunes]];
     }
 }
