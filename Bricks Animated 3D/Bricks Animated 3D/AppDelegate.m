@@ -18,6 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.legoType = SIMPLE_LEGO_TYPE;
+    self.downloadManager = [[DownloadManager alloc] init];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = [[SplashScreenViewController alloc] initWithNibName:@"SplashScreenViewController" bundle:nil];
     self.window.backgroundColor = [UIColor whiteColor];

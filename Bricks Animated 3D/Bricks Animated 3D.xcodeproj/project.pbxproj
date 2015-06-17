@@ -852,6 +852,8 @@
 		B20E64FA1B1A1B3D000B59D5 /* PercentageBarUploadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E64F71B1A1B3D000B59D5 /* PercentageBarUploadingView.m */; };
 		B20E64FD1B1A1E8B000B59D5 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E64FC1B1A1E8B000B59D5 /* DownloadManager.m */; };
 		B20E65001B1A1ED6000B59D5 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = B20E64FF1B1A1ED6000B59D5 /* Utils.m */; };
+		B25AFCFB1B31543B008925C0 /* menuVGA_02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B25AFCF91B31543B008925C0 /* menuVGA_02.jpg */; };
+		B25AFCFC1B31543B008925C0 /* menuVGA_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B25AFCFA1B31543B008925C0 /* menuVGA_01.jpg */; };
 		B26FFC6A1B1DD23F00B2E111 /* MoreApp.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FFC691B1DD23F00B2E111 /* MoreApp.m */; };
 		B26FFC6D1B1DD33200B2E111 /* ConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FFC6B1B1DD33200B2E111 /* ConfigManager.m */; };
 		B26FFC701B1DD35A00B2E111 /* ConfigApp.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FFC6F1B1DD35A00B2E111 /* ConfigApp.m */; };
@@ -1123,6 +1125,8 @@
 		B29A63001B312259004CB8C3 /* icon292_s.png in Resources */ = {isa = PBXBuildFile; fileRef = B29A62001B312259004CB8C3 /* icon292_s.png */; };
 		B29A63011B312259004CB8C3 /* icon293_s.png in Resources */ = {isa = PBXBuildFile; fileRef = B29A62011B312259004CB8C3 /* icon293_s.png */; };
 		B29A63021B312259004CB8C3 /* icon294_s.png in Resources */ = {isa = PBXBuildFile; fileRef = B29A62021B312259004CB8C3 /* icon294_s.png */; };
+		B2D1AACC1B314FFD0006FA7F /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D1AACB1B314FFD0006FA7F /* MenuViewController.m */; };
+		B2D1AACE1B3150150006FA7F /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2D1AACD1B3150150006FA7F /* MenuViewController.xib */; };
 		B988D12450A4551CC875CAB0 /* libPods-Bricks Animated 3D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A671F5382684AE0C5339ED /* libPods-Bricks Animated 3D.a */; };
 /* End PBXBuildFile section */
 
@@ -1995,6 +1999,8 @@
 		B20E64FC1B1A1E8B000B59D5 /* DownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DownloadManager.m; path = Proccessing/DownloadManager.m; sourceTree = "<group>"; };
 		B20E64FE1B1A1ED6000B59D5 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = Common/Utils.h; sourceTree = "<group>"; };
 		B20E64FF1B1A1ED6000B59D5 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utils.m; path = Common/Utils.m; sourceTree = "<group>"; };
+		B25AFCF91B31543B008925C0 /* menuVGA_02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = menuVGA_02.jpg; path = Images/menuVGA_02.jpg; sourceTree = "<group>"; };
+		B25AFCFA1B31543B008925C0 /* menuVGA_01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = menuVGA_01.jpg; path = Images/menuVGA_01.jpg; sourceTree = "<group>"; };
 		B26FFC681B1DD23F00B2E111 /* MoreApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoreApp.h; path = Entry/MoreApp.h; sourceTree = "<group>"; };
 		B26FFC691B1DD23F00B2E111 /* MoreApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MoreApp.m; path = Entry/MoreApp.m; sourceTree = "<group>"; };
 		B26FFC6B1B1DD33200B2E111 /* ConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConfigManager.m; path = Common/ConfigManager.m; sourceTree = "<group>"; };
@@ -2274,6 +2280,9 @@
 		B29A62001B312259004CB8C3 /* icon292_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon292_s.png; path = Images/icons/icon292_s.png; sourceTree = "<group>"; };
 		B29A62011B312259004CB8C3 /* icon293_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon293_s.png; path = Images/icons/icon293_s.png; sourceTree = "<group>"; };
 		B29A62021B312259004CB8C3 /* icon294_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon294_s.png; path = Images/icons/icon294_s.png; sourceTree = "<group>"; };
+		B2D1AACA1B314FFD0006FA7F /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		B2D1AACB1B314FFD0006FA7F /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		B2D1AACD1B3150150006FA7F /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuViewController.xib; path = Xib/MenuViewController.xib; sourceTree = "<group>"; };
 		B3B97C520897050493FDE417 /* Pods-Bricks Animated 3D.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bricks Animated 3D.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bricks Animated 3D/Pods-Bricks Animated 3D.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -2353,6 +2362,8 @@
 			isa = PBXGroup;
 			children = (
 				B29A61021B312249004CB8C3 /* icons */,
+				B25AFCF91B31543B008925C0 /* menuVGA_02.jpg */,
+				B25AFCFA1B31543B008925C0 /* menuVGA_01.jpg */,
 				B26FFC741B1DDD1A00B2E111 /* ic_more.png */,
 				B27C1E981B1D4E5F00E29671 /* lego_icon.png */,
 				B27C1E8A1B1C3FD300E29671 /* btnRight.png */,
@@ -3273,6 +3284,8 @@
 				B27C1E9B1B1D552800E29671 /* SplashScreenViewController.m */,
 				B26FFC711B1DD6E900B2E111 /* MoreAppsViewController.h */,
 				B26FFC721B1DD6E900B2E111 /* MoreAppsViewController.m */,
+				B2D1AACA1B314FFD0006FA7F /* MenuViewController.h */,
+				B2D1AACB1B314FFD0006FA7F /* MenuViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -3283,6 +3296,7 @@
 				B20E64D31B1839C5000B59D5 /* MainViewController.xib */,
 				B27C1E881B1C085900E29671 /* GuideViewController.xib */,
 				B27C1E9D1B1D55AA00E29671 /* SplashScreenViewController.xib */,
+				B2D1AACD1B3150150006FA7F /* MenuViewController.xib */,
 			);
 			name = Xib;
 			sourceTree = "<group>";
@@ -3798,6 +3812,7 @@
 				B20E5A9D1B15AFC8000B59D5 /* 4183992.png in Resources */,
 				B20E5A701B15AFC8000B59D5 /* 4159196.png in Resources */,
 				B29A62BF1B312259004CB8C3 /* icon225_s.png in Resources */,
+				B25AFCFB1B31543B008925C0 /* menuVGA_02.jpg in Resources */,
 				B20E5B021B15AFC8000B59D5 /* 4121932.png in Resources */,
 				B29A62EB1B312259004CB8C3 /* icon271_s.png in Resources */,
 				B20E5AA71B15AFC8000B59D5 /* 4188450.png in Resources */,
@@ -4328,6 +4343,7 @@
 				B20E5B6B1B15AFC8000B59D5 /* 243121.png in Resources */,
 				B20E59A01B15AFC8000B59D5 /* 4504376.png in Resources */,
 				B20E5A021B15AFC8000B59D5 /* 4243831.png in Resources */,
+				B25AFCFC1B31543B008925C0 /* menuVGA_01.jpg in Resources */,
 				B20E5B911B15AFC8000B59D5 /* 300505.png in Resources */,
 				B20E5B421B15AFC8000B59D5 /* 306824.png in Resources */,
 				B20E59751B15AFC8000B59D5 /* 4258478.png in Resources */,
@@ -4452,6 +4468,7 @@
 				B20E5C801B15AFF0000B59D5 /* 1045.png in Resources */,
 				B20E5A901B15AFC8000B59D5 /* 4179825.png in Resources */,
 				B20E5B841B15AFC8000B59D5 /* 300221.png in Resources */,
+				B2D1AACE1B3150150006FA7F /* MenuViewController.xib in Resources */,
 				B20E5B491B15AFC8000B59D5 /* 307001.png in Resources */,
 				B20E59F51B15AFC8000B59D5 /* 4222960.png in Resources */,
 				B20E558B1B15A31B000B59D5 /* Images.xcassets in Resources */,
@@ -4814,6 +4831,7 @@
 				B26FFC701B1DD35A00B2E111 /* ConfigApp.m in Sources */,
 				B20E64C11B1806FE000B59D5 /* LegoStep.m in Sources */,
 				B20E64ED1B19C492000B59D5 /* ContentGuideViewRowCarouselViewPosterView.m in Sources */,
+				B2D1AACC1B314FFD0006FA7F /* MenuViewController.m in Sources */,
 				B20E55801B15A31B000B59D5 /* main.m in Sources */,
 				B20E64EC1B19C492000B59D5 /* ContentGuideView.m in Sources */,
 				B20E64CB1B1808C5000B59D5 /* SQLiteManager.m in Sources */,

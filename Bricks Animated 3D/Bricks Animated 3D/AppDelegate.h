@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DownloadManager.h"
 
 typedef enum {
     SIMPLE_LEGO_TYPE,
@@ -18,6 +19,7 @@ typedef enum {
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSArray *moreApps;
 @property (strong, nonatomic) ConfigApp *config;
+@property (strong, nonatomic) DownloadManager *downloadManager;
 @property (nonatomic) LEGO_TYPE_SCREEN legoType;
 
 @end

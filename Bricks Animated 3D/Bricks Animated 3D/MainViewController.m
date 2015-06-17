@@ -11,7 +11,6 @@
 #import "PreviewLegoViewController.h"
 #import "PercentageBarUploadingView.h"
 #import "GuideViewController.h"
-#import "DownloadManager.h"
 #import "MoreAppsViewController.h"
 #import "AppDelegate.h"
 #import <GoogleMobileAds/GoogleMobileAds.h>
@@ -19,7 +18,6 @@
 @interface MainViewController () <UITableViewDataSource,UITableViewDelegate, PreviewLegoViewControllerDelegate, DownloadManagerDelegate, GADInterstitialDelegate>{
     NSMutableArray *groups;
     PercentageBarUploadingView *_percentageBarUploadingV;
-    DownloadManager *downloadManager;
     Lego *legoSelected;
     BOOL shouldAds;
     AppDelegate *appDelegate;
@@ -32,21 +30,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationItem setTitle:@"Animated Bricks 3D"];
+    appDelegate = [UIApplication sharedApplication].delegate;
+    [self.navigationItem setTitle:appDelegate.legoType == NORMAL_LEGO_TYPE ? @"Advanced":@"Simple"];
     
-    //create a right side button in the navigation bar
-    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Like!"
-                                                                 style:UIBarButtonItemStylePlain
-                                                                target:self
-                                                                action:@selector(actionLike)];
+    self.navigationController.navigationBar.tintColor = UIColorFromRGB(0x2a9c40);
+    
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Back"
+                                                                   style:UIBarButtonItemStylePlain
+                                                                  target:self
+                                                                  action:nil];
     [leftButton setTitleTextAttributes:@{
                                          NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:15.f],
                                          NSForegroundColorAttributeName: UIColorFromRGB(0x2a9c40)
                                          } forState:UIControlStateNormal];
+    [self.navigationItem setBackBarButtonItem:leftButton];
     
-    [self.navigationItem setLeftBarButtonItem:leftButton];
-    
-    appDelegate = [UIApplication sharedApplication].delegate;
     if (![appDelegate.config.moreShow isEqualToString:_more_default_]) {
         UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"More"
                                                                         style:UIBarButtonItemStylePlain
@@ -60,9 +58,7 @@
     }
     
     groups = [[SQLiteManager getInstance] getAllLegoGroup];
-    
-    downloadManager = [[DownloadManager alloc] init];
-    [downloadManager setDelegate:self];
+    [appDelegate.downloadManager setDelegate:self];
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -76,10 +72,6 @@
 }
 - (BOOL)prefersStatusBarHidden {
     return YES;
-}
-- (void)actionLike{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:_msg_rating_ message:nil delegate:self cancelButtonTitle:_msg_dismiss_ otherButtonTitles:_msg_rate_it_5_starts_, nil];
-    [alert show];
 }
 - (void)actionMore{
     MoreAppsViewController *moreAppsVC = [MoreAppsViewController new];
@@ -114,7 +106,7 @@
         entry.size = frame.size;
         [files addObject:entry];
     }
-    [downloadManager dowloadFilesWith:files];
+    [appDelegate.downloadManager dowloadFilesWith:files];
 }
 - (GADInterstitial *)createAndLoadInterstitial {
     GADInterstitial *interstitial = [[GADInterstitial alloc] initWithAdUnitID:INTERSTITIAL_ID_ADMOB_PAGE];
@@ -207,12 +199,6 @@
                              cell.imageView.transform=CGAffineTransformIdentity;
                          } completion:^(BOOL finished) {}];
                      }];
-}
-#pragma mark - UIAlertViewDelegate methods
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if (buttonIndex != alertView.cancelButtonIndex) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:appDelegate.config.urliTunes]];
-    }
 }
 #pragma mark - PreviewLegoViewControllerDelegate methods
 -(void)didTapDownloadLego:(PreviewLegoViewController *)previewLegoVC{
