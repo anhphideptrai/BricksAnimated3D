@@ -866,6 +866,7 @@
 		B27C1E991B1D4E5F00E29671 /* lego_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B27C1E981B1D4E5F00E29671 /* lego_icon.png */; };
 		B27C1E9C1B1D552800E29671 /* SplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27C1E9B1B1D552800E29671 /* SplashScreenViewController.m */; };
 		B27C1E9E1B1D55AA00E29671 /* SplashScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B27C1E9D1B1D55AA00E29671 /* SplashScreenViewController.xib */; };
+		B29A61011B311805004CB8C3 /* U0lNUExFX0xFR09fREIuc3FsaXRl= in Resources */ = {isa = PBXBuildFile; fileRef = B29A61001B311805004CB8C3 /* U0lNUExFX0xFR09fREIuc3FsaXRl= */; };
 		B988D12450A4551CC875CAB0 /* libPods-Bricks Animated 3D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A671F5382684AE0C5339ED /* libPods-Bricks Animated 3D.a */; };
 /* End PBXBuildFile section */
 
@@ -1760,6 +1761,7 @@
 		B27C1E9A1B1D552800E29671 /* SplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashScreenViewController.h; sourceTree = "<group>"; };
 		B27C1E9B1B1D552800E29671 /* SplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashScreenViewController.m; sourceTree = "<group>"; };
 		B27C1E9D1B1D55AA00E29671 /* SplashScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SplashScreenViewController.xib; path = Xib/SplashScreenViewController.xib; sourceTree = "<group>"; };
+		B29A61001B311805004CB8C3 /* U0lNUExFX0xFR09fREIuc3FsaXRl= */ = {isa = PBXFileReference; lastKnownFileType = file; name = "U0lNUExFX0xFR09fREIuc3FsaXRl="; path = "DataBase/U0lNUExFX0xFR09fREIuc3FsaXRl="; sourceTree = "<group>"; };
 		B3B97C520897050493FDE417 /* Pods-Bricks Animated 3D.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bricks Animated 3D.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bricks Animated 3D/Pods-Bricks Animated 3D.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -2713,6 +2715,7 @@
 		B20E64C31B180745000B59D5 /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
+				B29A61001B311805004CB8C3 /* U0lNUExFX0xFR09fREIuc3FsaXRl= */,
 				B20E64C41B18082F000B59D5 /* TEVHT19EQi5zcWxpdGU= */,
 			);
 			name = DataBase;
@@ -3381,6 +3384,7 @@
 				B20E59BF1B15AFC8000B59D5 /* 4211437.png in Resources */,
 				B20E5A101B15AFC8000B59D5 /* 4210651.png in Resources */,
 				B20E5B211B15AFC8000B59D5 /* 302926.png in Resources */,
+				B29A61011B311805004CB8C3 /* U0lNUExFX0xFR09fREIuc3FsaXRl= in Resources */,
 				B20E59481B15AFC8000B59D5 /* 4610897.png in Resources */,
 				B20E5C791B15AFF0000B59D5 /* 1028.png in Resources */,
 				B20E5B6E1B15AFC8000B59D5 /* 243226.png in Resources */,

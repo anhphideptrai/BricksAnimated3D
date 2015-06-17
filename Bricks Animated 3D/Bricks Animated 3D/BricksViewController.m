@@ -63,8 +63,8 @@
     return NUMBER_POSTERS_IN_A_ROW;
 }
 - (NSUInteger) numberOfRowsInContentGuide:(ContentGuideView*) contentGuide{
-    NSUInteger numberPokemons = _lego.bricks.count;
-    return numberPokemons == 0 ? 0 : (numberPokemons - 1)/NUMBER_POSTERS_IN_A_ROW + 1;
+    NSUInteger numberBricks = _lego.bricks.count;
+    return numberBricks == 0 ? 0 : (numberBricks - 1)/NUMBER_POSTERS_IN_A_ROW + 1;
 }
 - (ContentGuideViewRow*) contentGuide:(ContentGuideView*) contentGuide
                        rowForRowIndex:(NSUInteger)rowIndex{

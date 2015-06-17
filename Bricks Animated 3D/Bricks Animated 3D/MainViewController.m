@@ -33,6 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationItem setTitle:@"Animated Bricks 3D"];
+    _legoType = NORMAL_LEGO_TYPE;
     
     //create a right side button in the navigation bar
     UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Like!"
@@ -87,8 +88,10 @@
     [self presentViewController:navC animated:YES completion:^{}];
 }
 - (void)openLegoDetail{
+    legoSelected.legoSteps = [[SQLiteManager getInstance] getLegoStepsWithIDLego:legoSelected.iDLego];
     GuideViewController *guideVC = [[GuideViewController alloc] initWithNibName:@"GuideViewController" bundle:nil];
     [guideVC setLego:legoSelected];
+    shouldAds = YES;
     [self.navigationController pushViewController:guideVC animated:YES];
 }
 - (UIView *) percentageBarUploadingV{
@@ -99,6 +102,20 @@
     [_percentageBarUploadingV setTextLoading:@""];
     [_percentageBarUploadingV setPercent:0];
     return _percentageBarUploadingV.view;
+}
+- (void)downloadImgWithIDLego:(NSString*)iDLego{
+    [self.view setUserInteractionEnabled:NO];
+    [self.navigationController.navigationBar addSubview:self.percentageBarUploadingV];
+    NSMutableArray *files = [[NSMutableArray alloc] init];
+    for (LegoImage *frame in [[SQLiteManager getInstance] getLegoImagesWithIDLego:iDLego]) {
+        DownloadEntry *entry = [[DownloadEntry alloc] init];
+        entry.strUrl = frame.urlImage;
+        entry.dir = frame.iDLego;
+        entry.fileName = [[frame.urlImage componentsSeparatedByString:@"/"] lastObject];
+        entry.size = frame.size;
+        [files addObject:entry];
+    }
+    [downloadManager dowloadFilesWith:files];
 }
 - (GADInterstitial *)createAndLoadInterstitial {
     GADInterstitial *interstitial = [[GADInterstitial alloc] initWithAdUnitID:INTERSTITIAL_ID_ADMOB_PAGE];
@@ -165,14 +182,17 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     legoSelected = ((LegoGroup*)groups[indexPath.section]).legoes[indexPath.row];
     if (legoSelected.isDownloaded) {
-        legoSelected.legoSteps = [[SQLiteManager getInstance] getLegoStepsWithIDLego:legoSelected.iDLego];
         [self openLegoDetail];
-        shouldAds = YES;
+        
     }else{
-        PreviewLegoViewController *previewVC = [[PreviewLegoViewController alloc] init];
-        [previewVC setLego:legoSelected];
-        [previewVC setDelegate:self];
-        [self.navigationController pushViewController:previewVC animated:YES];
+        if (_legoType == SIMPLE_LEGO_TYPE) {
+            [self downloadImgWithIDLego:legoSelected.iDLego];
+        }else{
+            PreviewLegoViewController *previewVC = [[PreviewLegoViewController alloc] init];
+            [previewVC setLego:legoSelected];
+            [previewVC setDelegate:self];
+            [self.navigationController pushViewController:previewVC animated:YES];
+        }
     }
 }
 - (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -198,18 +218,7 @@
 #pragma mark - PreviewLegoViewControllerDelegate methods
 -(void)didTapDownloadLego:(PreviewLegoViewController *)previewLegoVC{
     [self.navigationController popViewControllerAnimated:YES];
-    [self.view setUserInteractionEnabled:NO];
-    [self.navigationController.navigationBar addSubview:self.percentageBarUploadingV];
-    NSMutableArray *files = [[NSMutableArray alloc] init];
-    for (LegoImage *frame in [[SQLiteManager getInstance] getLegoImagesWithIDLego:previewLegoVC.lego.iDLego]) {
-        DownloadEntry *entry = [[DownloadEntry alloc] init];
-        entry.strUrl = frame.urlImage;
-        entry.dir = frame.iDLego;
-        entry.fileName = [[frame.urlImage componentsSeparatedByString:@"/"] lastObject];
-        entry.size = frame.size;
-        [files addObject:entry];
-    }
-    [downloadManager dowloadFilesWith:files];
+    [self downloadImgWithIDLego:previewLegoVC.lego.iDLego];
 }
 #pragma mark - DownloadManagerDelegate methods
 - (void)didFinishedDownloadFilesWith:(NSArray *)filePaths withError:(NSError *)error{
@@ -219,6 +228,7 @@
         legoSelected.isDownloaded = YES;
         [[SQLiteManager getInstance] didDownloadedLego:legoSelected.iDLego];
         [_tbView reloadData];
+        [self openLegoDetail];
     }else{
         [Utils showAlertWithError:error];
     }

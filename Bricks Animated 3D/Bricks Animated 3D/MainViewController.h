@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+typedef enum {
+    SIMPLE_LEGO_TYPE,
+    NORMAL_LEGO_TYPE
+}LEGO_TYPE_SCREEN;
 @interface MainViewController : UIViewController
-
-
+@property (nonatomic) LEGO_TYPE_SCREEN legoType;
 @end
 
