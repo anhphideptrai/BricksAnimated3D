@@ -52,6 +52,12 @@
     url = [NSURL fileURLWithPath:strUrl];
     return url;
 }
++ (NSURL*)getURLImageForIDSimpleLego:(NSString*)iDLego andFileName:(NSString*)fileName{
+    NSURL *url = nil;
+    NSString *strUrl = [Utils documentsPathForFileName:[NSString stringWithFormat:@"%@_s/%@",iDLego, fileName]];
+    url = [NSURL fileURLWithPath:strUrl];
+    return url;
+}
 // + (NSString *) admobDeviceID
 // {
 // NSUUID* adid = [[ASIdentifierManager sharedManager] advertisingIdentifier];

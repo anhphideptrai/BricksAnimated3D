@@ -11,5 +11,6 @@
 @interface LegoGroup : NSObject
 @property (nonatomic, strong) NSString *iDGroup;
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSMutableArray *iDLegos;
 @property (nonatomic, strong) NSMutableArray *legoes;
 @end

@@ -8,12 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum {
+    SIMPLE_LEGO_TYPE,
+    NORMAL_LEGO_TYPE
+}LEGO_TYPE_SCREEN;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSArray *moreApps;
 @property (strong, nonatomic) ConfigApp *config;
-
+@property (nonatomic) LEGO_TYPE_SCREEN legoType;
 
 @end
 

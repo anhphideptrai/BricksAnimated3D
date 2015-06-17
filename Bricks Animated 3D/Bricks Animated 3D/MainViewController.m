@@ -33,7 +33,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationItem setTitle:@"Animated Bricks 3D"];
-    _legoType = NORMAL_LEGO_TYPE;
     
     //create a right side button in the navigation bar
     UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Like!"
@@ -110,7 +109,7 @@
     for (LegoImage *frame in [[SQLiteManager getInstance] getLegoImagesWithIDLego:iDLego]) {
         DownloadEntry *entry = [[DownloadEntry alloc] init];
         entry.strUrl = frame.urlImage;
-        entry.dir = frame.iDLego;
+        entry.dir = appDelegate.legoType == NORMAL_LEGO_TYPE ? frame.iDLego : [NSString stringWithFormat:@"%@_s", frame.iDLego];
         entry.fileName = [[frame.urlImage componentsSeparatedByString:@"/"] lastObject];
         entry.size = frame.size;
         [files addObject:entry];
@@ -173,7 +172,7 @@
     Lego *lego = ((LegoGroup*)groups[indexPath.section]).legoes[indexPath.row];
     [cell.textLabel setText:lego.name];
     [cell.detailTextLabel setText:[NSString stringWithFormat:@"%lu Details", (unsigned long)lego.totalBricks]];
-    [cell.imageView setImageWithURL:[[NSBundle mainBundle] URLForResource:[[lego.icon componentsSeparatedByString:@"."] firstObject] withExtension:[[lego.icon componentsSeparatedByString:@"."] lastObject]]];
+    [cell.imageView setImageWithURL:[[NSBundle mainBundle] URLForResource:appDelegate.legoType == NORMAL_LEGO_TYPE ? [[lego.icon componentsSeparatedByString:@"."] firstObject] : [NSString stringWithFormat:@"icon%@_s", lego.iDLego] withExtension:[[lego.icon componentsSeparatedByString:@"."] lastObject]]];
     cell.accessoryType = lego.isDownloaded?UITableViewCellAccessoryCheckmark:UITableViewCellAccessoryNone;
     cell.tintColor = UIColorFromRGB(0x2a9c40);
     return cell;
@@ -185,7 +184,7 @@
         [self openLegoDetail];
         
     }else{
-        if (_legoType == SIMPLE_LEGO_TYPE) {
+        if (appDelegate.legoType == SIMPLE_LEGO_TYPE) {
             [self downloadImgWithIDLego:legoSelected.iDLego];
         }else{
             PreviewLegoViewController *previewVC = [[PreviewLegoViewController alloc] init];

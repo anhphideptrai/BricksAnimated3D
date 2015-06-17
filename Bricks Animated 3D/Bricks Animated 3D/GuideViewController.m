@@ -127,29 +127,40 @@
     [alert show];
 }
 - (void)updateData{
-    [_bricksView setHidden:currentIndex == _lego.legoSteps.count - 1];
+    [_bricksView setHidden:currentIndex == _lego.legoSteps.count - 1 || appDelegate.legoType == SIMPLE_LEGO_TYPE];
     if (currentIndex == -1) {
-        oldImg = [Utils getURLBundleForFileName:_lego.preview];
-        newImg = oldImg;
+        if (appDelegate.legoType == NORMAL_LEGO_TYPE) {
+            oldImg = [Utils getURLBundleForFileName:_lego.preview];
+            newImg = oldImg;
+        }else{
+            LegoStep *stepLast = [_lego.legoSteps lastObject];
+            oldImg = [Utils getURLImageForIDSimpleLego:stepLast.iDLego andFileName:((LegoImage*)[stepLast.legoImgs lastObject]).iDImage];
+            newImg = oldImg;
+        }
         [_lbDescription setText:@"Preview"];
     }else{
         LegoStep *step = (LegoStep*)_lego.legoSteps[currentIndex];
-        if (step.legoImgs.count > 1) {
-            oldImg = [Utils getURLImageForIDLego:step.iDLego andFileName:[[((LegoImage*)step.legoImgs[0]).urlImage componentsSeparatedByString:@"/"] lastObject]];
-            newImg = [Utils getURLImageForIDLego:step.iDLego andFileName:[[((LegoImage*)step.legoImgs[1]).urlImage componentsSeparatedByString:@"/"] lastObject]];
-        }else{
-            if (currentIndex == _lego.legoSteps.count - 1) {
-                newImg = [Utils getURLImageForIDLego:step.iDLego andFileName:[[((LegoImage*)step.legoImgs[0]).urlImage componentsSeparatedByString:@"/"] lastObject]];
-                oldImg = newImg;
+        if (appDelegate.legoType == NORMAL_LEGO_TYPE) {
+            if (step.legoImgs.count > 1) {
+                oldImg = [Utils getURLImageForIDLego:step.iDLego andFileName:[[((LegoImage*)step.legoImgs[0]).urlImage componentsSeparatedByString:@"/"] lastObject]];
+                newImg = [Utils getURLImageForIDLego:step.iDLego andFileName:[[((LegoImage*)step.legoImgs[1]).urlImage componentsSeparatedByString:@"/"] lastObject]];
             }else{
-                LegoStep *stepPre = (LegoStep*)_lego.legoSteps[currentIndex - 1];
-                if (stepPre.legoImgs.count > 1) {
-                    oldImg = [Utils getURLImageForIDLego:stepPre.iDLego andFileName:[[((LegoImage*)stepPre.legoImgs[1]).urlImage componentsSeparatedByString:@"/"] lastObject]];
+                if (currentIndex == _lego.legoSteps.count - 1) {
+                    newImg = [Utils getURLImageForIDLego:step.iDLego andFileName:[[((LegoImage*)step.legoImgs[0]).urlImage componentsSeparatedByString:@"/"] lastObject]];
+                    oldImg = newImg;
                 }else{
-                    oldImg = [Utils getURLImageForIDLego:stepPre.iDLego andFileName:[[((LegoImage*)stepPre.legoImgs[0]).urlImage componentsSeparatedByString:@"/"] lastObject]];
+                    LegoStep *stepPre = (LegoStep*)_lego.legoSteps[currentIndex - 1];
+                    if (stepPre.legoImgs.count > 1) {
+                        oldImg = [Utils getURLImageForIDLego:stepPre.iDLego andFileName:[[((LegoImage*)stepPre.legoImgs[1]).urlImage componentsSeparatedByString:@"/"] lastObject]];
+                    }else{
+                        oldImg = [Utils getURLImageForIDLego:stepPre.iDLego andFileName:[[((LegoImage*)stepPre.legoImgs[0]).urlImage componentsSeparatedByString:@"/"] lastObject]];
+                    }
+                    newImg = [Utils getURLImageForIDLego:step.iDLego andFileName:[[((LegoImage*)step.legoImgs[0]).urlImage componentsSeparatedByString:@"/"] lastObject]];
                 }
-                newImg = [Utils getURLImageForIDLego:step.iDLego andFileName:[[((LegoImage*)step.legoImgs[0]).urlImage componentsSeparatedByString:@"/"] lastObject]];
             }
+        }else{
+            oldImg = [Utils getURLImageForIDSimpleLego:step.iDLego andFileName:((LegoImage*)[step.legoImgs lastObject]).iDImage];
+            newImg = oldImg;
         }
         [_lbDescription setText:[NSString stringWithFormat:@"%ld/%lu", currentIndex + 1, (unsigned long)_lego.legoSteps.count]];
     }

@@ -8,8 +8,11 @@
 
 #import "SQLiteManager.h"
 #import <sqlite3.h>
+#import "AppDelegate.h"
 
-@interface SQLiteManager()
+@interface SQLiteManager(){
+    AppDelegate *appDelegate;
+}
 
 @property (strong, nonatomic) NSString *databasePath;
 @property (nonatomic) sqlite3 *contactDB;
@@ -39,22 +42,23 @@ static SQLiteManager *thisInstance;
     return nil;
 }
 - (void)copyDatabase {
+    appDelegate = [UIApplication sharedApplication].delegate;
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSError *error;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     
-    _databasePath = [documentsDirectory stringByAppendingPathComponent:_NAME_DB_STRING_];
+    _databasePath = [documentsDirectory stringByAppendingPathComponent:appDelegate.legoType == NORMAL_LEGO_TYPE ? _NAME_DB_STRING_ : _NAME_DB_SIMPLE_STRING_];
     
     if ([fileManager fileExistsAtPath:_databasePath] == NO) {
-        NSString *resourcePath = [[NSBundle mainBundle] pathForResource:_NAME_DB_STRING_ ofType:@""];
+        NSString *resourcePath = [[NSBundle mainBundle] pathForResource:appDelegate.legoType == NORMAL_LEGO_TYPE ? _NAME_DB_STRING_ : _NAME_DB_SIMPLE_STRING_ ofType:@""];
         [fileManager copyItemAtPath:resourcePath toPath:_databasePath error:&error];
     }
     if (_contactDB) {
         sqlite3_close(_contactDB);
     }
 }
-- (NSMutableArray*)getArrLegoWithiDGroup:(NSString*)iDGroup{
+- (NSMutableArray*)getArrLegoWithiDGroup:(NSString*)iDGroup orWithArrIDLego:(NSArray*)iDLegos{
     [self copyDatabase];
     NSMutableArray *resultArray = [[NSMutableArray alloc]init];
     sqlite3_stmt    *statement;
@@ -62,7 +66,16 @@ static SQLiteManager *thisInstance;
     Lego *lego;
     if (sqlite3_open(dbpath, &_contactDB) == SQLITE_OK)
     {
-        NSString *querySQL = [NSString stringWithFormat:@"select * from lego where iDGroup = '%@' group by name", iDGroup];
+        NSString *querySQL = @"";
+        if (iDLegos && iDLegos.count > 0) {
+            NSString *tmp = @"";
+            for (NSString *iDItem in iDLegos) {
+                tmp = [tmp stringByAppendingFormat:([tmp isEqualToString:@""]?@"'%@'":@",'%@'"), iDItem];
+            }
+            querySQL = [NSString stringWithFormat:@"select * from lego where iDLego in (%@) group by name", tmp];
+        }else{
+            querySQL = [NSString stringWithFormat:@"select * from lego where iDGroup = '%@' group by name", iDGroup];
+        }
         const char *query_stmt = [querySQL UTF8String];
         if (sqlite3_prepare_v2(_contactDB,
                                query_stmt, -1, &statement, NULL) == SQLITE_OK)
@@ -122,7 +135,10 @@ static SQLiteManager *thisInstance;
                 lego = [[LegoGroup alloc] init];
                 lego.iDGroup = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 0)];
                 lego.name = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 1)];
-                lego.legoes = [self getArrLegoWithiDGroup:lego.iDGroup];
+                if (appDelegate.legoType != NORMAL_LEGO_TYPE) {
+                    lego.iDLegos = [[NSMutableArray alloc] initWithArray:[[NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 2)] componentsSeparatedByString:@","]];
+                }
+                lego.legoes = [self getArrLegoWithiDGroup:lego.iDGroup orWithArrIDLego:lego.iDLegos];
                 [resultArray addObject:lego];
             }
             sqlite3_finalize(statement);

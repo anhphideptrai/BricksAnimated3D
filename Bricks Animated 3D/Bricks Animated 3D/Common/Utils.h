@@ -14,5 +14,6 @@
 + (void)showAlertWithError:(NSError*)err;
 + (NSURL*)getURLBundleForFileName:(NSString*)fileName;
 + (NSURL*)getURLImageForIDLego:(NSString*)iDLego andFileName:(NSString*)fileName;
++ (NSURL*)getURLImageForIDSimpleLego:(NSString*)iDLego andFileName:(NSString*)fileName;
 //+ (NSString *) admobDeviceID;
 @end
