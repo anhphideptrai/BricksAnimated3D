@@ -21,6 +21,7 @@
     Lego *legoSelected;
     BOOL shouldAds;
     AppDelegate *appDelegate;
+    NSTimer *delayShowAdsTimer;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tbView;
 @property(nonatomic, strong) GADInterstitial *interstitial;
@@ -62,13 +63,27 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    if (delayShowAdsTimer) {
+        [delayShowAdsTimer invalidate];
+        delayShowAdsTimer = nil;
+    }
     if (shouldAds && ![appDelegate.config.adsShow isEqualToString:_ads_default_]) {
         shouldAds = NO;
         NSUInteger r = arc4random_uniform(5) + 1;
         if (r == 3) {
-            self.interstitial = [self createAndLoadInterstitial];
+            delayShowAdsTimer = [NSTimer scheduledTimerWithTimeInterval:_TIME_TICK_CHANGE_ target:self selector:@selector(delayShowAds) userInfo:nil repeats:NO];
         }
     }
+}
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    if (delayShowAdsTimer) {
+        [delayShowAdsTimer invalidate];
+        delayShowAdsTimer = nil;
+    }
+}
+- (void)delayShowAds{
+    self.interstitial = [self createAndLoadInterstitial];
 }
 - (BOOL)prefersStatusBarHidden {
     return YES;

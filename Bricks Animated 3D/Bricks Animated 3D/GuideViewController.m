@@ -14,8 +14,6 @@
 #import <Social/Social.h>
 #import "AppDelegate.h"
 
-#define _TIME_TICK_CHANGE_ 3.f
-
 @interface GuideViewController ()<GADBannerViewDelegate, BricksBarViewDelegate, MFMailComposeViewControllerDelegate>{
     NSInteger currentIndex;
     NSURL *oldImg;
