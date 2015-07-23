@@ -82,10 +82,10 @@
 #define CONFIG_MORE_TAG @"CONFIG_MORE_TAG"
 #define CONFIG_URL_ITUNES_TAG @"CONFIG_URL_ITUNES_TAG"
 
-#define SHOW_RATING_VIEW_TAG @"SHOW_RATING_VIEW"
+#define SHOW_RATING_VIEW_TAG @"SHOW_RATING_VIEW_1"
 
-#define _status_defalt_ @"beta1"
+#define _status_defalt_ @"beta2"
 #define _ads_default_ @"beta"
-#define _more_default_ @"beta1"
+#define _more_default_ @"beta2"
 
 #endif

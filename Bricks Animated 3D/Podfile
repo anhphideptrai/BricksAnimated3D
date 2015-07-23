@@ -5,7 +5,7 @@ target 'Bricks Animated 3D' do
 inhibit_all_warnings!
 
 pod 'AFNetworking', '~> 2.5'
-pod 'Google-Mobile-Ads-SDK', '~> 7.2'
+pod 'Google-Mobile-Ads-SDK', '~> 7.3'
 
 end
 
