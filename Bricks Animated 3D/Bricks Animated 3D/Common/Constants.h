@@ -84,8 +84,8 @@
 
 #define SHOW_RATING_VIEW_TAG @"SHOW_RATING_VIEW_1"
 
-#define _status_defalt_ @"beta2"
+#define _status_defalt_ @"beta3"
 #define _ads_default_ @"beta"
-#define _more_default_ @"beta2"
+#define _more_default_ @"beta3"
 
 #endif
